@@ -1,7 +1,5 @@
 package login;
 
-import com.example.onlinebookclub.login.AccountModel;
-
 public class RegisterController {
 
     /**

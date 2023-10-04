@@ -1,7 +1,5 @@
 package discussion;
-import com.example.onlinebookclub.discussion.DiscussionPostModel;
-import com.example.onlinebookclub.login.Login;
-import com.example.onlinebookclub.discussion.DiscussionReplyModel;
+import login.Login;
 
 public class DiscussionBoardController {
 

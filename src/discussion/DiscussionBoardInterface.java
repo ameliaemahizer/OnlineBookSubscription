@@ -1,7 +1,5 @@
 package discussion;
 
-import com.example.onlinebookclub.discussion.DiscussionBoard;
-import discussion.DiscussionBoardController;
 
 public class DiscussionBoardInterface {
 

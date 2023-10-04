@@ -1,5 +1,4 @@
 package login;
-import com.example.onlinebookclub.login.Login;
 
 public class LoginController {
     private Login userName;

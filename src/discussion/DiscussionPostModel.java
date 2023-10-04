@@ -1,6 +1,5 @@
-package com.example.onlinebookclub.discussion;
-
-import com.example.onlinebookclub.login.Login;
+package discussion;
+import login.Login;
 
 public class DiscussionPostModel {
     private Login userName;

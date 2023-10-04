@@ -1,6 +1,7 @@
-package com.example.onlinebookclub.discussion;
+package discussion;
 
-import com.example.onlinebookclub.login.Login;
+
+import login.Login;
 
 public class DiscussionReplyModel {
     private Login userName;
