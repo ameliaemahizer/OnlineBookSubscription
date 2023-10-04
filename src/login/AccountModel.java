@@ -1,4 +1,4 @@
-package com.example.onlinebookclub.login;
+package login;
 
 public class AccountModel {
 
