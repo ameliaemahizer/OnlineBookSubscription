@@ -1,23 +1,21 @@
 package login;
 
 public class LoginController {
-    private Login userName;
-    private Login password;
+    private User p1;
+
+    private LoginInterface li;
 
     /**
      * This is the default constructor for LoginController
      */
     public LoginController() {
+        this.li = new LoginInterface();
+        p1 = li.displayLogin();
+        int user = p1.verifyLogin();
+        if (user == 1) {
+            System.out.println("verified");
+        }
 
     }
 
-    /**
-     * Creates login
-     * @param userName username of the account
-     * @param password password of the account
-     * @return null for now, but will return username and password that match
-     */
-    public Login createLogin(Login userName, Login password){
-        return null;
-    }
 }

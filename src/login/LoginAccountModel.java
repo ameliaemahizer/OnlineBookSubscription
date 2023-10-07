@@ -1,6 +1,6 @@
 package login;
 
-public class AccountModel {
+public class LoginAccountModel {
 
     public String username;
 
@@ -11,7 +11,7 @@ public class AccountModel {
      * @param username username of the account
      * @param password password of the account
      */
-    public AccountModel(String username, String password) {
+    public LoginAccountModel(String username, String password) {
         this.username = username;
         this.password = password;
     }

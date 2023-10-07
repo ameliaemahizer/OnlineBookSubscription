@@ -14,7 +14,7 @@ public class RegisterController {
      * @param password Sets the account password
      * @return currently null, but will return the created account
      */
-    public AccountModel createAccount(String username, String password){
+    public LoginAccountModel createAccount(String username, String password){
         return null;
     }
 }

@@ -1,9 +1,9 @@
 package discussion;
-import login.Login;
+import login.User;
 
 public class DiscussionBoardController {
 
-    private Login userName;
+    private User userName;
     private String postTitle;
     private String mainPost;
     private String reply;
