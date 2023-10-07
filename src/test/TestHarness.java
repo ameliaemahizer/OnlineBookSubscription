@@ -1,13 +1,13 @@
 package test;
 
 import login.LoginController;
-import org.junit.Test;
+import login.RegisterController;
+
 
 public class TestHarness {
     public static void main (String[] args){
-        LoginController lc = new LoginController();
-
-
+         RegisterController rc = new RegisterController();
+         LoginController lc = new LoginController();
 
 
     }

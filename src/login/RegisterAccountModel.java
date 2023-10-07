@@ -1,6 +1,6 @@
 package login;
 
-public class Register {
+public class RegisterAccountModel {
 
     private String username;
     private String password;
