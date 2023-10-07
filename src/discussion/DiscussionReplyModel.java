@@ -1,10 +1,10 @@
 package discussion;
 
 
-import login.Login;
+import login.User;
 
 public class DiscussionReplyModel {
-    private Login userName;
+    private User userName;
     private String postReply;
 
     /**
@@ -12,7 +12,7 @@ public class DiscussionReplyModel {
      * @param userName username associated with the reply
      * @param postReply main text of the reply
      */
-    public DiscussionReplyModel(Login userName, String postReply){
+    public DiscussionReplyModel(User userName, String postReply){
         this.userName = userName;
         this.postReply = postReply;
     }

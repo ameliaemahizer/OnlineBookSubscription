@@ -2,12 +2,12 @@ package discussion;
 
 
 
-import login.Login;
+import login.User;
 
 import java.util.ArrayList;
 
 public class DiscussionBoard {
-    private Login userName;
+    private User userName;
     private String postTitle;
     private String mainPost;
     private String postReplies;
@@ -24,7 +24,7 @@ public class DiscussionBoard {
      * Returns the username associated with a discussion post
      * @return a string representing the username associated with the post
      **/
-    public Login getUserName() {
+    public User getUserName() {
         return userName;
     }
 

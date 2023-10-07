@@ -1,8 +1,8 @@
 package discussion;
-import login.Login;
+import login.User;
 
 public class DiscussionPostModel {
-    private Login userName;
+    private User userName;
     private String postTitle;
     private String mainPost;
 
@@ -13,7 +13,7 @@ public class DiscussionPostModel {
      * @param mainPost main text of the post
      */
 
-    public DiscussionPostModel (Login userName, String postTitle, String mainPost){
+    public DiscussionPostModel (User userName, String postTitle, String mainPost){
         this.userName = userName;
         this.postTitle = postTitle;
         this.mainPost = mainPost;

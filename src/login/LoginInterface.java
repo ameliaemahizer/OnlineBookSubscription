@@ -1,8 +1,8 @@
 package login;
 
+import java.util.Scanner;
+
 public class LoginInterface {
-    private Login userName;
-    private Login password;
 
     /**
      * This is the default constructor for LoginInterface
@@ -14,7 +14,13 @@ public class LoginInterface {
     /**
      * This display the username and encrypted password
      */
-    public void displayLogin(){
-
+    public User displayLogin(){
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter user name: ");
+        String username = s.next();
+        System.out.println("Enter password: ");
+        String password = s.next();
+        User l = new User(username, password);
+        return l;
     }
 }
