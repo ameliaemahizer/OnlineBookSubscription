@@ -13,9 +13,8 @@ public class LoginController {
         p1 = li.displayLogin();
         int user = p1.verifyLogin();
         if (user == 1) {
-            System.out.println("verified");
+            System.out.println("in system");
         }
-
     }
 
 }

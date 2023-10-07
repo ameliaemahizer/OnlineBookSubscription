@@ -2,11 +2,20 @@ package login;
 
 public class RegisterController {
 
+    private User p1;
+    private RegisterInterface ri;
     /**
      * default constructor for RegisterController
      */
     public RegisterController(){
-
+        this.ri = new RegisterInterface();
+        p1 = ri.displayRegisterInterface();
+        int user = p1.verifyLogin();
+        if (user == 1){
+            System.out.println("already in the system");
+        } else {
+            System.out.println("not in the system");
+        }
     }
 
     /**
