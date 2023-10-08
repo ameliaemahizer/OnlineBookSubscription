@@ -14,7 +14,7 @@ public class ReviewModel {
     public String bookName;
     Scanner scanner = new Scanner(System.in);
 
-    ArrayList<ReviewModel> bookReviews = new ArrayList<>();
+    static ArrayList<ReviewModel> bookReviews = new ArrayList<>();
 
     /**
      * This is the default constructor for a review.
@@ -88,7 +88,7 @@ public class ReviewModel {
         return this.bookName;
     }
 
-    public ReviewModel getBookReview(int indexNumber){
+    public static ReviewModel getBookReview(int indexNumber){
         ReviewModel bookReview = bookReviews.get(indexNumber);
 
         return bookReview;

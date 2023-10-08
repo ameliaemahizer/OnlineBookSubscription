@@ -3,6 +3,7 @@ package test;
 import login.LoginController;
 import login.RegisterController;
 import review.PostReviewController;
+import review.ViewReviewController;
 
 
 public class TestHarness {
@@ -10,6 +11,7 @@ public class TestHarness {
          RegisterController rc = new RegisterController();
          LoginController lc = new LoginController();
          PostReviewController prc = new PostReviewController();
+         ViewReviewController vrc = new ViewReviewController();
 
     }
 
