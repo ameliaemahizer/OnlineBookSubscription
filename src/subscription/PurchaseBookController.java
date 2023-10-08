@@ -12,7 +12,7 @@ public class PurchaseBookController {
     public PurchaseBookController(){
         this.pbi = new PurchaseBookInterface();
         book = pbi.displayBook();
-
+        userFinanceData.updateFinanceInfo();
 
     }
 }
