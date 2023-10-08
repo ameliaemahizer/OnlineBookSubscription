@@ -12,7 +12,12 @@ public class PostReviewInterface {
     /**
      * displays interface for posting reviews
      */
-    public void displayPostReviewInterface(){
+    public static void displayPostReviewInterface(ReviewModel review){
 
+        System.out.println("Created Review: \n" +
+
+                "Book Name: "  + review.getBookName() + "\n"
+                + "Rating: " + review.getReviewRating() + "\n" +
+                review.getReviewBody());
     }
 }
