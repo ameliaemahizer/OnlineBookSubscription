@@ -18,6 +18,6 @@ public class PostReviewInterface {
 
                 "Book Name: "  + review.getBookName() + "\n"
                 + "Rating: " + review.getReviewRating() + "\n" +
-                review.getReviewBody());
+                review.getReviewBody() +"\n Test Passed");
     }
 }

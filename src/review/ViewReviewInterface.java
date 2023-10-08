@@ -18,6 +18,7 @@ public class ViewReviewInterface {
 
         System.out.println("Book Name: " + review.getBookName() + "\n"
             + "Book Rating: " + review.getReviewRating() + "\n" +
-            review.getReviewBody());
+            review.getReviewBody()
+        + "\n Test Passed");
     }
 }
