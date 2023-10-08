@@ -28,8 +28,11 @@ public class PostReviewController {
 
         System.out.println("Describe your review of the book.");
         review.setReviewBody();
+        review.setReviewBody();
 
         PostReviewInterface.displayPostReviewInterface(review);
+
+        review.addBookReviewToArray(review);
         return review;
     }
 }

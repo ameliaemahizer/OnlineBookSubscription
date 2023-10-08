@@ -93,4 +93,9 @@ public class ReviewModel {
 
         return bookReview;
     }
+
+    public void addBookReviewToArray(ReviewModel review){
+        this.bookReviews.add(review);
+
+    }
 }
