@@ -19,7 +19,7 @@ public class isbnApi {
      * or null if no book is found.
      */
     public BookModel lookupByIsbn(String isbn) {
-        // Next Step: Add implementation code here
+        // Stub:
         return null;
     }
 }
