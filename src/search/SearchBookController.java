@@ -11,6 +11,7 @@ public class SearchBookController {
      * Initialize the SearchBook instance.
      */
     public SearchBookController() {
+
         this.searchBook = new SearchBook();
     }
 
@@ -21,6 +22,6 @@ public class SearchBookController {
      */
 
     public ArrayList<BookModel> searchBooks(String keyword) {
-        return searchBook.search(keyword);
+        return SearchBook.search(keyword);
     }
 }
