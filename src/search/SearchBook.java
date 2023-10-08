@@ -16,8 +16,9 @@ public class SearchBook {
      * or null if no book was found.
      */
     public BookModel searchByTitle(String title) {
-        // Next step: Add implementation code here
-        return null;
+        // Stub: Return a book for any title
+        System.out.println("Method searchByTitle called with title: " + title);
+        return new BookModel(title, 15.99, "123456789", "Book Author");
     }
 
     /**
@@ -27,8 +28,11 @@ public class SearchBook {
      * or empty array if no books were found.
      */
     public ArrayList<BookModel> searchByAuthor(String author) {
-        // Next step: Add implementation code here
-        return null;
+        // Stub: Return a list with a book for any author.
+        System.out.println("Method searchByAuthor called with author: " + author);
+        ArrayList<BookModel> result = new ArrayList<>();
+        result.add(new BookModel("Book Title", 15.99, "123456789", author));
+        return result;
     }
 
     /**
@@ -38,8 +42,10 @@ public class SearchBook {
      * or null if no book is found with the specified ISBN.
      */
     public BookModel searchByIsbn(String isbn) {
-        // Next Step: Add implementation code here
-        return isbnApiService.lookupByIsbn(isbn);
+        // Stub: Return a book for any ISBN
+        System.out.println("Method searchByTitle called with title: " + isbn);
+        //isbnApiService.lookupByIsbn(isbn);
+        return new BookModel("Book Title", 15.99, isbn, "Book Author");
     }
 
     /**
