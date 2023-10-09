@@ -1,11 +1,17 @@
 package test;
 
-import discussion.DiscussionBoardController;
-import discussion.DiscussionBoardInterface;
 import login.LoginController;
 import login.RegisterController;
+import org.junit.Test;
 import review.PostReviewController;
 import review.ViewReviewController;
+import search.*;
+import search.SearchBookController;
+import subscription.PurchaseBookController;
+
+import java.util.ArrayList;
+
+import static org.junit.Assert.assertEquals;
 
 
 public class TestHarness {
@@ -14,11 +20,7 @@ public class TestHarness {
          LoginController lc = new LoginController();
          PostReviewController prc = new PostReviewController();
          ViewReviewController vrc = new ViewReviewController();
-         DiscussionBoardController dbc = new DiscussionBoardController();
-
+         SearchBookController sc = new SearchBookController();
+         PurchaseBookController pc = new PurchaseBookController();
     }
-
-
-
-
 }

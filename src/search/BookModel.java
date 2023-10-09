@@ -1,12 +1,15 @@
 package search;
 
-public class BookModel {
+import review.ReviewModel;
 
-    private String bookTitle;
+import java.util.ArrayList;
+
+public class BookModel {
+    private static String bookTitle;
     private double bookPrice;
     private String isbn;
-
-    private String author;
+    public String author;
+    static ArrayList<BookModel> bookInfos = new ArrayList<>();
 
     /**
      * This is the default constructor for a book.
@@ -28,7 +31,7 @@ public class BookModel {
      *
      * @return the book title
      */
-    public String getBookTitle() {
+    public static String getBookTitle() {
         return bookTitle;
     }
 
@@ -93,5 +96,10 @@ public class BookModel {
      */
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    public static BookModel getBookInfo(int indexNumber){
+        BookModel bookInfo = bookInfos.get(indexNumber);
+        return bookInfo;
     }
 }
