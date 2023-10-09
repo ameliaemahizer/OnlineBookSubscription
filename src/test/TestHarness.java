@@ -2,14 +2,13 @@ package test;
 
 import login.LoginController;
 import login.RegisterController;
-import org.junit.Test;
 import review.PostReviewController;
 import review.ViewReviewController;
-import search.*;
 import search.SearchBookController;
 import subscription.PurchaseBookController;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import static org.junit.Assert.assertEquals;
 
@@ -23,4 +22,5 @@ public class TestHarness {
          SearchBookController sc = new SearchBookController();
          PurchaseBookController pc = new PurchaseBookController();
     }
+
 }

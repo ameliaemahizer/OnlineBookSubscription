@@ -15,18 +15,17 @@ public interface SearchBookInterface {
      * @param keyword The keyword to search for.
      * @return List of books as search result matching the keyword.
      */
-    ArrayList<BookModel> displaySearchResult(String keyword);
-
-    public static void displayResult() {
-        System.out.println("Search Result");
-
-        BookModel book = BookModel.getBookInfo(0);
-        ReviewModel review = ReviewModel.getBookReview(0);
-
-        System.out.println("Book Title: " + book.getBookTitle() + "\n"
-                + "Book Author: " + book.getAuthor() + "\n"
-                + "ISBN Code: " + book.getIsbn() + "\n"
-                + "Price:" + book.getBookPrice() + "\n"
-                + "Book Rating: " + review.getReviewRating());
-    }
+    ;
+// Attempt:
+//    public ArrayList<BookModel> displaySearchResult(String keyword) {
+//        System.out.println("Search Result");
+//
+//        BookModel book = BookModel.getBookInfo(0);
+//
+//        System.out.println("Book Title: " + book.getBookTitle() + "\n"
+//                + "Book Author: " + book.getAuthor() + "\n"
+//                + "ISBN Code: " + book.getIsbn() + "\n"
+//                + "Price:" + book.getBookPrice() + "\n");
+//        return null;
+//    }
 }
