@@ -7,4 +7,8 @@ public class UserFinanceData {
         cash -= 60;
         return cash;
     }
+
+    public int getCash() {
+        return cash;
+    }
 }
