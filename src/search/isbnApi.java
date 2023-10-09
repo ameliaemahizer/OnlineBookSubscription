@@ -13,12 +13,6 @@ import java.util.ArrayList;
 public class isbnApi {
 
     /**
-     * Default constructor for the isbnApi class.
-     */
-    public isbnApi() {
-    }
-
-    /**
      * Looks up a book based on its ISBN.
      *
      * @param isbn The ISBN code of the book to look up.
