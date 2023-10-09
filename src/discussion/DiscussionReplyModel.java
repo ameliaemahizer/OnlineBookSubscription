@@ -16,4 +16,23 @@ public class DiscussionReplyModel {
         this.userName = userName;
         this.postReply = postReply;
     }
+
+    public DiscussionReplyModel(){
+    }
+
+    public User getUserName() {
+        return userName;
+    }
+
+    public void setUserName(User userName) {
+        this.userName = userName;
+    }
+
+    public String getPostReply() {
+        return postReply;
+    }
+
+    public void setPostReply(String postReply) {
+        this.postReply = postReply;
+    }
 }
