@@ -21,7 +21,7 @@ public class isbnApi {
      */
     private static final String API_KEY = "123456"; // Replace with your API key
 
-    public static ArrayList<BookModel> searchByIsbn(String isbn) {
+    public static ArrayList<BookModel> isbnAPICall(String isbn) {
         ArrayList<BookModel> searchResults = new ArrayList<>();
 
         try {
