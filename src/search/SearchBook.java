@@ -7,8 +7,6 @@ import java.util.ArrayList;
  */
 public class SearchBook {
 
-    private isbnApi isbnApiService;
-
     /**
      * Searches for a book by title.
      * @param title The title of the book to search for.
