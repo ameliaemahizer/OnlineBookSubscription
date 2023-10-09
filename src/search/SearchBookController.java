@@ -19,7 +19,7 @@ public class SearchBookController {
      * @param keyword The keyword to search for.
      * @return List of books matching the keyword.
      */
-    public ArrayList<BookModel> searchBooks(String keyword) {
+    public static ArrayList<BookModel> searchBooks(String keyword) {
 
         ArrayList<BookModel> searchResult = SearchBook.search(keyword);
 
