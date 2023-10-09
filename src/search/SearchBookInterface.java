@@ -15,7 +15,7 @@ public interface SearchBookInterface {
      * @param keyword The keyword to search for.
      * @return List of books as search result matching the keyword.
      */
-    ;
+    ArrayList<BookModel> displaySearchResult(String keyword);
 // Attempt:
 //    public ArrayList<BookModel> displaySearchResult(String keyword) {
 //        System.out.println("Search Result");

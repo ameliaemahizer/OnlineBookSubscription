@@ -7,12 +7,6 @@ import review.ViewReviewController;
 import search.SearchBookController;
 import subscription.PurchaseBookController;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-
-import static org.junit.Assert.assertEquals;
-
-
 public class TestHarness {
     public static void main (String[] args){
          RegisterController rc = new RegisterController();
