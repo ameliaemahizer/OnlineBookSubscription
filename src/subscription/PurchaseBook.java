@@ -21,6 +21,10 @@ public class PurchaseBook {
         return bookTitle;
     }
 
+    public void setBookTitle(String name){
+        this.bookTitle = name;
+    }
+
     /**
      * returns the price of a book to be purchased
      * @return a double representing the price of the book
