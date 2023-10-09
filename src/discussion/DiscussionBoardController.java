@@ -7,12 +7,13 @@ public class DiscussionBoardController {
     private String postTitle;
     private String mainPost;
     private String reply;
+    private DiscussionBoardInterface discussionBoardInterface;
 
     /**
      * This is the default constructor for the DiscussionBoard class
      */
     public DiscussionBoardController() {
-
+        this.discussionBoardInterface
     }
 
     /**
@@ -23,7 +24,9 @@ public class DiscussionBoardController {
      * @return right now, returns null, but it will return the combined main post
      */
     public DiscussionPostModel createDiscussionPost(String userName, String postTitle, String post){
-        return null;
+        Scanner s = new Scanner(System.in);
+        System.out.println("Write your discussion: ");
+        
     }
 
     /**
