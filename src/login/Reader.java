@@ -1,6 +1,6 @@
 package login;
 
-public class Reader extends User {
+public class Reader extends UserModel {
 
     /**
      * This is the default constructor for the Login class

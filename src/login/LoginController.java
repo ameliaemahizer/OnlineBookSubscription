@@ -1,7 +1,7 @@
 package login;
 
 public class LoginController {
-    private User p1;
+    private UserModel p1;
 
     private LoginInterface li;
 
@@ -13,7 +13,9 @@ public class LoginController {
         p1 = li.displayLogin();
         int user = p1.verifyLogin();
         if (user == 1) {
-            System.out.println("in system");
+            System.out.println("Login was successful!");
+        } else{
+            System.out.println("Login was not successful!");
         }
     }
 

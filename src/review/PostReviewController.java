@@ -30,6 +30,7 @@ public class PostReviewController {
         review.setReviewBody();
         review.setReviewBody();
 
+        System.out.println("Review successfully posted");
         PostReviewInterface.displayPostReviewInterface(review);
 
         review.addBookReviewToArray(review);

@@ -17,7 +17,7 @@ public class PurchaseBookController {
 
         System.out.println("New Balance: " + userFinanceData.getCash());
 
-        System.out.println("Test passed");
+        System.out.println("Purchase completed!");
 
     }
 }

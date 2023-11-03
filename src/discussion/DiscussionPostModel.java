@@ -1,11 +1,11 @@
 package discussion;
-import login.User;
+import login.UserModel;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DiscussionPostModel {
-    private User userName;
+    private UserModel userModelName;
     private String postTitle;
     private String mainPost;
     private String postReplies;
@@ -15,13 +15,13 @@ public class DiscussionPostModel {
 
     /**
      * This is the default controller for the DiscussionPostModel
-     * @param userName username associated with the post
+     * @param userModelName username associated with the post
      * @param postTitle title associated with the post
      * @param mainPost main text of the post
      */
 
-    public DiscussionPostModel (User userName, String postTitle, String mainPost){
-        this.userName = userName;
+    public DiscussionPostModel (UserModel userModelName, String postTitle, String mainPost){
+        this.userModelName = userModelName;
         this.postTitle = postTitle;
         this.mainPost = mainPost;
     }
@@ -39,8 +39,8 @@ public class DiscussionPostModel {
      * Returns the username associated with a discussion post
      * @return a string representing the username associated with the post
      **/
-    public User getUserName() {
-        return userName;
+    public UserModel getUserName() {
+        return userModelName;
     }
 
     /**

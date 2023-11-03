@@ -14,13 +14,13 @@ public class LoginInterface {
     /**
      * This display the username and encrypted password
      */
-    public User displayLogin(){
+    public UserModel displayLogin(){
         Scanner s = new Scanner(System.in);
         System.out.println("Enter user name: ");
         String username = s.next();
         System.out.println("Enter password: ");
         String password = s.next();
-        User l = new User(username, password);
+        UserModel l = new UserModel(username, password);
         return l;
     }
 }
