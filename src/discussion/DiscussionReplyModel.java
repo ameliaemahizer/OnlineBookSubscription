@@ -1,31 +1,31 @@
 package discussion;
 
 
-import login.User;
+import login.UserModel;
 
 public class DiscussionReplyModel {
-    private User userName;
+    private UserModel userModelName;
     private String postReply;
 
     /**
      * This is the default constructor for DiscussionReplyModel
-     * @param userName username associated with the reply
+     * @param userModelName username associated with the reply
      * @param postReply main text of the reply
      */
-    public DiscussionReplyModel(User userName, String postReply){
-        this.userName = userName;
+    public DiscussionReplyModel(UserModel userModelName, String postReply){
+        this.userModelName = userModelName;
         this.postReply = postReply;
     }
 
     public DiscussionReplyModel(){
     }
 
-    public User getUserName() {
-        return userName;
+    public UserModel getUserName() {
+        return userModelName;
     }
 
-    public void setUserName(User userName) {
-        this.userName = userName;
+    public void setUserName(UserModel userModelName) {
+        this.userModelName = userModelName;
     }
 
     public String getPostReply() {

@@ -1,10 +1,10 @@
 package discussion;
-import login.User;
+import login.UserModel;
 
 
 public class DiscussionBoardController {
 
-    private User userName;
+    private UserModel userModelName;
     private String postTitle;
     private String mainPost;
     private DiscussionReplyModel reply = new DiscussionReplyModel();
@@ -31,6 +31,7 @@ public class DiscussionBoardController {
         System.out.println("What is the body of the post?");
         discussionPost.setMainPost();
 
+        System.out.println("Post successfully posted!");
         this.discussionBoardInterface.displayDiscussionPost(discussionPost);
 
         createDiscussionReply();
@@ -47,6 +48,7 @@ public class DiscussionBoardController {
 
         reply.setPostReply("That's a great insight! I agree completely.");
 
+        System.out.println("Reply successfully posted!");
         this.discussionBoardInterface.displayDiscussionReply(reply);
         return reply;
     }
