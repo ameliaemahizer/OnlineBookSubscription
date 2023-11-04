@@ -1,7 +1,5 @@
 # OnlineBookSubscription
 IST 412 Project<br>
-username: johndoe <br> 
-password: abc123
 
 ## Design Patterns Implementation
 mzc5994 - Mackenzie Cane: <br> 
