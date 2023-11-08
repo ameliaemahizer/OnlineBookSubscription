@@ -1,17 +1,6 @@
 # OnlineBookSubscription
 IST 412 Project<br>
 
-## Design Patterns Implementation
-mzc5994 - Mackenzie Cane: <br> 
-
-- **Template:** Reader, Author, BookReviewer
-- **Input Feedback:** LoginView, PostReviewController, DiscussionBoardController, PurchaseBookController
-
-ake5280 - Amelia Emahizer: <br> 
-ajf6238 - Aidan Fitz: <br> 
-jcf5517 - Jack Fitzgerald: <br> 
-jkz5262 - Ji Zhang: <br> 
-
 ## Login Usernames, Passwords, and UniqueIDs
 ### For Reader: 
 - username: johndoe
@@ -27,3 +16,21 @@ jkz5262 - Ji Zhang: <br>
 - username: alicesmith
 - password: book200
 - unique id: 34761
+
+## Design Patterns Implementation
+mzc5994 - Mackenzie Cane: <br> 
+
+- **Template:** Reader, Author, BookReviewer
+- **Input Feedback:** LoginView, PostReviewController, DiscussionBoardController, PurchaseBookController
+
+ake5280 - Amelia Emahizer: <br> 
+ajf6238 - Aidan Fitz: <br> 
+jcf5517 - Jack Fitzgerald: <br> 
+jkz5262 - Ji Zhang: <br> 
+
+## One Implemented Use Case 
+mzc5994 - Mackenzie Cane: <br> 
+ake5280 - Amelia Emahizer: <br> 
+ajf6238 - Aidan Fitz: <br> 
+jcf5517 - Jack Fitzgerald: <br> 
+jkz5262 - Ji Zhang: <br> 
