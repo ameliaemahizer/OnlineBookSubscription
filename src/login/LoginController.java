@@ -3,23 +3,17 @@ package login;
 import java.sql.*;
 
 public class LoginController {
-    private UserModel p1;
 
-    private LoginInterface li;
+    LoginView loginView;
 
     /**
      * This is the default constructor for LoginController
      */
-    public LoginController() {
-        this.li = new LoginInterface();
-        p1 = li.displayLogin();
-        int user = p1.verifyLogin();
-        if (user == 1) {
-            System.out.println("Login was successful!");
-        } else{
-            System.out.println("Login was not successful!");
-        }
+    public LoginController(){
+        loginView = new LoginView();
     }
+
+
 
     public static void main(String[] args) {
         try {

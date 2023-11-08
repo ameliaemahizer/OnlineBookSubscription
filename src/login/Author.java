@@ -3,6 +3,7 @@ package login;
 public class Author extends UserModel{
 
     String authorID;
+    String publisher;
 
     /**
      * This is the default constructor for the Login class
@@ -21,5 +22,13 @@ public class Author extends UserModel{
 
     public void setAuthorID(String authorID) {
         this.authorID = authorID;
+    }
+
+    public String getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
     }
 }
