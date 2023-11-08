@@ -5,9 +5,25 @@ IST 412 Project<br>
 mzc5994 - Mackenzie Cane: <br> 
 
 - **Template:** Reader, Author, BookReviewer
-- **Input Feedback:** LoginController, PostReviewController, DiscussionBoardController, PurchaseBookController
+- **Input Feedback:** LoginView, PostReviewController, DiscussionBoardController, PurchaseBookController
 
 ake5280 - Amelia Emahizer: <br> 
 ajf6238 - Aidan Fitz: <br> 
 jcf5517 - Jack Fitzgerald: <br> 
 jkz5262 - Ji Zhang: <br> 
+
+## Login Usernames, Passwords, and UniqueIDs
+### For Reader: 
+- username: johndoe
+- password: password123
+- unique id: 12345
+
+### For Author:
+- username: stevenking
+- password: abc123
+- unique id: 53243
+
+### For Book Reviewer: 
+- username: alicesmith
+- password: book200
+- unique id: 34761
