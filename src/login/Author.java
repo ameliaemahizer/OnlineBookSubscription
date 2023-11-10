@@ -1,27 +1,28 @@
 package login;
 
 public class Author extends UserModel{
-
-    String authorID;
+    String authorName;
     String publisher;
 
-    /**
-     * This is the default constructor for the Login class
-     *
-     * @param username of the author account
-     * @param password of the author account
-     */
-    public Author(String username, String password, String authorID) {
-        super(username, password);
-        this.authorID = authorID;
+    public Author(String username, String password, int uniqueID, String authorName, String publisher) {
+        super(username, password, uniqueID);
+        this.authorName = authorName;
+        this.publisher = publisher;
     }
 
-    public String getAuthorID() {
-        return authorID;
+    public Author(String username, String password, String email, int uniqueID,
+                  String authorName, String publisher) {
+        super(username, password, email, uniqueID);
+        this.authorName = authorName;
+        this.publisher = publisher;
     }
 
-    public void setAuthorID(String authorID) {
-        this.authorID = authorID;
+    public String getAuthorName() {
+        return authorName;
+    }
+
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName;
     }
 
     public String getPublisher() {

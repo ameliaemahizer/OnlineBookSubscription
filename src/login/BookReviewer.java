@@ -1,25 +1,36 @@
 package login;
 
 public class BookReviewer extends UserModel {
+    String reviewerName;
+    String companyName;
 
-    String reviewerID;
-
-    /**
-     * This is the default constructor for the Login class
-     *
-     * @param username of the book reviewer
-     * @param password of the book reviewer
-     */
-    public BookReviewer(String username, String password, String reviewerID) {
-        super(username, password);
-        this.reviewerID = reviewerID;
+    public BookReviewer(String username, String password, int uniqueID,
+                        String reviewerName, String companyName) {
+        super(username, password, uniqueID);
+        this.reviewerName = reviewerName;
+        this.companyName = companyName;
     }
 
-    public String getReviewerID() {
-        return reviewerID;
+    public BookReviewer(String username, String password, String email, int uniqueID,
+                        String reviewerName, String companyName) {
+        super(username, password, email, uniqueID);
+        this.reviewerName = reviewerName;
+        this.companyName = companyName;
     }
 
-    public void setReviewerID(String reviewerID) {
-        this.reviewerID = reviewerID;
+    public String getReviewerName() {
+        return reviewerName;
+    }
+
+    public void setReviewerName(String reviewerName) {
+        this.reviewerName = reviewerName;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 }
