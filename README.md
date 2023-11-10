@@ -21,7 +21,7 @@ IST 412 Project<br>
 mzc5994 - Mackenzie Cane: <br> 
 
 - **Template:** Reader, Author, BookReviewer
-- **Input Feedback:** LoginView, PostReviewController, DiscussionBoardController, PurchaseBookController
+- **Input Feedback:** 
 
 ake5280 - Amelia Emahizer: <br> 
 ajf6238 - Aidan Fitz: <br> 
