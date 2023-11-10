@@ -5,10 +5,9 @@ IST 412 Project<br>
 ### For Reader: 
 - username: johndoe
 - password: password123
-- unique id: 12345
 
 ### For Author:
-- username: stevenking
+- username: tarawestover
 - password: abc123
 - unique id: 53243
 
