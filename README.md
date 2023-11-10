@@ -5,6 +5,7 @@ IST 412 Project<br>
 ### For Reader: 
 - username: johndoe
 - password: password123
+- unique id: 0 (does not need one)
 
 ### For Author:
 - username: tarawestover
