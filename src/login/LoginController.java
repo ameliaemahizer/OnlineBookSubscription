@@ -18,7 +18,7 @@ public class LoginController {
     public static void main(String[] args) {
         try {
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-            Connection conn = DriverManager.getConnection("jdbc:ucanaccess://src/database/BookClubDatabase1.accdb");//needs changed depending on person
+            Connection conn = DriverManager.getConnection("jdbc:ucanaccess://src/database/BookClubDatabase1.accdb");
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(("select Book.ID, Book.Title, " +
                     "Genre.Genre from Book, Genre " +

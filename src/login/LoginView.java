@@ -1,5 +1,7 @@
 package login;
 
+import onlinebookclub.HomePageView;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -46,6 +48,10 @@ public class LoginView extends JFrame {
                    if (rs.next()){
                        if(rs.getString(2).equals(ps) && rs.getString(3).equals(uniqueID)){
                            AuthField.setText("Authenticated");
+                           HomePageView homeView = new HomePageView();
+                           homeView.setVisible(true);
+                           setVisible(false);
+                           dispose();
                        }
                        conn.commit();
                        conn.close();

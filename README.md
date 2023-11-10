@@ -5,6 +5,7 @@ IST 412 Project<br>
 ### For Reader: 
 - username: johndoe
 - password: password123
+- unique id: 0 (does not need one)
 
 ### For Author:
 - username: tarawestover
@@ -20,7 +21,7 @@ IST 412 Project<br>
 mzc5994 - Mackenzie Cane: <br> 
 
 - **Template:** Reader, Author, BookReviewer
-- **Input Feedback:** LoginView, PostReviewController, DiscussionBoardController, PurchaseBookController
+- **Input Feedback:** 
 
 ake5280 - Amelia Emahizer: <br> 
 ajf6238 - Aidan Fitz: <br> 
