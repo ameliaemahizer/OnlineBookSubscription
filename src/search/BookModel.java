@@ -5,10 +5,12 @@ import review.ReviewModel;
 import java.util.ArrayList;
 
 public class BookModel {
-    private static String bookTitle;
-    private double bookPrice;
+    public String title;
+    private String author;
+    private String publisher;
     private String isbn;
-    public String author;
+    private double price;
+    private String genre;
     static ArrayList<BookModel> bookInfos = new ArrayList<>();
 
     /**
@@ -20,8 +22,8 @@ public class BookModel {
      * @param author    the author of the book
      */
     public BookModel(String bookTitle, double bookPrice, String isbn, String author) {
-        this.bookTitle = bookTitle;
-        this.bookPrice = bookPrice;
+        this.title = bookTitle;
+        this.price = bookPrice;
         this.isbn = isbn;
         this.author = author;
     }
@@ -31,8 +33,8 @@ public class BookModel {
      *
      * @return the book title
      */
-    public static String getBookTitle() {
-        return bookTitle;
+    public String getTitle() {
+        return title;
     }
 
     /**
@@ -40,8 +42,8 @@ public class BookModel {
      *
      * @param bookTitle the new title of the book
      */
-    public void setBookTitle(String bookTitle) {
-        this.bookTitle = bookTitle;
+    public void setTitle(String bookTitle) {
+        this.title = bookTitle;
     }
 
     /**
@@ -50,7 +52,7 @@ public class BookModel {
      * @return the book price
      */
     public double getBookPrice() {
-        return bookPrice;
+        return price;
     }
 
     /**
@@ -59,7 +61,7 @@ public class BookModel {
      * @param bookPrice the new price of the book
      */
     public void setBookPrice(double bookPrice) {
-        this.bookPrice = bookPrice;
+        this.price = bookPrice;
     }
 
     /**
@@ -102,4 +104,5 @@ public class BookModel {
         BookModel bookInfo = bookInfos.get(indexNumber);
         return bookInfo;
     }
+
 }
