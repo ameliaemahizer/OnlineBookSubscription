@@ -24,6 +24,8 @@ mzc5994 - Mackenzie Cane: <br>
 - **Input Feedback:** LoginInterface, LoginView 
 
 ake5280 - Amelia Emahizer: <br> 
+= **Mediator:** In subscription package: BookInventory, BookService, BookServiceMediator, DeliveryService
+- **Navigation Tabs:** In onlinebookclub package: HomePageView, HomePageView.form
 ajf6238 - Aidan Fitz: <br> 
 
 - **Decorator:** PaymentDecorator, PaymentImplementation, Payment, DebitCredit, ApplePay, PayPal, ShoppingCart

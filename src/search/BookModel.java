@@ -31,7 +31,7 @@ public class BookModel {
      *
      * @return the book title
      */
-    public static String getBookTitle() {
+    public String getBookTitle() {
         return bookTitle;
     }
 
