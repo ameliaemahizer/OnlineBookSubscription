@@ -9,15 +9,16 @@ public class DiscussionReplyModel {
 
     /**
      * This is the default constructor for DiscussionReplyModel
+     *
      * @param userModelName username associated with the reply
-     * @param postReply main text of the reply
+     * @param postReply     main text of the reply
      */
-    public DiscussionReplyModel(UserModel userModelName, String postReply){
+    public DiscussionReplyModel(UserModel userModelName, String postReply) {
         this.userModelName = userModelName;
         this.postReply = postReply;
     }
 
-    public DiscussionReplyModel(){
+    public DiscussionReplyModel() {
     }
 
     public UserModel getUserName() {
@@ -34,5 +35,10 @@ public class DiscussionReplyModel {
 
     public void setPostReply(String postReply) {
         this.postReply = postReply;
+    }
+
+    public String toString() {
+        return "Poster: " + this.getUserName().getUsername() + "\n" +
+                "Body: " + this.getPostReply() + "\n";
     }
 }

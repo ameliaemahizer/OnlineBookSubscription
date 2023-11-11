@@ -11,6 +11,8 @@ public class DiscussionPostModel {
     private String postReplies;
     private ArrayList<String> discussionThreadList;
 
+    private String bookTitle;
+
     Scanner scanner = new Scanner(System.in);
 
     /**
@@ -29,6 +31,30 @@ public class DiscussionPostModel {
     public DiscussionPostModel (String postTitle, String mainPost){
         this.postTitle = postTitle;
         this.mainPost = mainPost;
+    }
+
+    public UserModel getUserModelName() {
+        return userModelName;
+    }
+
+    public void setUserModelName(UserModel userModelName) {
+        this.userModelName = userModelName;
+    }
+
+    public void setPostTitle(String postTitle) {
+        this.postTitle = postTitle;
+    }
+
+    public void setMainPost(String mainPost) {
+        this.mainPost = mainPost;
+    }
+
+    public String getBookTitle() {
+        return bookTitle;
+    }
+
+    public void setBookTitle(String bookTitle) {
+        this.bookTitle = bookTitle;
     }
 
     public DiscussionPostModel (){
@@ -104,5 +130,12 @@ public class DiscussionPostModel {
      */
     public void setDiscussionThreadList(ArrayList<String> discussionThreadList) {
         this.discussionThreadList = discussionThreadList;
+    }
+
+    public String toString() {
+        return "Poster: " + this.getUserName().getUsername() + "\n" +
+                "Book: " + this.getBookTitle() + "\n" +
+                "Title: " + this.getPostTitle() + "\n" +
+                "Body: " + this.getMainPost() + "\n";
     }
 }

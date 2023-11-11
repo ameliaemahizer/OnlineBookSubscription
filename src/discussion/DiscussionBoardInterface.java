@@ -15,6 +15,8 @@ public class DiscussionBoardInterface {
      */
     public void displayDiscussionPost(DiscussionPostModel discussionPost){
         System.out.println("Discussion Post: \n" +
+                "Username: " + discussionPost.getUserModelName().getUsername() + "\n" +
+                "Book: " + discussionPost.getBookTitle() + "\n" +
                 "Title: " + discussionPost.getPostTitle() + "\n"
                 + "Post Body: " + discussionPost.getMainPost() +
                 "\n Test passed");

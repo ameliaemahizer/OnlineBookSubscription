@@ -47,11 +47,11 @@ public class LoginView extends JFrame {
                            "where CustomerUsername = \"" + login + "\"");
                    if (rs.next()){
                        if(rs.getString(2).equals(ps) && rs.getString(3).equals(uniqueID)){
+                           setVisible(false);
+                           dispose();
                            AuthField.setText("Authenticated");
                            HomePageView homeView = new HomePageView();
                            homeView.setVisible(true);
-                           setVisible(false);
-                           dispose();
                        }
                        conn.commit();
                        conn.close();
