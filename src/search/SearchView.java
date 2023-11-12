@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SearchView {
+public class SearchView extends JFrame{
     private JFrame frame;
     private JTextArea resultTextArea;
     private JComboBox<String> filterComboBox;

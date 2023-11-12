@@ -1,8 +1,13 @@
 package onlinebookclub;
 
+import search.BookModel;
+import search.SearchBookController;
+import search.SearchView;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class HomePageView extends JDialog {
     private JPanel contentPane;
@@ -13,7 +18,11 @@ public class HomePageView extends JDialog {
     private JLabel welcomeLabel;
     private JButton buttonOK;
 
-    public HomePageView() {
+    private ArrayList<BookModel> bm = new ArrayList<BookModel>();
+
+    private SearchBookController s1 = new SearchBookController(bm);
+
+    public HomePageView()  {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
@@ -23,6 +32,9 @@ public class HomePageView extends JDialog {
         searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                SearchView searchView = new SearchView(s1);
+                searchView.setVisible(true);
+                setVisible(false);
                 //add search view here
             }
         });
