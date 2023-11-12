@@ -17,7 +17,7 @@ IST 412 Project<br>
 - password: book200
 - unique id: 34761
 
-## Book List
+## Books
 ### Book Table with Title, Author, ISBN, and Genre
 ![Screenshot 2023-11-12 at 5 17 50 PM](https://github.com/ameliaemahizer/OnlineBookSubscription/assets/90058612/be85e83c-2ed0-4a82-b099-4b22435a3606) <br>
 ![Screenshot 2023-11-12 at 5 18 13 PM](https://github.com/ameliaemahizer/OnlineBookSubscription/assets/90058612/7cab20f0-f7a3-4da7-836f-27eccaa767e6) <br>
