@@ -32,9 +32,23 @@ ajf6238 - Aidan Fitz: <br>
 jcf5517 - Jack Fitzgerald: <br> 
 jkz5262 - Ji Zhang: <br> 
 
-## One Implemented Use Case 
+## One Implemented Use Case (Search) 
 mzc5994 - Mackenzie Cane: <br> 
+
+- **30%:**  Created LoginView form; Wrote LoginView code to connect the view to the database; Created OnlineBookSubscription class to call LoginController, which contains LoginView Frame; Added user information for reader, author, and book reviewer. 
+  
 ake5280 - Amelia Emahizer: <br> 
+
+- **30%:** Created our database and tables within; Added user and search information into the created tables; Created a HomePageView form to connect LoginView and SearchView; Wrote HomeReview code to connect LoginView to SearchView. 
+
 ajf6238 - Aidan Fitz: <br> 
+
+- **10%:** Supported team members during assignment; Will be responsible for coding one of the next use cases.
+  
 jcf5517 - Jack Fitzgerald: <br> 
-jkz5262 - Ji Zhang: <br> 
+
+- **10%:** Supported team members during assignment; Will be responsible for coding one of the next use cases.
+  
+jkz5262 - Ji Zhang: <br>
+
+- **30%:** Created SearchView form; Wrote SearchView code to connect the view to the database; Added book information that is utilized in the database.
