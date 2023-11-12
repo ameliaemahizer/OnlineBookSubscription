@@ -19,6 +19,7 @@ IST 412 Project<br>
 
 ## Design Patterns Implementation
 mzc5994 - Mackenzie Cane: <br> 
+jcf5517 - Jack Fitzgerald: Builder and input prompt in the Discussion board class
 
 - **Template:** Reader, Author, BookReviewer
 - **Input Feedback:** 
