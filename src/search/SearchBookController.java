@@ -29,35 +29,3 @@ public class SearchBookController {
                 .collect(Collectors.toList());
     }
 }
-
-
-//package search;
-//
-//import login.LoginView;
-//import review.ViewReviewInterface;
-//
-//import java.sql.Connection;
-//import java.sql.DriverManager;
-//import java.sql.ResultSet;
-//import java.sql.Statement;
-//import java.util.ArrayList;
-//
-//public class SearchBookController {
-//
-//    private SearchView searchView;
-//    private ArrayList<BookModel> books;
-//
-//    public SearchBookController() {
-//        //searchBook = new SearchBook();
-//        //books =
-//        searchView = new SearchView();
-//    }
-////    public void setSearchStrategy(SearchBook strategy) {
-////        searchBook.setStrategy(strategy);
-////    }
-////
-////    public ArrayList<BookModel> search(String query) {
-////
-////        return searchBook.executeSearch(query, books);
-////    }
-//}
