@@ -15,6 +15,7 @@ public class SearchBookController {
         return bookModels.stream()
                 .filter(bookModel -> bookModel.getTitle().toLowerCase().contains(searchTerm.toLowerCase()))
                 .collect(Collectors.toList());
+
     }
 
     public List<BookModel> filterBooksByPrice(double maxPrice) {
@@ -26,6 +27,12 @@ public class SearchBookController {
     public List<BookModel> filterBooksByGenre(String genre) {
         return bookModels.stream()
                 .filter(bookModel -> bookModel.getGenre().equalsIgnoreCase(genre))
+                .collect(Collectors.toList());
+    }
+
+    public List<BookModel> filterBooksByAuthor(String author) {
+        return bookModels.stream()
+                .filter(bookModel -> bookModel.getAuthor().equalsIgnoreCase(author))
                 .collect(Collectors.toList());
     }
 }
