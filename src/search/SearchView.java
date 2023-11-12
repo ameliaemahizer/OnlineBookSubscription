@@ -60,7 +60,9 @@ public class SearchView {
 
         List<BookModel> results;
 
-        if (selectedFilter.equals("Filter by Price")) {
+        if (selectedFilter == null || selectedFilter.equals("Filter by Title")) {
+            results = controller.searchBooks(searchTerm);
+        } else if (selectedFilter.equals("Filter by Price")) {
             try {
                 double maxPrice = Double.parseDouble(searchTerm);
                 results = controller.filterBooksByPrice(maxPrice);
@@ -71,8 +73,9 @@ public class SearchView {
         } else if (selectedFilter.equals("Filter by Genre")) {
             results = controller.filterBooksByGenre(searchTerm);
         } else {
-            results = controller.searchBooks(searchTerm);
+            results = new ArrayList<>(); // Handle unknown filter option here, for example.
         }
+
 
         displayResults(results);
     }
@@ -102,48 +105,4 @@ public class SearchView {
         SearchBookController controller = new SearchBookController(bookModels);
         SwingUtilities.invokeLater(() -> new SearchView(controller));
     }
-
 }
-//import javax.swing.*;
-//import java.awt.event.ActionEvent;
-//import java.awt.event.ActionListener;
-//import java.sql.Connection;
-//import java.sql.DriverManager;
-//import java.sql.ResultSet;
-//import java.sql.Statement;
-//
-//public class SearchView extends JFrame {
-//    private JTextField searchField;
-//    private JButton searchButton;
-//    private JPanel searchPanel;
-//
-//    public SearchView() {
-//        setContentPane(searchPanel);
-//        setSize(600, 600);
-//        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-//        setVisible(true);
-//
-//        searchButton.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                String search = searchField.getText();
-//
-//                try {
-//                    Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-//                    Connection conn = DriverManager.getConnection("jdbc:ucanaccess://src/database/BookClubDatabase1.accdb");
-//                    Statement st = conn.createStatement();
-//                    ResultSet rs = st.executeQuery(("select Book.ID, Book.Title, " +
-//                            "Genre.Genre from Book, Genre " +
-//                            " where Book.Genre=Genre.ID"));
-//                    while (rs.next()) {
-//                        System.out.println("Book ID: " + rs.getString(1)
-//                                + "; Name: " + rs.getString(2) + "; Genre: "
-//                                + rs.getString(3));
-//                    }
-//                } catch (Exception ee) {
-//                    System.out.println(ee);
-//                }
-//            }
-//        });
-//    }
-//}

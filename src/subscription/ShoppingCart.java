@@ -17,7 +17,7 @@ public class ShoppingCart {
         String contents = "";
         for (int i = 0; i < length; i++){
             BookModel l = cartList.get(i);
-            contents += l.getBookTitle() +" " + l.getBookPrice();
+            contents += l.getTitle() +" " + l.getPrice();
             contents = contents + "\n";
         }
         return contents;
