@@ -1,6 +1,5 @@
 package search;
 
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -23,7 +22,7 @@ public class SearchView {
 
         frame = new JFrame("Book Search Engine");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(400, 300);
+        frame.setSize(600, 500);
 
         resultTextArea = new JTextArea(10, 30);
         resultTextArea.setEditable(false);
@@ -32,6 +31,8 @@ public class SearchView {
         searchButton = new JButton("Search");
 
         filterComboBox = new JComboBox<>();
+        filterComboBox.addItem("Filter by Title");
+        filterComboBox.addItem("Filter by Author");
         filterComboBox.addItem("Filter by Price");
         filterComboBox.addItem("Filter by Genre");
 
@@ -72,11 +73,11 @@ public class SearchView {
             }
         } else if (selectedFilter.equals("Filter by Genre")) {
             results = controller.filterBooksByGenre(searchTerm);
+        } else if (selectedFilter.equals("Filter by Author")) {
+            results = controller.filterBooksByAuthor(searchTerm);
         } else {
             results = new ArrayList<>(); // Handle unknown filter option here, for example.
         }
-
-
         displayResults(results);
     }
 
@@ -100,7 +101,7 @@ public class SearchView {
         ArrayList<BookModel> bookModels = new ArrayList<>();
         bookModels.add(new BookModel("It", "Stephen King", 19.99, "Horror"));
         bookModels.add(new BookModel("Pride and Prejudice", "Jane Austen", 12.99, "Romance"));
-        bookModels.add(new BookModel("Educated: A Memoir", "Author 3", 9.99, "Non-Fiction"));
+        bookModels.add(new BookModel("Educated: A Memoir", "Author 3", 9.99, "Non fiction"));
 
         SearchBookController controller = new SearchBookController(bookModels);
         SwingUtilities.invokeLater(() -> new SearchView(controller));
