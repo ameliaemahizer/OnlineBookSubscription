@@ -62,8 +62,11 @@ public class HomePageView extends JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Load book data to the SearchBookController
+                setVisible(false);
+                dispose();
                 SearchBookController controller = new SearchBookController(bookModels);
                 SearchView searchView = new SearchView(controller);
+
             }
         });
 
