@@ -7,7 +7,7 @@ IST 412 Project<br>
 ### For Reader: 
 - username: johndoe
 - password: password123
-- unique id: 0 (does not need one)
+- unique id: 0
 
 ### For Author:
 - username: tarawestover
@@ -23,6 +23,13 @@ IST 412 Project<br>
 - IT, Stephen King, 19.99, Horror
 - Pride and Prejudice, Jane Austen, 12.99, Romance
 - Educated: A Memoir, Author 3, 9.99, Non fiction
+- Eragon,Christopher Paolini, 8.99, Fantasy
+- To Kill A Mockingbird, Harper Lee, 9.99, Fiction
+- Blink, Malcolm Gladwell, 17.00, Non fiction
+- Harry Potter and the Chamber of Secrets, J.K. Rowling, 24.99, Fantasy
+- Harry Potter and the Sorcerer's Stone, J.K. Rowling, 24.99, Fantasy
+- Green Eggs and Ham, Dr. Seuss, 8.99, Kid's
+- Northanger Abbey, Jane Austen, 6.00, Romance
 
 ## Design Patterns Implementation
 mzc5994 - Mackenzie Cane: <br> 
@@ -46,7 +53,7 @@ mzc5994 - Mackenzie Cane: <br>
   
 ake5280 - Amelia Emahizer: <br> 
 
-- **30%:** Created our database and tables within; Added user and search information into the created tables; Created a HomePageView form to connect LoginView and SearchView; Wrote HomeReview code to connect LoginView to SearchView. 
+- **30%:** Created our database and tables within; Added user and search information into the created tables; Created a HomePageView form to connect LoginView and SearchView; Wrote HomeReview code to connect LoginView to SearchView. Edited code for others. Added several books to arraylist.
 
 ajf6238 - Aidan Fitz: <br> 
 
