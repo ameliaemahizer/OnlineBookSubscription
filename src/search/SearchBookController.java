@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class SearchBookController {
-    private ArrayList<BookModel> bookModels;
+    private final ArrayList<BookModel> bookModels;
 
     public SearchBookController(ArrayList<BookModel> bookModels) {
         this.bookModels = bookModels;
@@ -26,13 +26,13 @@ public class SearchBookController {
 
     public List<BookModel> filterBooksByGenre(String genre) {
         return bookModels.stream()
-                .filter(bookModel -> bookModel.getGenre().equalsIgnoreCase(genre))
+                .filter(bookModel -> bookModel.getGenre().toLowerCase().contains(genre.toLowerCase()))
                 .collect(Collectors.toList());
     }
 
     public List<BookModel> filterBooksByAuthor(String author) {
         return bookModels.stream()
-                .filter(bookModel -> bookModel.getAuthor().equalsIgnoreCase(author))
+                .filter(bookModel -> bookModel.getAuthor().toLowerCase().contains(author.toLowerCase()))
                 .collect(Collectors.toList());
     }
 }

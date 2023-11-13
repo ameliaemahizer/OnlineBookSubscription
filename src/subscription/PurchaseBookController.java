@@ -5,9 +5,9 @@ public class PurchaseBookController {
     /**
      * This is the default constructor for the PurchaseBookController class
      */
-    private PurchaseBook book;
-    private PurchaseBookInterface pbi;
-    private UserFinanceData userFinanceData = new UserFinanceData();
+    private final PurchaseBook book;
+    private final PurchaseBookInterface pbi;
+    private final UserFinanceData userFinanceData = new UserFinanceData();
 
     public PurchaseBookController(){
         this.pbi = new PurchaseBookInterface();

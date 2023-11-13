@@ -21,7 +21,7 @@ public class LoginView extends JFrame {
     private JTextField AuthField;
     private JTextField UniqueIDField;
     private JLabel UniqueIDLabel;
-    private HomePageView homePageView;
+    private final HomePageView homePageView;
 
     public LoginView(HomePageView homePageView) {
         this.homePageView = homePageView;

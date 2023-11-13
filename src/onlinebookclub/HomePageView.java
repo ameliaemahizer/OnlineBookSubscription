@@ -24,9 +24,9 @@ public class HomePageView extends JDialog {
     private JButton searchButton;
     private JLabel welcomeLabel;
     private JButton buttonOK;
-    private ArrayList<BookModel> bookModels;
+    private final ArrayList<BookModel> bookModels;
     private boolean isLoggedIn;
-    private LoginView loginView;
+    private final LoginView loginView;
 
     public HomePageView(ArrayList<BookModel> bookModels) {
         this.bookModels = bookModels;
