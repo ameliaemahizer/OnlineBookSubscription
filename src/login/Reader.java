@@ -1,24 +1,35 @@
 package login;
 
-public class Reader extends UserModel {
-    String readerID;
+public class Reader extends UserModel{
+    String readerName;
+    int yearJoined;
 
-    /**
-     * This is the default constructor for the Login class
-     *
-     * @param username of the reader
-     * @param password of the reader
-     */
-    public Reader(String username, String password, String readerID) {
-        super(username, password);
-        this.readerID = readerID;
+    public Reader(String username, String password, int uniqueID, String readerName, int yearJoined) {
+        super(username, password, uniqueID);
+        this.readerName = readerName;
+        this.yearJoined = yearJoined;
     }
 
-    public String getReaderID() {
-        return readerID;
+    public Reader(String username, String password, String email, int uniqueID,
+                  String readerName, int yearJoined) {
+        super(username, password, email, uniqueID);
+        this.readerName = readerName;
+        this.yearJoined = yearJoined;
     }
 
-    public void setReaderID(String readerID) {
-        this.readerID = readerID;
+    public String getReaderName() {
+        return readerName;
+    }
+
+    public void setReaderName(String readerName) {
+        this.readerName = readerName;
+    }
+
+    public int getYearJoined() {
+        return yearJoined;
+    }
+
+    public void setYearJoined(int yearJoined) {
+        this.yearJoined = yearJoined;
     }
 }
