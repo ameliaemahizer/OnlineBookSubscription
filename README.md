@@ -58,4 +58,4 @@ jcf5517 - Jack Fitzgerald: <br>
   
 jkz5262 - Ji Zhang: <br>
 
-- **30%:** Created SearchView form; Wrote SearchView code to connect the view to the database; Added book information that is utilized in the database.
+- **30%:** Created SearchView form; Wrote SearchView code to connect the view to the list of book; Added book information that is utilized in the code.
