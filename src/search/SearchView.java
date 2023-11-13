@@ -14,7 +14,6 @@ public class SearchView extends JFrame{
     private JTextField searchField;
     private JButton searchButton;
     private JPanel panel;
-
     private SearchBookController controller;
 
     public SearchView(SearchBookController controller) {
@@ -23,6 +22,7 @@ public class SearchView extends JFrame{
         frame = new JFrame("Book Search Engine");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(600, 500);
+        frame.setVisible(true);
 
         resultTextArea = new JTextArea(10, 30);
         resultTextArea.setEditable(false);
@@ -52,7 +52,6 @@ public class SearchView extends JFrame{
             }
         });
 
-        frame.setVisible(true);
     }
 
     private void performSearch() {
