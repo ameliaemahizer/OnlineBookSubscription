@@ -44,7 +44,12 @@ ajf6238 - Aidan Fitz: <br>
 - **Shopping Cart:** PurchaseBookController 
 
 jcf5517 - Jack Fitzgerald: <br> 
-jkz5262 - Ji Zhang: <br> 
+
+jkz5262 - Ji Zhang: <be> 
+
+- **Strategy:** BookModel, TitleSearch, AuthorSearch, GenreSearch, PriceSearch, SearchBookInterface, 
+- **Filter:** SearchBookController
+
 
 ## One Implemented Use Case (Search) 
 mzc5994 - Mackenzie Cane: <br> 
@@ -53,7 +58,7 @@ mzc5994 - Mackenzie Cane: <br>
   
 ake5280 - Amelia Emahizer: <br> 
 
-- **30%:** Created our database and tables within; Added user and search information into the created tables; Created a HomePageView form to connect LoginView and SearchView; Wrote HomeReview code to connect LoginView to SearchView. Edited code for others. Added several books to arraylist.
+- **30%:** Created our database and tables within; Added user and search information into the created tables; Created a HomePageView form to connect LoginView and SearchView; Wrote HomeReview code to connect LoginView to SearchView. Edited code for others. Added several books to the arraylist.
 
 ajf6238 - Aidan Fitz: <br> 
 
@@ -65,4 +70,4 @@ jcf5517 - Jack Fitzgerald: <br>
   
 jkz5262 - Ji Zhang: <br>
 
-- **30%:** Created SearchView form; Wrote SearchView code to connect the view to the list of book; Added book information that is utilized in the code.
+- **30%:** Created SearchView form; Wrote SearchView code to connect the view to the list of books; Added book information that is utilized in the code. Created the login to home page view to search flow by editing and adding code to HomePageView, LoginView, and SearchView. Finalized the codes and ensured accurate functionalities.
