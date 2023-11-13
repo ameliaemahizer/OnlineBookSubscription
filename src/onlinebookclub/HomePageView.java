@@ -125,10 +125,8 @@ public class HomePageView extends JDialog {
         bookModels.add(new BookModel("Blink","Malcolm Gladwell", 17.00, "Non fiction"));
         bookModels.add(new BookModel("Harry Potter and the Chamber of Secrets", "J.K. Rowling", 24.99, "Fantasy"));
         bookModels.add(new BookModel("Harry Potter and the Sorcerer's Stone", "J.K. Rowling", 24.99, "Fantasy"));
-        bookModels.add(new BookModel("Green Eggs and Ham", "Dr. Seuss", 8.99, "Kid's"));
+        bookModels.add(new BookModel("Green Eggs and Ham", "Dr. Seuss", 8.99, "Children"));
         bookModels.add(new BookModel("Northanger Abbey", "Jane Austen", 6.00, "Romance"));
-
-
 
         SwingUtilities.invokeLater(() -> {
             HomePageView homePageView = new HomePageView(bookModels);
