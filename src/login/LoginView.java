@@ -1,7 +1,6 @@
 package login;
 
 import onlinebookclub.HomePageView;
-import search.BookModel;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -10,7 +9,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.ArrayList;
 
 public class LoginView extends JFrame {
     private JPanel LoginPanel;
@@ -24,7 +22,6 @@ public class LoginView extends JFrame {
     private JTextField UniqueIDField;
     private JLabel UniqueIDLabel;
     private HomePageView homePageView;
-    private ArrayList<BookModel> bookModels;
 
     public LoginView(HomePageView homePageView) {
         this.homePageView = homePageView;
@@ -51,7 +48,6 @@ public class LoginView extends JFrame {
                     if (rs.next()) {
                         if (rs.getString(2).equals(password) && rs.getString(3).equals(uniqueID)) {
                             AuthField.setText("Authenticated");
-                            // Set isLoggedIn in HomePageView to true
                             homePageView.setLoggedIn(true);
                             setVisible(false);
                             dispose();
