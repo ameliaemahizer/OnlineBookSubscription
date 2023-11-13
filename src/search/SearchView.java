@@ -15,6 +15,7 @@ public class SearchView extends JFrame{
     private JButton searchButton;
     private JPanel panel;
     private final SearchBookController controller;
+    private SearchBookInterface searchStrategy;
 
     public SearchView(SearchBookController controller) {
         this.controller = controller;
@@ -98,6 +99,10 @@ public class SearchView extends JFrame{
 
     public JFrame getFrame() {
         return frame;
+    }
+
+    public void setSearchStrategy(SearchBookInterface searchStrategy) {
+        controller.setSearchStrategy(searchStrategy);
     }
 
     public static void main(String[] args) {

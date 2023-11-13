@@ -5,7 +5,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class SearchBookController {
-    private final ArrayList<BookModel> bookModels;
+    private ArrayList<BookModel> bookModels;
+    private SearchBookInterface searchStrategy;
 
     public SearchBookController(ArrayList<BookModel> bookModels) {
         this.bookModels = bookModels;
@@ -15,7 +16,6 @@ public class SearchBookController {
         return bookModels.stream()
                 .filter(bookModel -> bookModel.getTitle().toLowerCase().contains(searchTerm.toLowerCase()))
                 .collect(Collectors.toList());
-
     }
 
     public List<BookModel> filterBooksByPrice(double maxPrice) {
@@ -34,5 +34,9 @@ public class SearchBookController {
         return bookModels.stream()
                 .filter(bookModel -> bookModel.getAuthor().toLowerCase().contains(author.toLowerCase()))
                 .collect(Collectors.toList());
+    }
+
+    public void setSearchStrategy(SearchBookInterface searchStrategy) {
+        this.searchStrategy = searchStrategy;
     }
 }
