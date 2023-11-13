@@ -10,7 +10,7 @@ IST 412 Project<br>
 - unique id: 0
 
 ### For Author:
-- username: tarawestover
+- username: stevenking
 - password: abc123
 - unique id: 53243
 
