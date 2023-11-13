@@ -18,7 +18,7 @@ public class HomePageView extends JDialog {
     private JLabel welcomeLabel;
     private JButton buttonOK;
 
-    private ArrayList<BookModel> bm = new ArrayList<BookModel>();
+    private ArrayList<BookModel> bm = new ArrayList<>();
 
     private SearchBookController s1 = new SearchBookController(bm);
 
@@ -35,6 +35,7 @@ public class HomePageView extends JDialog {
                 SearchView searchView = new SearchView(s1);
                 searchView.setVisible(true);
                 setVisible(false);
+
                 //add search view here
             }
         });
