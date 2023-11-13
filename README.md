@@ -1,7 +1,7 @@
 # OnlineBookSubscription
 IST 412 Project<br>
 
-**To access our first use case, go to HomeView under the OnlineBookClub and go to the main method at the bottom.**
+**To access our first use case, go to HomePageView under the OnlineBookClub and go to the main method at the bottom.**
 
 ## Login Usernames, Passwords, and UniqueIDs
 ### For Reader: 
@@ -28,7 +28,7 @@ IST 412 Project<br>
 - Blink, Malcolm Gladwell, 17.00, Non fiction
 - Harry Potter and the Chamber of Secrets, J.K. Rowling, 24.99, Fantasy
 - Harry Potter and the Sorcerer's Stone, J.K. Rowling, 24.99, Fantasy
-- Green Eggs and Ham, Dr. Seuss, 8.99, Children's
+- Green Eggs and Ham, Dr. Seuss, 8.99, Children
 - Northanger Abbey, Jane Austen, 6.00, Romance
 
 ## Design Patterns Implementation
@@ -44,7 +44,12 @@ ajf6238 - Aidan Fitz: <br>
 - **Shopping Cart:** PurchaseBookController 
 
 jcf5517 - Jack Fitzgerald: <br> 
-jkz5262 - Ji Zhang: <br> 
+
+jkz5262 - Ji Zhang: <be> 
+
+- **Strategy:** BookModel, TitleSearch, AuthorSearch, GenreSearch, PriceSearch, SearchBookInterface, 
+- **Filter:** SearchBookController
+
 
 ## One Implemented Use Case (Search) 
 mzc5994 - Mackenzie Cane: <br> 
@@ -53,7 +58,7 @@ mzc5994 - Mackenzie Cane: <br>
   
 ake5280 - Amelia Emahizer: <br> 
 
-- **30%:** Created our database and tables within; Added user and search information into the created tables; Created a HomePageView form to connect LoginView and SearchView; Wrote HomeReview code to connect LoginView to SearchView. Edited code for others. Added several books to arraylist.
+- **30%:** Created our database and tables within; Added user and search information into the created tables; Created a HomePageView form to connect LoginView and SearchView; Wrote HomeReview code to connect LoginView and SearchView. Edited code for others. Added several books to the arraylist.
 
 ajf6238 - Aidan Fitz: <br> 
 
@@ -65,4 +70,4 @@ jcf5517 - Jack Fitzgerald: <br>
   
 jkz5262 - Ji Zhang: <br>
 
-- **30%:** Created SearchView form; Wrote SearchView code to connect the view to the list of book; Added book information that is utilized in the code.
+- **30%:** Created SearchView form; Wrote SearchView code to connect the view to the list of books; Added book information that is utilized in the code. Wrote HomePageView code to connect LoginView and SearchView. Edited code for others. Finalized the codes and ensured accurate functionalities.
