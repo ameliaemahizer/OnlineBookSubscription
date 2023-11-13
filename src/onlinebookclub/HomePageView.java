@@ -119,7 +119,16 @@ public class HomePageView extends JDialog {
         ArrayList<BookModel> bookModels = new ArrayList<>();
         bookModels.add(new BookModel("It", "Stephen King", 19.99, "Horror"));
         bookModels.add(new BookModel("Pride and Prejudice", "Jane Austen", 12.99, "Romance"));
-        bookModels.add(new BookModel("Educated: A Memoir", "Author 3", 9.99, "Non fiction"));
+        bookModels.add(new BookModel("Educated: A Memoir", "Tara Westover", 9.99, "Non fiction"));
+        bookModels.add(new BookModel("Eragon","Christopher Paolini", 8.99, "Fantasy"));
+        bookModels.add(new BookModel("To Kill A Mockingbird", "Harper Lee", 9.99, "Fiction"));
+        bookModels.add(new BookModel("Blink","Malcolm Gladwell", 17.00, "Non fiction"));
+        bookModels.add(new BookModel("Harry Potter and the Chamber of Secrets", "J.K. Rowling", 24.99, "Fantasy"));
+        bookModels.add(new BookModel("Harry Potter and the Sorcerer's Stone", "J.K. Rowling", 24.99, "Fantasy"));
+        bookModels.add(new BookModel("Green Eggs and Ham", "Dr. Seuss", 8.99, "Kid's"));
+        bookModels.add(new BookModel("Northanger Abbey", "Jane Austen", 6.00, "Romance"));
+
+
 
         SwingUtilities.invokeLater(() -> {
             HomePageView homePageView = new HomePageView(bookModels);
