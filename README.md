@@ -18,11 +18,9 @@ IST 412 Project<br>
 - unique id: 34761
 
 ## Books
-### Book Table with Title, Author, ISBN, and Genre
-![Screenshot 2023-11-12 at 5 17 50 PM](https://github.com/ameliaemahizer/OnlineBookSubscription/assets/90058612/be85e83c-2ed0-4a82-b099-4b22435a3606) <br>
-![Screenshot 2023-11-12 at 5 18 13 PM](https://github.com/ameliaemahizer/OnlineBookSubscription/assets/90058612/7cab20f0-f7a3-4da7-836f-27eccaa767e6) <br>
-### Genre Table
-![Screenshot 2023-11-12 at 5 18 37 PM](https://github.com/ameliaemahizer/OnlineBookSubscription/assets/90058612/1a5659f2-711f-4953-9d6b-cbfd00755f3d)
+- IT, Stephen King, 19.99, Horror
+- Pride and Prejudice, Jane Austen, 12.99, Romance
+- Educated: A Memoir, Author 3, 9.99, Non fiction
 
 ## Design Patterns Implementation
 mzc5994 - Mackenzie Cane: <br> 
