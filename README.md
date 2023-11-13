@@ -28,7 +28,7 @@ IST 412 Project<br>
 - Blink, Malcolm Gladwell, 17.00, Non fiction
 - Harry Potter and the Chamber of Secrets, J.K. Rowling, 24.99, Fantasy
 - Harry Potter and the Sorcerer's Stone, J.K. Rowling, 24.99, Fantasy
-- Green Eggs and Ham, Dr. Seuss, 8.99, Children's
+- Green Eggs and Ham, Dr. Seuss, 8.99, Children
 - Northanger Abbey, Jane Austen, 6.00, Romance
 
 ## Design Patterns Implementation
