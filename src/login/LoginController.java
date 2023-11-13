@@ -10,7 +10,7 @@ public class LoginController {
      * This is the default constructor for LoginController
      */
     public LoginController(){
-        loginView = new LoginView();
+        //loginView = new LoginView();
     }
 
 }

@@ -97,6 +97,10 @@ public class SearchView {
         }
     }
 
+    public JFrame getFrame() {
+        return frame;
+    }
+
     public static void main(String[] args) {
         ArrayList<BookModel> bookModels = new ArrayList<>();
         bookModels.add(new BookModel("It", "Stephen King", 19.99, "Horror"));
