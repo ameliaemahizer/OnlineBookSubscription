@@ -2,6 +2,7 @@
 IST 412 Project<br>
 
 **To access our first use case, go to HomePageView under the OnlineBookClub and go to the main method at the bottom.**
+**The first use case allows users (Reader, Author, or Book Reviewer) to log in and access the book club's homepage. They can search for a book using a selected filter based on book title, author, genre, or price.**
 
 ## Login Usernames, Passwords, and UniqueIDs
 ### For Reader: 
