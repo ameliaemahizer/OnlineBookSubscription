@@ -1,7 +1,7 @@
 # OnlineBookSubscription
 IST 412 Project<br>
 
-**To access our first use case, go to HomeView under the OnlineBookClub and go to the main method at the bottom.**
+**To access our first use case, go to HomePageView under the OnlineBookClub and go to the main method at the bottom.**
 
 ## Login Usernames, Passwords, and UniqueIDs
 ### For Reader: 
