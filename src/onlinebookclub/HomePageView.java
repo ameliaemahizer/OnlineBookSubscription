@@ -18,20 +18,21 @@ public class HomePageView extends JDialog {
     private JLabel welcomeLabel;
     private JButton buttonOK;
 
-    private ArrayList<BookModel> bm = new ArrayList<>();
-
-    private SearchBookController s1 = new SearchBookController(bm);
 
     public HomePageView()  {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
         setSize(1000,800);
-        setVisible(true);
 
         searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                ArrayList<BookModel> bm = new ArrayList<>();
+                bm.add(new BookModel("It", "Stephen King", 19.99, "Horror"));
+                bm.add(new BookModel("Pride and Prejudice", "Jane Austen", 12.99, "Romance"));
+                bm.add(new BookModel("Educated: A Memoir", "Author 3", 9.99, "Non fiction"));
+                SearchBookController s1 = new SearchBookController(bm);
                 SearchView searchView = new SearchView(s1);
                 searchView.setVisible(true);
                 setVisible(false);
