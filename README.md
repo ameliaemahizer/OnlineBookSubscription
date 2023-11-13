@@ -48,7 +48,7 @@ jcf5517 - Jack Fitzgerald: <br>
 
 jkz5262 - Ji Zhang: <be> 
 
-- **Strategy:** BookModel, TitleSearch, AuthorSearch, GenreSearch, PriceSearch, SearchBookInterface, 
+- **Strategy:** BookModel, TitleSearch, AuthorSearch, SearchBookInterface, 
 - **Filter:** SearchBookController
 
 
