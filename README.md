@@ -60,11 +60,11 @@ jkz5262 - Ji Zhang: <be>
 ## One Implemented Use Case (Search) 
 mzc5994 - Mackenzie Cane: <br> 
 
-- **30%:**  Created LoginView form; Wrote LoginView code to connect the view to the database; Created OnlineBookSubscription class to call LoginController, which contains LoginView Frame; Added user information for reader, author, and book reviewer. 
+- **30%:**  Created LoginView form; Wrote LoginView code to connect the view to the database; Created OnlineBookSubscription class to call LoginController, which contains LoginView Frame; Added user information for reader, author, and book reviewer. Contributed to the README.txt file.
   
 ake5280 - Amelia Emahizer: <br> 
 
-- **30%:** Created our database and tables within; Added user and search information into the created tables; Created a HomePageView form to connect LoginView and SearchView; Wrote HomeReview code to connect LoginView and SearchView. Edited code for others. Added several books to the arraylist.
+- **30%:** Created our database and tables within; Added user and search information into the created tables; Created a HomePageView form to connect LoginView and SearchView; Wrote HomePageView code to connect LoginView and SearchView. Edited code for others. Added several books to the arraylist.
 
 ajf6238 - Aidan Fitz: <br> 
 
@@ -76,4 +76,4 @@ jcf5517 - Jack Fitzgerald: <br>
   
 jkz5262 - Ji Zhang: <br>
 
-- **30%:** Created SearchView form; Wrote SearchView code to connect the view to the list of books; Added book information that is utilized in the code. Wrote HomePageView code to connect LoginView and SearchView. Edited code for others. Finalized the codes and ensured accurate functionalities.
+- **30%:** Created SearchView form; Wrote SearchView & SearchController code to connect the view to the list of books; Added book information that is utilized in the code. Wrote HomePageView code to connect LoginView and SearchView. Edited code for others. Added book data to the arraylist. Finalized the codes and ensured accurate functionalities. Contributed to the README.txt file.
