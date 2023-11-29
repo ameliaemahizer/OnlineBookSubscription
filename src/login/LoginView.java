@@ -1,5 +1,6 @@
 package login;
 
+import database.dbConnect;
 import onlinebookclub.HomePageView;
 
 import javax.swing.*;
@@ -39,13 +40,12 @@ public class LoginView extends JFrame {
                 String password = new String(passwordChars); // Convert char array to string
                 String uniqueID = UniqueIDField.getText();
 
+
+                dbConnect db = new dbConnect("select CustomerUsername, Password, UniqueID from Accounts " +
+                        "where CustomerUsername = '" + login + "'");
                 try {
-                    Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-                    Connection conn = DriverManager.getConnection("jdbc:ucanaccess://src/database/BookClubDatabase1.accdb");
-                    Statement st = conn.createStatement();
-                    ResultSet rs = st.executeQuery("select CustomerUsername, Password, UniqueID from Accounts " +
-                            "where CustomerUsername = '" + login + "'");
-                    if (rs.next()) {
+                    ResultSet rs = db.returnResult();
+                    while (rs.next()) {
                         if (rs.getString(2).equals(password) && rs.getString(3).equals(uniqueID)) {
                             setVisible(false);
                             dispose();
@@ -55,11 +55,7 @@ public class LoginView extends JFrame {
                         } else {
                             AuthField.setText("Not Authenticated");
                         }
-                    } else {
-                        AuthField.setText("Not Authenticated");
                     }
-                    conn.commit();
-                    conn.close();
                 } catch (Exception ee) {
                     System.out.println(ee);
                 }
