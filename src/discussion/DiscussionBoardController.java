@@ -7,8 +7,8 @@ public class DiscussionBoardController {
     private UserModel userModelName;
     private String postTitle;
     private String mainPost;
-    private DiscussionReplyModel reply = new DiscussionReplyModel();
-    private DiscussionPostModel discussionPost = new DiscussionPostModel();
+    private final DiscussionReplyModel reply = new DiscussionReplyModel();
+    private final DiscussionPostModel discussionPost = new DiscussionPostModel();
     private DiscussionBoardInterface discussionBoardInterface;
 
     /**

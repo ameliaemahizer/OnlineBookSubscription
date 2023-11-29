@@ -8,13 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SearchView extends JFrame{
-    private JFrame frame;
+    private final JFrame frame;
     private JTextArea resultTextArea;
     private JComboBox<String> filterComboBox;
     private JTextField searchField;
     private JButton searchButton;
     private JPanel panel;
-    private SearchBookController controller;
+    private final SearchBookController controller;
+    private SearchBookInterface searchStrategy;
 
     public SearchView(SearchBookController controller) {
         this.controller = controller;
@@ -100,12 +101,12 @@ public class SearchView extends JFrame{
         return frame;
     }
 
+    public void setSearchStrategy(SearchBookInterface searchStrategy) {
+        controller.setSearchStrategy(searchStrategy);
+    }
+
     public static void main(String[] args) {
         ArrayList<BookModel> bookModels = new ArrayList<>();
-        bookModels.add(new BookModel("It", "Stephen King", 19.99, "Horror"));
-        bookModels.add(new BookModel("Pride and Prejudice", "Jane Austen", 12.99, "Romance"));
-        bookModels.add(new BookModel("Educated: A Memoir", "Author 3", 9.99, "Non fiction"));
-
         SearchBookController controller = new SearchBookController(bookModels);
         SwingUtilities.invokeLater(() -> new SearchView(controller));
     }
