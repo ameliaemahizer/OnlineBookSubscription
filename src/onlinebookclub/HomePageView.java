@@ -106,8 +106,6 @@ public class HomePageView extends JDialog {
             loginView.dispose();
             // Enable access to home page view
             this.setVisible(true);
-            // HomePageView homePageView = new HomePageView(bookModels);
-            // homePageView.setVisible(true);
         }
     }
 

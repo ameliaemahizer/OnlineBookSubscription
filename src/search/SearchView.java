@@ -55,6 +55,8 @@ public class SearchView extends JFrame{
 
     }
 
+    // Need to change this, make it easily scalable and edited in the future
+    // Implement Strategy pattern properly
     private void performSearch() {
         String searchTerm = searchField.getText();
         String selectedFilter = (String) filterComboBox.getSelectedItem();
