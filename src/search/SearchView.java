@@ -1,9 +1,12 @@
 package search;
 
+import database.dbConnect;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,22 +64,71 @@ public class SearchView extends JFrame{
         String searchTerm = searchField.getText();
         String selectedFilter = (String) filterComboBox.getSelectedItem();
 
-        List<BookModel> results;
+        List<BookModel> results = new ArrayList<>();
 
+        dbConnect dbc = new dbConnect("select Title, Author, Price, Genre from Book " +
+                "where Title like '%" + searchTerm + "%'");
         if (selectedFilter == null || selectedFilter.equals("Filter by Title")) {
-            results = controller.searchBooks(searchTerm);
+            try {
+                ResultSet rs = dbc.returnResult();
+                while (rs.next()) {
+                    String title = rs.getString(1);
+                    String author = rs.getString(2);
+                    double price = rs.getDouble(3);
+                    int genre = rs.getInt(4);
+                    String gen = String.valueOf(genre);
+                    BookModel searchedBook = new BookModel(title, author, price, gen);
+                    results.add(searchedBook);
+                }
+            }catch(Exception ee) {
+                System.out.println(ee);
+            }
         } else if (selectedFilter.equals("Filter by Price")) {
             try {
-                double maxPrice = Double.parseDouble(searchTerm);
-                results = controller.filterBooksByPrice(maxPrice);
-            } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(frame, "Invalid price format. Please enter a valid number.");
-                return;
+                ResultSet rs = dbc.returnResult();
+                while (rs.next()) {
+                    String title = rs.getString(1);
+                    String author = rs.getString(2);
+                    double price = rs.getDouble(3);
+                    int genre = rs.getInt(4);
+                    String gen = String.valueOf(genre);
+                    BookModel searchedBook = new BookModel(title, author, price, gen);
+                    results.add(searchedBook);
+                }
+            }catch(Exception ee) {
+                System.out.println(ee);
             }
+
         } else if (selectedFilter.equals("Filter by Genre")) {
-            results = controller.filterBooksByGenre(searchTerm);
+            try {
+                ResultSet rs = dbc.returnResult();
+                while (rs.next()) {
+                    String title = rs.getString(1);
+                    String author = rs.getString(2);
+                    double price = rs.getDouble(3);
+                    int genre = rs.getInt(4);
+                    String gen = String.valueOf(genre);
+                    BookModel searchedBook = new BookModel(title, author, price, gen);
+                    results.add(searchedBook);
+                }
+            }catch(Exception ee) {
+                System.out.println(ee);
+            }
         } else if (selectedFilter.equals("Filter by Author")) {
-            results = controller.filterBooksByAuthor(searchTerm);
+            try {
+                ResultSet rs = dbc.returnResult();
+                while (rs.next()) {
+                    String title = rs.getString(1);
+                    String author = rs.getString(2);
+                    double price = rs.getDouble(3);
+                    int genre = rs.getInt(4);
+                    String gen = String.valueOf(genre);
+                    BookModel searchedBook = new BookModel(title, author, price, gen);
+                    results.add(searchedBook);
+                }
+            }catch(Exception ee) {
+                System.out.println(ee);
+            }
         } else {
             results = new ArrayList<>(); // Handle unknown filter option here, for example.
         }
