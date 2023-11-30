@@ -4,6 +4,8 @@ import login.LoginView;
 import search.BookModel;
 import search.SearchView;
 import search.SearchBookController;
+import subscription.SubscriptionView;
+import subscription.PurchaseBookController;
 
 import javax.swing.*;
 import java.awt.*;
@@ -53,6 +55,7 @@ public class HomePageView extends JDialog {
         subscriptionButton = new JButton("Subscription");
         contentPane.add(subscriptionButton);
 
+
         // Discussion button
         discussionButton = new JButton("Discussion");
         contentPane.add(discussionButton);
@@ -80,7 +83,10 @@ public class HomePageView extends JDialog {
         subscriptionButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Add code to open the subscription view here
+                setVisible(false);
+                dispose();
+                PurchaseBookController pbc = new PurchaseBookController();
+                SubscriptionView subscriptionView = new SubscriptionView(pbc);
             }
         });
 
