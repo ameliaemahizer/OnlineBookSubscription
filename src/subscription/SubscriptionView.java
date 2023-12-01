@@ -1,6 +1,8 @@
 package subscription;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class SubscriptionView extends JFrame {
     private JTextArea resultTextArea;
@@ -21,6 +23,24 @@ public class SubscriptionView extends JFrame {
 
         textArea1.setEditable(false);
 
+        addCardButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+        removeCardButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+        payPalButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
     }
 
     private void displayResults(PurchaseBookController controller){
