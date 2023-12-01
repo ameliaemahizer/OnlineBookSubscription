@@ -18,11 +18,11 @@ public class SearchBookController {
                 .collect(Collectors.toList());
     }
 
-//    public List<BookModel> filterBooksByPrice(double maxPrice) {
-//        return bookModels.stream()
-//                .filter(bookModel -> bookModel.getPrice() <= maxPrice)
-//                .collect(Collectors.toList());
-//    }
+    public List<BookModel> filterBooksByPrice(double maxPrice) {
+        return bookModels.stream()
+                .filter(bookModel -> bookModel.getPrice() <= maxPrice)
+                .collect(Collectors.toList());
+    }
 
 
     public List<BookModel> filterBooksByGenre(String genre) {

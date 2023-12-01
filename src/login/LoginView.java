@@ -18,15 +18,15 @@ public class LoginView extends JFrame {
     private JLabel PasswordTitle;
     private JTextField UserNameField;
     private JButton LoginButton;
-    private JPasswordField PasswordField; // Use JPasswordField for password input
-    private JTextField AuthField;
-    private JTextField UniqueIDField;
-    private JLabel UniqueIDLabel;
+    private JPasswordField PasswordField;
     private final HomePageView homePageView;
+
+    dbConnect db = new dbConnect();
 
     public LoginView(HomePageView homePageView) {
         this.homePageView = homePageView;
         setContentPane(LoginPanel);
+        setTitle("Login");
         setSize(600, 600);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setVisible(true);
@@ -34,26 +34,20 @@ public class LoginView extends JFrame {
         LoginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                AuthField.setText("");
                 String login = UserNameField.getText();
                 char[] passwordChars = PasswordField.getPassword(); // Get the password as char array
                 String password = new String(passwordChars); // Convert char array to string
-                String uniqueID = UniqueIDField.getText();
 
 
-                dbConnect db = new dbConnect("select CustomerUsername, Password, UniqueID from Accounts " +
-                        "where CustomerUsername = '" + login + "'");
+                dbConnect db = new dbConnect();
                 try {
-                    ResultSet rs = db.returnResult();
+                    ResultSet rs = db.returnResult("select CustomerUsername, Password from Accounts " +
+                            "where CustomerUsername = '" + login + "'");
                     while (rs.next()) {
-                        if (rs.getString(2).equals(password) && rs.getString(3).equals(uniqueID)) {
+                        if (rs.getString(2).equals(password)) {
                             setVisible(false);
                             dispose();
-                            AuthField.setText("Authenticated");
                             homePageView.setLoggedIn(true);
-
-                        } else {
-                            AuthField.setText("Not Authenticated");
                         }
                     }
                 } catch (Exception ee) {
