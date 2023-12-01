@@ -24,6 +24,7 @@ public class SearchBookController {
                 .collect(Collectors.toList());
     }
 
+
     public List<BookModel> filterBooksByGenre(String genre) {
         return bookModels.stream()
                 .filter(bookModel -> bookModel.getGenre().toLowerCase().contains(genre.toLowerCase()))

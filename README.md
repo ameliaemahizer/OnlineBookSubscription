@@ -13,17 +13,14 @@ The first use case allows users (Reader, Author, or Book Reviewer) to log in and
 ### For Reader: 
 - username: johndoe
 - password: password123
-- unique id: 0
 
 ### For Author:
 - username: stevenking
 - password: abc123
-- unique id: 53243
 
 ### For Book Reviewer: 
 - username: alicesmith
 - password: book200
-- unique id: 34761
 
 ## Books
 - IT, Stephen King, 19.99, Horror

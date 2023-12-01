@@ -5,26 +5,23 @@ public class UserModel {
     private String username;
     private String password;
     private String email;
-    private int uniqueID;
+
 
     /**
      * This is the default constructor for the Login class
      **/
-    public UserModel(String username, String password, int uniqueID) {
+    public UserModel(String username, String password) {
         this.username = username;
         this.password = password;
-        this.uniqueID  = uniqueID;
-
     }
 
     /**
      * This is another constructor for the Login class
      */
-    public UserModel(String username, String password, String email, int uniqueID){
+    public UserModel(String username, String password, String email){
         this.username = username;
         this.password = password;
         this.email = email;
-        this.uniqueID  = uniqueID;
     }
 
     /**
@@ -75,19 +72,4 @@ public class UserModel {
         this.email = email;
     }
 
-    /**
-     * This gets the unique ID for certain users
-     * @return unique ID of the account (if needed)
-     */
-    public int getUniqueID() {
-        return uniqueID;
-    }
-
-    /**
-     * This sets the unique ID for certain users
-     * @param uniqueID of the account (if needed)
-     */
-    public void setUniqueID(int uniqueID) {
-        this.uniqueID = uniqueID;
-    }
 }
