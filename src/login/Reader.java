@@ -4,15 +4,15 @@ public class Reader extends UserModel{
     String readerName;
     int yearJoined;
 
-    public Reader(String username, String password, int uniqueID, String readerName, int yearJoined) {
-        super(username, password, uniqueID);
+    public Reader(String username, String password, String readerName, int yearJoined) {
+        super(username, password);
         this.readerName = readerName;
         this.yearJoined = yearJoined;
     }
 
-    public Reader(String username, String password, String email, int uniqueID,
+    public Reader(String username, String password, String email,
                   String readerName, int yearJoined) {
-        super(username, password, email, uniqueID);
+        super(username, password, email);
         this.readerName = readerName;
         this.yearJoined = yearJoined;
     }

@@ -95,7 +95,7 @@ public class ReviewModel {
     }
 
     public void addBookReviewToArray(ReviewModel review){
-        this.bookReviews.add(review);
+        bookReviews.add(review);
 
     }
 }

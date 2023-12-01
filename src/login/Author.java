@@ -4,15 +4,15 @@ public class Author extends UserModel{
     String authorName;
     String publisher;
 
-    public Author(String username, String password, int uniqueID, String authorName, String publisher) {
-        super(username, password, uniqueID);
+    public Author(String username, String password, String authorName, String publisher) {
+        super(username, password);
         this.authorName = authorName;
         this.publisher = publisher;
     }
 
-    public Author(String username, String password, String email, int uniqueID,
+    public Author(String username, String password, String email,
                   String authorName, String publisher) {
-        super(username, password, email, uniqueID);
+        super(username, password, email);
         this.authorName = authorName;
         this.publisher = publisher;
     }

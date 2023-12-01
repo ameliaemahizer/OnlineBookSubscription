@@ -4,16 +4,16 @@ public class BookReviewer extends UserModel {
     String reviewerName;
     String companyName;
 
-    public BookReviewer(String username, String password, int uniqueID,
+    public BookReviewer(String username, String password,
                         String reviewerName, String companyName) {
-        super(username, password, uniqueID);
+        super(username, password);
         this.reviewerName = reviewerName;
         this.companyName = companyName;
     }
 
-    public BookReviewer(String username, String password, String email, int uniqueID,
+    public BookReviewer(String username, String password, String email,
                         String reviewerName, String companyName) {
-        super(username, password, email, uniqueID);
+        super(username, password, email);
         this.reviewerName = reviewerName;
         this.companyName = companyName;
     }

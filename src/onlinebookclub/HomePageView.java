@@ -1,13 +1,21 @@
 package onlinebookclub;
 
+import discussion.DiscussionView;
+import login.LoginView;
 import search.BookModel;
-import search.SearchBookController;
 import search.SearchView;
+import search.SearchBookController;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+
+//import java.sql.Connection;
+//import java.sql.DriverManager;
+//import java.sql.ResultSet;
+//import java.sql.Statement;
 
 public class HomePageView extends JDialog {
     private JPanel contentPane;
@@ -17,56 +25,74 @@ public class HomePageView extends JDialog {
     private JButton searchButton;
     private JLabel welcomeLabel;
     private JButton buttonOK;
+    private final ArrayList<BookModel> bookModels;
+    private boolean isLoggedIn;
+    private final LoginView loginView;
 
-
-    public HomePageView()  {
+    public HomePageView(ArrayList<BookModel> bookModels) {
+        this.bookModels = bookModels;
         setContentPane(contentPane);
-        setModal(true);
-        getRootPane().setDefaultButton(buttonOK);
-        setSize(1000,800);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Online Book Club");
+        setSize(1000, 800);
+        setLocationRelativeTo(null);
 
         searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ArrayList<BookModel> bm = new ArrayList<>();
-                bm.add(new BookModel("It", "Stephen King", 19.99, "Horror"));
-                bm.add(new BookModel("Pride and Prejudice", "Jane Austen", 12.99, "Romance"));
-                bm.add(new BookModel("Educated: A Memoir", "Author 3", 9.99, "Non fiction"));
-                SearchBookController s1 = new SearchBookController(bm);
-                SearchView searchView = new SearchView(s1);
-                searchView.setVisible(true);
                 setVisible(false);
-
-                //add search view here
+                dispose();
+                SearchBookController controller = new SearchBookController(bookModels);
+                SearchView searchView = new SearchView(controller);
             }
         });
 
         discussionButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //add discussion view here
+                setVisible(false);
+                dispose();
+                DiscussionView discussionView = new DiscussionView();
             }
         });
 
         subscriptionButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //add subscription view here
+                // Add code to open the subscription view here
             }
         });
 
         shoppingCartButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //add shoppingCart view here
+                // Add code to open the shopping cart view here
             }
         });
+
+
+        isLoggedIn = false;
+        loginView = new LoginView(this);
+    }
+
+    public void setLoggedIn(boolean loggedIn) {
+        this.isLoggedIn = loggedIn;
+        if (loggedIn) {
+            loginView.dispose();
+            this.setVisible(true);
+        }
+    }
+
+    public boolean isLoggedIn() {
+        return isLoggedIn;
     }
 
     public static void main(String[] args) {
-        HomePageView dialog = new HomePageView();
-        dialog.pack();
-        dialog.setVisible(true);
-        System.exit(0);
+        ArrayList<BookModel> bookModels = new ArrayList<>();
+
+        SwingUtilities.invokeLater(() -> {
+            HomePageView homePageView = new HomePageView(bookModels);
+            homePageView.setVisible(false);
+        });
     }
 }

@@ -1,10 +1,10 @@
 package search;
 
 public class BookModel {
-    private String title;
-    private String author;
-    private double price;
-    private String genre;
+    private final String title;
+    private final String author;
+    private final double price;
+    private final String genre;
 
     public BookModel(String title, String author, double price, String genre) {
         this.title = title;

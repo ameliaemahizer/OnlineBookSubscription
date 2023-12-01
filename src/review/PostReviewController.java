@@ -4,7 +4,7 @@ public class PostReviewController {
 
     private PostReviewInterface reviewInterface;
 
-    private ReviewModel review = new ReviewModel();
+    private final ReviewModel review = new ReviewModel();
 
 
     /**

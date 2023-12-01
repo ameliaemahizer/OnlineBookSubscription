@@ -1,13 +1,14 @@
 package search;
 
-import java.util.ArrayList;
-
-/**
- * Interface defining the public methods for searching books.
- */
+// Will continue to work on this
+import java.util.List;
 public interface SearchBookInterface {
-    public static ArrayList<BookModel> search(String query, ArrayList<BookModel> bookModels) {
-        return null;
-    }
-}
 
+    /**
+     * Interface defining the public methods for searching books.
+     */
+    List<BookModel> search(String searchTerm, List<BookModel> bookModels);
+    List<BookModel> filterBooksByPrice(double maxPrice);
+    List<BookModel> filterBooksByGenre(String genre);
+    List<BookModel> filterBooksByAuthor(String author);
+}
