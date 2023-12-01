@@ -1,34 +1,30 @@
 package subscription;
 
-import search.SearchBookController;
-
 import javax.swing.*;
-import java.awt.*;
 
 public class SubscriptionView extends JFrame {
     private JTextArea resultTextArea;
     private PurchaseBookController controller;
-    public SubscriptionView(PurchaseBookController controller){
-        this.controller = controller;
+    private JPanel SubscriptionView;
+    private JTextField textField1;
+    private JTextArea textArea1;
+    private JButton payPalButton;
+    private JButton addCardButton;
+    private JButton removeCardButton;
 
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setTitle("Search");
+    public SubscriptionView(){
+        setContentPane(SubscriptionView);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Subscription");
         setSize(1000, 800);
-        setLocationRelativeTo(null);
-        setLayout(new BorderLayout());
+        setVisible(true);
 
-        resultTextArea = new JTextArea(10, 30);
-        resultTextArea.setEditable(false);
+        textArea1.setEditable(false);
 
     }
 
     private void displayResults(PurchaseBookController controller){
 
-    }
-
-    public static void main(String[] args) {
-        PurchaseBookController controller = new PurchaseBookController();
-        SwingUtilities.invokeLater(() -> new SubscriptionView(controller));
     }
 
 }
