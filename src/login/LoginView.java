@@ -6,10 +6,7 @@ import onlinebookclub.HomePageView;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.Statement;
 
 public class LoginView extends JFrame {
     private JPanel LoginPanel;
@@ -21,6 +18,7 @@ public class LoginView extends JFrame {
     private JPasswordField PasswordField;
     private final HomePageView homePageView;
 
+    private String searchTerm;
     dbConnect db = new dbConnect();
 
     public LoginView(HomePageView homePageView) {
