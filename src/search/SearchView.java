@@ -36,6 +36,11 @@ public class SearchView extends JFrame{
         resultTextArea.setEditable(false);
 
 
+<<<<<<< Updated upstream
+=======
+        filterComboBox = new JComboBox<>();
+        filterComboBox.addItem("Search All");
+>>>>>>> Stashed changes
         filterComboBox.addItem("Filter by Title");
         filterComboBox.addItem("Filter by Author");
         filterComboBox.addItem("Filter by Price");
@@ -68,8 +73,34 @@ public class SearchView extends JFrame{
 
         List<BookModel> results = new ArrayList<>();
 
+<<<<<<< Updated upstream
         if (selectedFilter == null || selectedFilter.equals("Filter by Title")) {
             dbConnect db = new dbConnect();
+=======
+        if (selectedFilter.equals("Search All")) {
+
+            dbConnect dbc = new dbConnect("select Title, Author, Price, Genre from Book " +
+                    "where Title like '%" + searchTerm + "%'" + "where Author like '%" + searchTerm + "%'"
+                    + "where Genre like '%" + searchTerm + "%'");
+            try {
+                ResultSet rs = dbc.returnResult();
+                while (rs.next()) {
+                    String title = rs.getString(1);
+                    String author = rs.getString(2);
+                    double price = rs.getDouble(3);
+                    int genre = rs.getInt(4);
+                    String gen = String.valueOf(genre);
+                    BookModel searchedBook = new BookModel(title, author, price, gen);
+                    results.add(searchedBook);
+                }
+            } catch (Exception ee) {
+                System.out.println(ee);
+            }
+        } else if (selectedFilter.equals("Filter by Title")) {
+
+            dbConnect dbc = new dbConnect("select Title, Author, Price, Genre from Book " +
+                    "where Title like '%" + searchTerm + "%'");
+>>>>>>> Stashed changes
             try {
                 ResultSet rs = db.returnResult("select Title, Author, Price, Genre from Book " +
                         "where Title like '%" + searchTerm + "%'");
@@ -86,7 +117,13 @@ public class SearchView extends JFrame{
                 System.out.println(ee);
             }
         } else if (selectedFilter.equals("Filter by Price")) {
+
+            double searchTermAsDouble = Double.parseDouble(searchTerm);
+            dbConnect dbc = new dbConnect("select Title, Author, Price, Genre from Book " +
+                    "where Price like '%" + searchTermAsDouble + "%'");
+
             try {
+<<<<<<< Updated upstream
                 double maxPrice = Double.parseDouble(searchTerm);
                 results = controller.filterBooksByPrice(maxPrice);
 
@@ -94,10 +131,33 @@ public class SearchView extends JFrame{
                 JOptionPane.showMessageDialog(MessageBox,
                         "Invalid price format. Please enter a valid number.");
                 return;
+=======
+                double price = rs.getDouble(3);
+                ResultSet rs = dbc.returnResult();
+                while (rs.next()) {
+                    String title = rs.getString(1);
+                    String author = rs.getString(2);
+                    double price = rs.getDouble(3);
+                    int genre = rs.getInt(4);
+                    String gen = String.valueOf(genre);
+                    BookModel searchedBook = new BookModel(title, author, price, gen);
+                        results.add(searchedBook);
+                    }
+            } catch(Exception ee) {
+                System.out.println(ee);
+>>>>>>> Stashed changes
             }
 
+
         } else if (selectedFilter.equals("Filter by Genre")) {
+<<<<<<< Updated upstream
             dbConnect db = new dbConnect();
+=======
+
+            dbConnect dbc = new dbConnect("select Title, Author, Price, Genre from Book " +
+                    "where Genre like '%" + searchTerm + "%'");
+
+>>>>>>> Stashed changes
             try {
                 ResultSet rs = db.returnResult("select Title, Author, Price, Genre from Book " +
                         "where Genre like '%" + searchTerm + "%'");
@@ -114,7 +174,14 @@ public class SearchView extends JFrame{
                 System.out.println(ee);
             }
         } else if (selectedFilter.equals("Filter by Author")) {
+<<<<<<< Updated upstream
             dbConnect db = new dbConnect();
+=======
+
+            dbConnect dbc = new dbConnect("select Title, Author, Price, Genre from Book " +
+                    "where Author like '%" + searchTerm + "%'");
+
+>>>>>>> Stashed changes
             try {
                 ResultSet rs = db.returnResult("select Title, Author, Price, Genre from Book " +
                         "where Author like '%" + searchTerm + "%'");
