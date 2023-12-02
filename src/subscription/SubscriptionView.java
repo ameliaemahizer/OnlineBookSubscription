@@ -1,6 +1,7 @@
 package subscription;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -8,10 +9,15 @@ public class SubscriptionView extends JFrame {
     private JTextArea resultTextArea;
     private PurchaseBookController controller;
     private JPanel SubscriptionView;
-    private JTextField textField1;
+    private JTextField ZIPTextField;
+    private JTextField cardNumberTextField;
+    private JTextField nameOnCardTextField;
+    private JTextField expirationDateTextField;
+    private JTextField CCVTextField;
     private JTextArea textArea1;
     private JButton payPalButton;
     private JButton addCardButton;
+    private JTable table1;
     private JButton removeCardButton;
 
     public SubscriptionView(){
@@ -21,7 +27,7 @@ public class SubscriptionView extends JFrame {
         setSize(1000, 800);
         setVisible(true);
 
-        textArea1.setEditable(false);
+        createTable();
 
         addCardButton.addActionListener(new ActionListener() {
             @Override
@@ -29,22 +35,15 @@ public class SubscriptionView extends JFrame {
 
             }
         });
-        removeCardButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-        payPalButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
     }
 
-    private void displayResults(PurchaseBookController controller){
-
+    private void createTable(){
+        Object[][] data = {{"12345678910", "Aidan", "11/2027", "013", "56001"}};
+        table1.setModel(new DefaultTableModel (
+            data,
+            new String[] {"Number", "Name", "Exp", "CCV", "ZIPCODE"}
+        ));
     }
+
 
 }
