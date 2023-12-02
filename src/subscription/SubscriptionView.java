@@ -4,6 +4,8 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class SubscriptionView extends JFrame {
     private JTextArea resultTextArea;
@@ -19,6 +21,7 @@ public class SubscriptionView extends JFrame {
     private JButton addCardButton;
     private JTable table1;
     private JButton removeCardButton;
+    private JButton updateInfoButton;
 
     public SubscriptionView(){
         setContentPane(SubscriptionView);
@@ -34,6 +37,11 @@ public class SubscriptionView extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 DefaultTableModel model = (DefaultTableModel) table1.getModel();
                 model.addRow(new Object[]{cardNumberTextField.getText(), nameOnCardTextField.getText(), expirationDateTextField.getText(), CCVTextField.getText(), ZIPTextField.getText()});
+                cardNumberTextField.setText("");
+                nameOnCardTextField.setText("");
+                expirationDateTextField.setText("");
+                CCVTextField.setText("");
+                ZIPTextField.setText("");
             }
         });
         removeCardButton.addActionListener(new ActionListener() {
@@ -46,9 +54,52 @@ public class SubscriptionView extends JFrame {
                 }else{
                     System.out.println("Delete Error");
                 }
+                cardNumberTextField.setText("");
+                nameOnCardTextField.setText("");
+                expirationDateTextField.setText("");
+                CCVTextField.setText("");
+                ZIPTextField.setText("");
+            }
+        });
+
+        table1.addMouseListener(new MouseAdapter(){
+           @Override
+           public void mouseClicked(MouseEvent e){
+               DefaultTableModel model = (DefaultTableModel) table1.getModel();
+
+               int i = table1.getSelectedRow();
+               cardNumberTextField.setText(model.getValueAt(i,0).toString());
+               nameOnCardTextField.setText(model.getValueAt(i,1).toString());
+               expirationDateTextField.setText(model.getValueAt(i,2).toString());
+               CCVTextField.setText(model.getValueAt(i,3).toString());
+               ZIPTextField.setText(model.getValueAt(i,4).toString());
+           }
+        });
+
+
+        updateInfoButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DefaultTableModel model = (DefaultTableModel) table1.getModel();
+                int i = table1.getSelectedRow();
+                if(i >= 0) {
+                    model.setValueAt(cardNumberTextField.getText(), i, 0);
+                    model.setValueAt(nameOnCardTextField.getText(), i, 1);
+                    model.setValueAt(expirationDateTextField.getText(), i, 2);
+                    model.setValueAt(CCVTextField.getText(), i, 3);
+                    model.setValueAt(ZIPTextField.getText(), i, 4);
+                }else{
+                    System.out.println("Update Error");
+                }
+                cardNumberTextField.setText("");
+                nameOnCardTextField.setText("");
+                expirationDateTextField.setText("");
+                CCVTextField.setText("");
+                ZIPTextField.setText("");
             }
         });
     }
+
 
     private void createTable(){
         table1.setModel(new DefaultTableModel (
