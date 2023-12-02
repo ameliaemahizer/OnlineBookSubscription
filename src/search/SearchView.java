@@ -1,15 +1,19 @@
 package search;
 
+
 import database.dbConnect;
 import login.LoginView;
 import onlinebookclub.HomePageView;
+
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class SearchView extends JFrame{
     private JTextArea resultTextArea;
@@ -20,9 +24,10 @@ public class SearchView extends JFrame{
     private JTextField MessageBox;
     private JButton BackButton;
     private final SearchBookController controller;
-    private SearchBookInterface searchStrategy;
 
     ArrayList<BookModel> bookModels= new ArrayList<>();
+
+    dbConnect db = new dbConnect();
 
     public SearchView(SearchBookController controller) {
         setContentPane(SearchPanel);
@@ -35,12 +40,11 @@ public class SearchView extends JFrame{
 
         resultTextArea.setEditable(false);
 
-
+        filterComboBox.addItem("Search All");
         filterComboBox.addItem("Filter by Title");
         filterComboBox.addItem("Filter by Author");
         filterComboBox.addItem("Filter by Price");
         filterComboBox.addItem("Filter by Genre");
-
 
         searchButton.addActionListener(new ActionListener() {
             @Override
@@ -49,27 +53,31 @@ public class SearchView extends JFrame{
             }
         });
 
+
         BackButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               setVisible(false);
-               dispose();
-               /// add something to go back home
+                setVisible(false);
+                dispose();
+                HomePageView homePageView = new HomePageView(new ArrayList<>());
+                homePageView.setLoggedIn(true);
             }
         });
 
+
     }
 
-    // Need to change this, make it easily scalable and edited in the future
-    // Implement Strategy pattern properly
     private void performSearch() {
         String searchTerm = searchField.getText();
         String selectedFilter = (String) filterComboBox.getSelectedItem();
 
+
         List<BookModel> results = new ArrayList<>();
 
-        if (selectedFilter == null || selectedFilter.equals("Filter by Title")) {
-            dbConnect db = new dbConnect();
+
+        if (selectedFilter.equals("Filter by Title")) {
+
+
             try {
                 ResultSet rs = db.returnResult("select Title, Author, Price, Genre from Book " +
                         "where Title like '%" + searchTerm + "%'");
@@ -86,14 +94,24 @@ public class SearchView extends JFrame{
                 System.out.println(ee);
             }
         } else if (selectedFilter.equals("Filter by Price")) {
+
             try {
                 double maxPrice = Double.parseDouble(searchTerm);
-                results = controller.filterBooksByPrice(maxPrice);
+                ResultSet rs = db.returnResult("SELECT Title, Author, Price, Genre FROM Book WHERE Price <= " + maxPrice);
 
-            }catch(NumberFormatException e) {
-                JOptionPane.showMessageDialog(MessageBox,
-                        "Invalid price format. Please enter a valid number.");
-                return;
+                while (rs.next()) {
+                    String title = rs.getString(1);
+                    String author = rs.getString(2);
+                    double price = rs.getDouble(3);
+                    int genre = rs.getInt(4);
+                    String gen = String.valueOf(genre);
+                    BookModel searchedBook = new BookModel(title, author, price, gen);
+                    results.add(searchedBook);
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input for price: " + e.getMessage());
+            } catch (Exception e) {
+                System.out.println(e);
             }
 
         } else if (selectedFilter.equals("Filter by Genre")) {
@@ -110,7 +128,7 @@ public class SearchView extends JFrame{
                     BookModel searchedBook = new BookModel(title, author, price, gen);
                     results.add(searchedBook);
                 }
-            }catch(Exception ee) {
+            } catch(Exception ee) {
                 System.out.println(ee);
             }
         } else if (selectedFilter.equals("Filter by Author")) {
@@ -139,6 +157,7 @@ public class SearchView extends JFrame{
     private void displayResults(List<BookModel> results) {
         resultTextArea.setText("");
 
+
         if (results.isEmpty()) {
             resultTextArea.append("No results found.");
         } else {
@@ -152,13 +171,11 @@ public class SearchView extends JFrame{
         }
     }
 
-    public void setSearchStrategy(SearchBookInterface searchStrategy) {
-        controller.setSearchStrategy(searchStrategy);
-    }
-
     public static void main(String[] args) {
         ArrayList<BookModel> bookModels = new ArrayList<>();
         SearchBookController controller = new SearchBookController(bookModels);
         SwingUtilities.invokeLater(() -> new SearchView(controller));
     }
 }
+
+

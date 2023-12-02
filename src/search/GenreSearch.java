@@ -4,10 +4,12 @@ import search.BookModel;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public abstract class GenreSearch implements SearchBookInterface {
+public class GenreSearch extends SearchView {
+    public GenreSearch(SearchBookController controller) {
+        super(controller);
+    }
 
-    @Override
-    public List<BookModel> search(String genre, List<BookModel> bookModels) {
+    public List<BookModel> searchBook(String genre, List<BookModel> bookModels) {
         return bookModels.stream()
                 .filter(bookModel -> bookModel.getGenre().toLowerCase().contains(genre.toLowerCase()))
                 .collect(Collectors.toList());
