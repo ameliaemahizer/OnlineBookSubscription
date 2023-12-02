@@ -24,7 +24,7 @@ public class SubscriptionView extends JFrame {
         setContentPane(SubscriptionView);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Subscription");
-        setSize(1000, 800);
+        setSize(1000, 400);
         setVisible(true);
 
         createTable();
@@ -34,6 +34,18 @@ public class SubscriptionView extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 DefaultTableModel model = (DefaultTableModel) table1.getModel();
                 model.addRow(new Object[]{cardNumberTextField.getText(), nameOnCardTextField.getText(), expirationDateTextField.getText(), CCVTextField.getText(), ZIPTextField.getText()});
+            }
+        });
+        removeCardButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DefaultTableModel model = (DefaultTableModel) table1.getModel();
+                int i = table1.getSelectedRow();
+                if(i >= 0){
+                    model.removeRow(i);
+                }else{
+                    System.out.println("Delete Error");
+                }
             }
         });
     }
