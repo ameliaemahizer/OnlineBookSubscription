@@ -32,15 +32,15 @@ public class SubscriptionView extends JFrame {
         addCardButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                DefaultTableModel model = (DefaultTableModel) table1.getModel();
+                model.addRow(new Object[]{cardNumberTextField.getText(), nameOnCardTextField.getText(), expirationDateTextField.getText(), CCVTextField.getText(), ZIPTextField.getText()});
             }
         });
     }
 
     private void createTable(){
-        Object[][] data = {{"12345678910", "Aidan", "11/2027", "013", "56001"}};
         table1.setModel(new DefaultTableModel (
-            data,
+            null,
             new String[] {"Number", "Name", "Exp", "CCV", "ZIPCODE"}
         ));
     }
