@@ -5,6 +5,8 @@ import login.LoginView;
 import search.BookModel;
 import search.SearchView;
 import search.SearchBookController;
+import subscription.ShoppingCartView;
+import subscription.SubscriptionView;
 
 import javax.swing.*;
 import java.awt.*;
@@ -59,6 +61,9 @@ public class HomePageView extends JDialog {
         subscriptionButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                dispose();
+                SubscriptionView subscriptionView = new SubscriptionView();
                 // Add code to open the subscription view here
             }
         });
@@ -66,7 +71,9 @@ public class HomePageView extends JDialog {
         shoppingCartButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Add code to open the shopping cart view here
+                setVisible(false);
+                dispose();
+                ShoppingCartView shoppingCartView = new ShoppingCartView();
             }
         });
 

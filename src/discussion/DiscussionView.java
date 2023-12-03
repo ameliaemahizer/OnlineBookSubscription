@@ -18,6 +18,7 @@ public class DiscussionView extends JFrame {
     private JButton ViewPostsButton;
     private JButton HomeButton;
 
+    private String searchTerm;
     dbConnect db = new dbConnect();
     DiscussionPostModel dpm;
 

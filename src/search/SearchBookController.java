@@ -6,7 +6,6 @@ import java.util.stream.Collectors;
 
 public class SearchBookController {
     private ArrayList<BookModel> bookModels;
-    private SearchBookInterface searchStrategy;
 
     public SearchBookController(ArrayList<BookModel> bookModels) {
         this.bookModels = bookModels;
@@ -36,8 +35,9 @@ public class SearchBookController {
                 .filter(bookModel -> bookModel.getAuthor().toLowerCase().contains(author.toLowerCase()))
                 .collect(Collectors.toList());
     }
-
-    public void setSearchStrategy(SearchBookInterface searchStrategy) {
-        this.searchStrategy = searchStrategy;
-    }
 }
+
+//    public void setSearchStrategy(SearchBookInterface searchStrategy) {
+//        this.searchStrategy = searchStrategy;
+//    }
+
