@@ -31,6 +31,7 @@ public class dbConnect{
         return this.rs;
     }
 
+    //update the database
     public int updateData(String queryString){
         int rows = 0;
         try {
