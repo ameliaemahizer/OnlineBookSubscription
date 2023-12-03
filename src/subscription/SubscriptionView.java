@@ -1,11 +1,14 @@
 package subscription;
 
+import onlinebookclub.HomePageView;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
 public class SubscriptionView extends JFrame {
     private JTextArea resultTextArea;
@@ -22,6 +25,7 @@ public class SubscriptionView extends JFrame {
     private JTable table1;
     private JButton removeCardButton;
     private JButton updateInfoButton;
+    private JButton BackButton;
 
     public SubscriptionView(){
         setContentPane(SubscriptionView);
@@ -96,6 +100,16 @@ public class SubscriptionView extends JFrame {
                 expirationDateTextField.setText("");
                 CCVTextField.setText("");
                 ZIPTextField.setText("");
+            }
+        });
+
+        BackButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                dispose();
+                HomePageView homePageView = new HomePageView(new ArrayList<>());
+                homePageView.setLoggedIn(true);
             }
         });
     }
