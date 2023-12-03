@@ -1,6 +1,9 @@
 package subscription;
 
 import database.dbConnect;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import search.BookModel;
 
@@ -42,6 +45,12 @@ public class ShoppingCartView extends JFrame{
         }
 
 
+        purchaseWithCardButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showConfirmDialog(null, "Purchase Complete!", "Confirmation", JOptionPane.CLOSED_OPTION);
+            }
+        });
     }
 
 }
