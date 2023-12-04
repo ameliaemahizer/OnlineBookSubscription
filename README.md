@@ -11,9 +11,10 @@ This use case allows users like Reader, Author, or Book Reviewer to log in using
 In the first use case, logged-in users can search for a book using a selected filter based on book title, author, genre, or price, with the default being searching all books without any filter. <be>
 
 ### Use Case 2: Purchase
+In the second use case, logged-in users can purchase searched books using the search view. They can view their items in the shopping cart where the transaction is done. They can also add their payment information in the subscription view as well.<be>
 
 ### Use Case 3: Discussion
-
+In the third use case, logged-in users can discuss books with other users. They can post a main post with a title and body. They can also reply to posts as well. **(We were unable to connect posts and replies at this time)** <be>
 
 
 ## Login Usernames, Passwords, and UniqueIDs
@@ -65,7 +66,11 @@ ID	Title	Author	Price	IISBN	Genre <br>
 
 ## Refactored Code 
 
-1. The books were not connected to the 
+1. The database is now connected to all parts of the code.
+2. We have deleted unused classes such as UserFinance and OnlineBookSubscription.
+3. We took out the unnecessary comments that were within the code.
+4. We deleted the UniqueID parameter in Login.
+5. All of the view classes are consistent when it comes to code.
 
 ## Design Patterns Implementation
 mzc5994 - Mackenzie Cane: <br> 
