@@ -6,27 +6,24 @@ import login.UserModel;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-public class DiscussionView extends JFrame {
+public class DiscussionReplyInterface extends JFrame {
     private JPanel DiscussionPost;
-    private JLabel DiscussionPostTitle;
     private JTextField DiscussionPostTitleText;
     private JLabel Post;
     private JTextArea PostText;
     private JButton SubmitButton;
     private JButton ClearButton;
-    private JButton ViewPostsButton;
     private JButton HomeButton;
 
     private String searchTerm;
     dbConnect db = new dbConnect();
-    DiscussionPostModel dpm;
+    DiscussionReplyModel dpm;
 
     UserModel um = new UserModel("dummy", "dummy");
 
-    public DiscussionView(){
+    public DiscussionReplyInterface(){
         setContentPane(DiscussionPost);
-        setTitle("Discussion Post");
+        setTitle("Discussion Reply");
         setSize(450, 300);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setVisible(true);
@@ -34,15 +31,13 @@ public class DiscussionView extends JFrame {
         SubmitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String discTitle = DiscussionPostTitleText.getText();
                 String discPost = PostText.getText();
-                dpm = new DiscussionPostModel(um,discTitle,discPost);
+                dpm = new DiscussionReplyModel(um,discPost);
                 try{
-                    String sql = "insert into DiscussionPost (Title, Post) values ('"+ discTitle + "', '"
-                            + discPost + "')";
+                    String sql = "insert into DiscussionReply (reply) values ( '" + discPost + "')";
                     int row = db.updateData(sql);
                     if (row > 0) {
-                        System.out.println("The discussion post added successfully.");
+                        System.out.println("The discussion reply added successfully.");
                     }
                 }catch(Exception ee){
                     System.out.println(ee);
@@ -53,14 +48,7 @@ public class DiscussionView extends JFrame {
         ClearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-              dispose();
-            }
-        });
-
-        ViewPostsButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
+                dispose();
             }
         });
 
@@ -72,7 +60,7 @@ public class DiscussionView extends JFrame {
         });
     }
 
-    public DiscussionPostModel getDiscussionPost() {
+    public DiscussionReplyModel getDiscussionReply() {
         return dpm;
     }
 
