@@ -51,7 +51,6 @@ public class SearchView extends JFrame{
             }
         });
 
-
         BackButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -83,17 +82,12 @@ public class SearchView extends JFrame{
     private void performSearch() {
         String searchTerm = searchField.getText();
         String selectedFilter = (String) filterComboBox.getSelectedItem();
-
-        dbConnect db = new dbConnect();
-        SearchBookController controller = new SearchBookController(db);
         List<BookModel> results = controller.performSearch(searchTerm, selectedFilter);
         displayResults(results);
+        SearchBookController controller = new SearchBookController(db);
     }
 
     public static void main(String[] args) {
-//        ArrayList<BookModel> bookModels = new ArrayList<>();
-//        SearchBookController controller = new SearchBookController(bookModels);
-//        SwingUtilities.invokeLater(() -> new SearchView(controller));
     }
 }
 

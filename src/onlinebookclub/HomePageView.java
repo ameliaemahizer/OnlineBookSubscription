@@ -8,17 +8,10 @@ import search.SearchView;
 import search.SearchBookController;
 import subscription.ShoppingCartView;
 import subscription.SubscriptionView;
-
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-
-//import java.sql.Connection;
-//import java.sql.DriverManager;
-//import java.sql.ResultSet;
-//import java.sql.Statement;
 
 public class HomePageView extends JDialog {
     private JPanel contentPane;
@@ -42,16 +35,6 @@ public class HomePageView extends JDialog {
         setSize(1000, 800);
         setLocationRelativeTo(null);
 
-//        searchButton.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                setVisible(false);
-//                dispose();
-//                SearchBookController controller = new SearchBookController(bookModels);
-//                SearchView searchView = new SearchView(controller);
-//            }
-//        });
-
         this.dbConnection = new dbConnect(); // Initialize the dbConnect object
 
         searchButton.addActionListener(new ActionListener() {
@@ -63,7 +46,6 @@ public class HomePageView extends JDialog {
                 SearchView searchView = new SearchView(controller);
             }
         });
-
 
         discussionButton.addActionListener(new ActionListener() {
             @Override
@@ -92,7 +74,6 @@ public class HomePageView extends JDialog {
                 ShoppingCartView shoppingCartView = new ShoppingCartView();
             }
         });
-
 
         isLoggedIn = false;
         loginView = new LoginView(this);
