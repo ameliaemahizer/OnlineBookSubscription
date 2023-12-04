@@ -64,12 +64,13 @@ ID	Title	Author	Price	IISBN	Genre <br>
 29	Northanger Abbey	Jane Austen	6	9780486414126	Romance<br>
 
 
-## Refactored Code 
+## Refactoring Implementation
+* All members were involved in different parts of the implementation. 
 
-1. The database is now connected to all parts of the code.
+1. The database is now connected to all parts of the code. Professor Vora helped us with the query codes. Amelia helped identify data tables and update them. Ji implemented the data connection codes into the SearchController class, and McKenzie implemented the data connection codes into the LoginView class.
 2. We have deleted unused classes such as UserFinance, OnlineBookSubscription, SocialMedia, ExternalReview, and SearchInterface.
-3. We took out the unnecessary comments that were among the codes.
-4. We deleted the UniqueID parameter in Login.
+3. We removed the unnecessary comments among the codes in HomePageView and those in Search and Login packages. Those were coded heavily previously. 
+4. McKenzie deleted the UniqueID parameter in Login. 
 5. All of the view classes are consistent when it comes to code.
 6. We added setter methods into model classes that initially only have getters, such as UserModel and BookModel.
 
@@ -80,6 +81,7 @@ mzc5994 - Mackenzie Cane: <br>
 - **Input Feedback:** LoginInterface, LoginView, PurchaseBookController, PostReviewController, DiscussionBoardController, SearchView
 
 ake5280 - Amelia Emahizer: <br> 
+
 ajf6238 - Aidan Fitz: <br> 
 
 - **Decorator:** PaymentDecorator, PaymentImplementation, Payment, DebitCredit, ApplePay, PayPal, ShoppingCart
@@ -99,11 +101,11 @@ jkz5262 - Ji Zhang: <be>
 
 mzc5994 - Mackenzie Cane: <br> 
 
-- **10%:**  Created LoginView form; Wrote LoginView code to connect the view to the database; Created OnlineBookSubscription class to call LoginController, which contains LoginView Frame; Added user information for reader, author, and book reviewer. Contributed to the README.txt file.
+- **10%:**  Created LoginView form; Wrote LoginView code to connect the view to the database; Created OnlineBookSubscription class to call LoginController, which contains LoginView Frame; Edited code for others. Contributed to the README.txt file.
   
 ake5280 - Amelia Emahizer: <br> 
 
-- **10%:** Updated our database and tables within; Added user and search information into the created tables; Created a HomePageView form to connect LoginView and SearchView; Wrote HomePageView code to connect LoginView and SearchView. Edited code for others. 
+- **10%:** Updated our database and tables within; Added user and search information into the created tables; Updated HomePageView form to ensure display accuracy; Edited HomePageView code to connect LoginView and SearchView. Edited code for others. 
 
 ajf6238 - Aidan Fitz: <br> 
 
