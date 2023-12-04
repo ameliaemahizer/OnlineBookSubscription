@@ -63,7 +63,7 @@ jkz5262 - Ji Zhang: <be>
 
 
 
-## TEAM INVOLVEMENT LOG 
+## Team Involvement Log
 
 ### Implemented Use Cases 2 and 3: 
 
