@@ -1,10 +1,12 @@
 package subscription;
 
 import database.dbConnect;
+import onlinebookclub.HomePageView;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import javax.swing.*;
 
@@ -13,6 +15,7 @@ public class ShoppingCartView extends JFrame{
     private JButton purchaseWithCardButton;
     private JPanel ShoppingCartView;
     private JButton clearCartButton;
+    private JButton homeButton;
 
 
     public ShoppingCartView(){
@@ -39,8 +42,16 @@ public class ShoppingCartView extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 JOptionPane.showConfirmDialog(null, "Purchase Complete!", "Confirmation", JOptionPane.CLOSED_OPTION);
+
+                String sql = "update ShoppingCart set Contents = NULL";
+                int row = db.updateData(sql);
+                if (row > 0) {
+                    System.out.println("Cart contents removed successfully.");
+                    textArea1.setText("");
+                }
             }
         });
+
         clearCartButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -56,6 +67,16 @@ public class ShoppingCartView extends JFrame{
                 }catch(Exception ee){
                     System.out.println(ee);
                 }
+            }
+        });
+
+        homeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                dispose();
+                HomePageView homePageView = new HomePageView(new ArrayList<>());
+                homePageView.setLoggedIn(true);
             }
         });
     }

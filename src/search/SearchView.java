@@ -22,6 +22,7 @@ public class SearchView extends JFrame{
     private JTextField MessageBox;
     private JButton BackButton;
     private final SearchBookController controller;
+    private JButton addToCartButton;
 
     ArrayList<BookModel> bookModels= new ArrayList<>();
 
@@ -58,6 +59,24 @@ public class SearchView extends JFrame{
                 dispose();
                 HomePageView homePageView = new HomePageView(new ArrayList<>());
                 homePageView.setLoggedIn(true);
+            }
+        });
+
+        addToCartButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String cartContent = resultTextArea.getText();
+                dbConnect db = new dbConnect();
+                try{
+                    String sql = "insert into ShoppingCart (Contents) values ('" + cartContent + "')";
+                    int row = db.updateData(sql);
+                    if (row > 0) {
+                        System.out.println("Cart contents added successfully.");
+                        JOptionPane.showConfirmDialog(null, "Item added to cart!", "Notification", JOptionPane.CLOSED_OPTION);
+                    }
+                }catch(Exception ee){
+                    System.out.println(ee);
+                }
             }
         });
     }
