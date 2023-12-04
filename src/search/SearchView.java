@@ -2,7 +2,6 @@ package search;
 
 
 import database.dbConnect;
-import login.LoginView;
 import onlinebookclub.HomePageView;
 
 
@@ -10,7 +9,6 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +21,7 @@ public class SearchView extends JFrame{
     private JPanel SearchPanel;
     private JTextField MessageBox;
     private JButton BackButton;
+    private JButton addToCartButton;
     private final SearchBookController controller;
 
     ArrayList<BookModel> bookModels= new ArrayList<>();
@@ -64,6 +63,23 @@ public class SearchView extends JFrame{
             }
         });
 
+        addToCartButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String cartContent = resultTextArea.getText();
+                dbConnect db = new dbConnect();
+                try{
+                    String sql = "insert into ShoppingCart (Contents) values ('" + cartContent + "')";
+                    int row = db.updateData(sql);
+                    if (row > 0) {
+                        System.out.println("Cart contents added successfully.");
+                        JOptionPane.showConfirmDialog(null, "Item added to cart!", "Notification", JOptionPane.CLOSED_OPTION);
+                    }
+                }catch(Exception ee){
+                    System.out.println(ee);
+                }
+            }
+        });
 
     }
 
@@ -156,6 +172,7 @@ public class SearchView extends JFrame{
 
     private void displayResults(List<BookModel> results) {
         resultTextArea.setText("");
+        dbConnect db = new dbConnect();
 
 
         if (results.isEmpty()) {
@@ -167,9 +184,12 @@ public class SearchView extends JFrame{
                 resultTextArea.append("Price: $" + bookModel.getPrice() + "\n");
                 resultTextArea.append("Genre: " + bookModel.getGenre() + "\n");
                 resultTextArea.append("\n");
+
             }
         }
     }
+
+
 
     public static void main(String[] args) {
         ArrayList<BookModel> bookModels = new ArrayList<>();
