@@ -1,5 +1,5 @@
 # OnlineBookSubscription
-**IST 412 Project**<br>
+***IST 412 Project***<br>
 
 ## Use Cases
 **To access our first use case, go to HomePageView under the OnlineBookClub and go to the main method at the bottom.** <br><be>
