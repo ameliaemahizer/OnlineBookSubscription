@@ -1,8 +1,6 @@
 package search;
 
-
 import database.dbConnect;
-import login.LoginView;
 import onlinebookclub.HomePageView;
 
 
@@ -53,7 +51,6 @@ public class SearchView extends JFrame{
             }
         });
 
-
         BackButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -63,100 +60,10 @@ public class SearchView extends JFrame{
                 homePageView.setLoggedIn(true);
             }
         });
-
-
-    }
-
-    private void performSearch() {
-        String searchTerm = searchField.getText();
-        String selectedFilter = (String) filterComboBox.getSelectedItem();
-
-
-        List<BookModel> results = new ArrayList<>();
-
-
-        if (selectedFilter.equals("Filter by Title")) {
-
-
-            try {
-                ResultSet rs = db.returnResult("select Title, Author, Price, Genre from Book " +
-                        "where Title like '%" + searchTerm + "%'");
-                while (rs.next()) {
-                    String title = rs.getString(1);
-                    String author = rs.getString(2);
-                    double price = rs.getDouble(3);
-                    int genre = rs.getInt(4);
-                    String gen = String.valueOf(genre);
-                    BookModel searchedBook = new BookModel(title, author, price, gen);
-                    results.add(searchedBook);
-                }
-            }catch(Exception ee) {
-                System.out.println(ee);
-            }
-        } else if (selectedFilter.equals("Filter by Price")) {
-
-            try {
-                double maxPrice = Double.parseDouble(searchTerm);
-                ResultSet rs = db.returnResult("SELECT Title, Author, Price, Genre FROM Book WHERE Price <= " + maxPrice);
-
-                while (rs.next()) {
-                    String title = rs.getString(1);
-                    String author = rs.getString(2);
-                    double price = rs.getDouble(3);
-                    int genre = rs.getInt(4);
-                    String gen = String.valueOf(genre);
-                    BookModel searchedBook = new BookModel(title, author, price, gen);
-                    results.add(searchedBook);
-                }
-            } catch (NumberFormatException e) {
-                System.out.println("Invalid input for price: " + e.getMessage());
-            } catch (Exception e) {
-                System.out.println(e);
-            }
-
-        } else if (selectedFilter.equals("Filter by Genre")) {
-            dbConnect db = new dbConnect();
-            try {
-                ResultSet rs = db.returnResult("select Title, Author, Price, Genre from Book " +
-                        "where Genre like '%" + searchTerm + "%'");
-                while (rs.next()) {
-                    String title = rs.getString(1);
-                    String author = rs.getString(2);
-                    double price = rs.getDouble(3);
-                    int genre = rs.getInt(4);
-                    String gen = String.valueOf(genre);
-                    BookModel searchedBook = new BookModel(title, author, price, gen);
-                    results.add(searchedBook);
-                }
-            } catch(Exception ee) {
-                System.out.println(ee);
-            }
-        } else if (selectedFilter.equals("Filter by Author")) {
-            dbConnect db = new dbConnect();
-            try {
-                ResultSet rs = db.returnResult("select Title, Author, Price, Genre from Book " +
-                        "where Author like '%" + searchTerm + "%'");
-                while (rs.next()) {
-                    String title = rs.getString(1);
-                    String author = rs.getString(2);
-                    double price = rs.getDouble(3);
-                    int genre = rs.getInt(4);
-                    String gen = String.valueOf(genre);
-                    BookModel searchedBook = new BookModel(title, author, price, gen);
-                    results.add(searchedBook);
-                }
-            }catch(Exception ee) {
-                System.out.println(ee);
-            }
-        } else {
-            results = new ArrayList<>(); // Handle unknown filter option here, for example.
-        }
-        displayResults(results);
     }
 
     private void displayResults(List<BookModel> results) {
         resultTextArea.setText("");
-
 
         if (results.isEmpty()) {
             resultTextArea.append("No results found.");
@@ -171,10 +78,16 @@ public class SearchView extends JFrame{
         }
     }
 
+    // Inside HomePageView class
+    private void performSearch() {
+        String searchTerm = searchField.getText();
+        String selectedFilter = (String) filterComboBox.getSelectedItem();
+        List<BookModel> results = controller.performSearch(searchTerm, selectedFilter);
+        displayResults(results);
+        SearchBookController controller = new SearchBookController(db);
+    }
+
     public static void main(String[] args) {
-        ArrayList<BookModel> bookModels = new ArrayList<>();
-        SearchBookController controller = new SearchBookController(bookModels);
-        SwingUtilities.invokeLater(() -> new SearchView(controller));
     }
 }
 

@@ -1,43 +1,59 @@
 package search;
 
+import database.dbConnect;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.sql.ResultSet;
 
 public class SearchBookController {
-    private ArrayList<BookModel> bookModels;
+    private dbConnect db;
 
-    public SearchBookController(ArrayList<BookModel> bookModels) {
-        this.bookModels = bookModels;
+    public SearchBookController(dbConnect db) {
+        this.db = db;
     }
 
-    public List<BookModel> searchBooks(String searchTerm) {
-        return bookModels.stream()
-                .filter(bookModel -> bookModel.getTitle().toLowerCase().contains(searchTerm.toLowerCase()))
-                .collect(Collectors.toList());
-    }
+    public List<BookModel> performSearch(String searchTerm, String selectedFilter) {
+        List<BookModel> results = new ArrayList<>();
+        ResultSet rs = null;
 
-    public List<BookModel> filterBooksByPrice(double maxPrice) {
-        return bookModels.stream()
-                .filter(bookModel -> bookModel.getPrice() <= maxPrice)
-                .collect(Collectors.toList());
-    }
+        try {
+            String query = "";
+            if (selectedFilter.equals("Search All")) {
+                // To check if searchTerm is numeric
+                boolean isNumeric = searchTerm.matches("-?\\d+(\\.\\d+)?");
+                String priceCondition = isNumeric ? " OR Price = " + Double.parseDouble(searchTerm) : "";
+                query = "SELECT Title, Author, Price, Genre FROM Book WHERE Title LIKE '%" + searchTerm + "%' OR Author LIKE '%" + searchTerm + "%' OR Genre LIKE '%" + searchTerm + "%'" + priceCondition;
+            } else if (selectedFilter.equals("Filter by Title")) {
+                query = "SELECT Title, Author, Price, Genre FROM Book WHERE Title LIKE '%" + searchTerm + "%'";
+            } else if (selectedFilter.equals("Filter by Price")) {
+                double maxPrice = Double.parseDouble(searchTerm);
+                query = "SELECT Title, Author, Price, Genre FROM Book WHERE Price <= " + maxPrice;
+            } else if (selectedFilter.equals("Filter by Genre")) {
+                query = "SELECT Title, Author, Price, Genre FROM Book WHERE Genre LIKE '%" + searchTerm + "%'";
+            } else if (selectedFilter.equals("Filter by Author")) {
+                query = "SELECT Title, Author, Price, Genre FROM Book WHERE Author LIKE '%" + searchTerm + "%'";
+            }
 
+            if (!query.isEmpty()) {
+                rs = db.returnResult(query);
+            }
 
-    public List<BookModel> filterBooksByGenre(String genre) {
-        return bookModels.stream()
-                .filter(bookModel -> bookModel.getGenre().toLowerCase().contains(genre.toLowerCase()))
-                .collect(Collectors.toList());
-    }
-
-    public List<BookModel> filterBooksByAuthor(String author) {
-        return bookModels.stream()
-                .filter(bookModel -> bookModel.getAuthor().toLowerCase().contains(author.toLowerCase()))
-                .collect(Collectors.toList());
+            if (rs != null) {
+                while (rs.next()) {
+                    String title = rs.getString(1);
+                    String author = rs.getString(2);
+                    double price = rs.getDouble(3);
+                    int genre = rs.getInt(4);
+                    String gen = String.valueOf(genre);
+                    BookModel searchedBook = new BookModel(title, author, price, gen);
+                    results.add(searchedBook);
+                }
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid format for price: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+        return results;
     }
 }
-
-//    public void setSearchStrategy(SearchBookInterface searchStrategy) {
-//        this.searchStrategy = searchStrategy;
-//    }
-
