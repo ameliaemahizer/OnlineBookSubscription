@@ -53,7 +53,7 @@ ID	Title	Author	Price	IISBN	Genre <br>
 19	Harry Potter and the Goblet of Fire	J.K. Rowling	29.99	9780439139601	Fantasy<br>
 20	Carrie	Stephen King	7.99	9780385086950	Horror<br>
 21	Green Eggs and Ham	Dr. Seuss	9.99	9780394800165	Children's<br>
-22	The Cat in the Hat	Dr. Seuss	8.99	9780394800011	Children's
+22	The Cat in the Hat	Dr. Seuss	8.99	9780394800011	Children's<br>
 23	Oh, the Places You'll Go!	Dr. Seuss	17.99	9780679805274	Children's<br>
 24	Emma	Jane Austen	7	9780486406480	Romance<br>
 25	Sense and Sensibility	Jane Austen	9	9780141439662	Romance<br>
