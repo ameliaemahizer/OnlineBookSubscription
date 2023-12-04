@@ -22,6 +22,7 @@ public class SearchView extends JFrame{
     private JTextField MessageBox;
     private JButton BackButton;
     private final SearchBookController controller;
+    private JButton addToCartButton;
 
     ArrayList<BookModel> bookModels= new ArrayList<>();
 
@@ -60,6 +61,24 @@ public class SearchView extends JFrame{
                 homePageView.setLoggedIn(true);
             }
         });
+
+        addToCartButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String cartContent = resultTextArea.getText();
+                dbConnect db = new dbConnect();
+                try{
+                    String sql = "insert into ShoppingCart (Contents) values ('" + cartContent + "')";
+                    int row = db.updateData(sql);
+                    if (row > 0) {
+                        System.out.println("Cart contents added successfully.");
+                        JOptionPane.showConfirmDialog(null, "Item added to cart!", "Notification", JOptionPane.CLOSED_OPTION);
+                    }
+                }catch(Exception ee){
+                    System.out.println(ee);
+                }
+            }
+        });
     }
 
     private void displayResults(List<BookModel> results) {
@@ -78,7 +97,6 @@ public class SearchView extends JFrame{
         }
     }
 
-    // Inside HomePageView class
     private void performSearch() {
         String searchTerm = searchField.getText();
         String selectedFilter = (String) filterComboBox.getSelectedItem();
@@ -87,8 +105,6 @@ public class SearchView extends JFrame{
         SearchBookController controller = new SearchBookController(db);
     }
 
-    public static void main(String[] args) {
-    }
 }
 
 
