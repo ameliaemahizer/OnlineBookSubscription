@@ -1,5 +1,6 @@
 package onlinebookclub;
 
+import database.dbConnect;
 import discussion.DiscussionView;
 import login.LoginView;
 import search.BookModel;
@@ -31,6 +32,8 @@ public class HomePageView extends JDialog {
     private boolean isLoggedIn;
     private final LoginView loginView;
 
+    private dbConnect dbConnection;
+
     public HomePageView(ArrayList<BookModel> bookModels) {
         this.bookModels = bookModels;
         setContentPane(contentPane);
@@ -39,15 +42,28 @@ public class HomePageView extends JDialog {
         setSize(1000, 800);
         setLocationRelativeTo(null);
 
+//        searchButton.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                setVisible(false);
+//                dispose();
+//                SearchBookController controller = new SearchBookController(bookModels);
+//                SearchView searchView = new SearchView(controller);
+//            }
+//        });
+
+        this.dbConnection = new dbConnect(); // Initialize the dbConnect object
+
         searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
                 dispose();
-                SearchBookController controller = new SearchBookController(bookModels);
+                SearchBookController controller = new SearchBookController(dbConnection); // Pass dbConnection here
                 SearchView searchView = new SearchView(controller);
             }
         });
+
 
         discussionButton.addActionListener(new ActionListener() {
             @Override
