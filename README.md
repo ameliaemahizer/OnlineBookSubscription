@@ -65,7 +65,7 @@ jkz5262 - Ji Zhang: <be>
 
 ## Team Involvement Log
 
-### Implemented Use Cases 2 and 3: 
+### Implemented Use Cases 2 and 3
 
 mzc5994 - Mackenzie Cane: <br> 
 
@@ -87,7 +87,7 @@ jkz5262 - Ji Zhang: <br>
 
 - **10%:** Updated SearchView form; Moved search algorithm codes into SearchController and refined them; Connected search algorithm to the book database. Edited and updated HomePageView code to seamlessly utilize functions from the Search package. Edited code for others. Contributed to the README.txt file.
 
-### Implemented Use Case 1: Search 
+### Implemented Use Case 1
 mzc5994 - Mackenzie Cane: <br> 
 
 - **30%:**  Created LoginView form; Wrote LoginView code to connect the view to the database; Created OnlineBookSubscription class to call LoginController, which contains LoginView Frame; Added user information for reader, author, and book reviewer. Contributed to the README.txt file.
