@@ -97,7 +97,6 @@ public class SearchView extends JFrame{
         }
     }
 
-    // Inside HomePageView class
     private void performSearch() {
         String searchTerm = searchField.getText();
         String selectedFilter = (String) filterComboBox.getSelectedItem();
@@ -106,8 +105,6 @@ public class SearchView extends JFrame{
         SearchBookController controller = new SearchBookController(db);
     }
 
-    public static void main(String[] args) {
-    }
 }
 
 
