@@ -67,10 +67,11 @@ ID	Title	Author	Price	IISBN	Genre <br>
 ## Refactored Code 
 
 1. The database is now connected to all parts of the code.
-2. We have deleted unused classes such as UserFinance and OnlineBookSubscription.
-3. We took out the unnecessary comments that were within the code.
+2. We have deleted unused classes such as UserFinance, OnlineBookSubscription, SocialMedia, ExternalReview, and SearchInterface.
+3. We took out the unnecessary comments that were among the codes.
 4. We deleted the UniqueID parameter in Login.
 5. All of the view classes are consistent when it comes to code.
+6. We added setter methods into model classes that initially only have getters, such as UserModel and BookModel.
 
 ## Design Patterns Implementation
 mzc5994 - Mackenzie Cane: <br> 
@@ -102,7 +103,7 @@ mzc5994 - Mackenzie Cane: <br>
   
 ake5280 - Amelia Emahizer: <br> 
 
-- **10%:** Created our database and tables within; Added user and search information into the created tables; Created a HomePageView form to connect LoginView and SearchView; Wrote HomePageView code to connect LoginView and SearchView. Edited code for others. Added several books to the arraylist.
+- **10%:** Updated our database and tables within; Added user and search information into the created tables; Created a HomePageView form to connect LoginView and SearchView; Wrote HomePageView code to connect LoginView and SearchView. Edited code for others. 
 
 ajf6238 - Aidan Fitz: <br> 
 
@@ -117,6 +118,7 @@ jkz5262 - Ji Zhang: <br>
 - **10%:** Updated SearchView form; Moved search algorithm codes into SearchController and refined them; Connected search algorithm to the book database. Edited and updated HomePageView code to seamlessly utilize functions from the Search package. Edited code for others. Contributed to the README.txt file.
 
 ### Implemented Use Case 1
+
 mzc5994 - Mackenzie Cane: <br> 
 
 - **30%:**  Created LoginView form; Wrote LoginView code to connect the view to the database; Created OnlineBookSubscription class to call LoginController, which contains LoginView Frame; Added user information for reader, author, and book reviewer. Contributed to the README.txt file.
