@@ -24,7 +24,7 @@ public class DiscussionReplyInterface extends JFrame {
     public DiscussionReplyInterface(){
         setContentPane(DiscussionReply);
         setTitle("Discussion Reply");
-        setSize(450, 300);
+        setSize(600, 600);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setVisible(true);
 

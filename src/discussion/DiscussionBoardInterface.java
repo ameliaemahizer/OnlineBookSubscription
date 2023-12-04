@@ -12,6 +12,8 @@ public class DiscussionBoardInterface extends JFrame {
     private JButton createADiscussionPostButton;
     private JButton replyToAPostButton;
     private JPanel DiscussionInterface;
+    private JTextArea PostDisplay;
+    private JLabel DiscussionThread;
 
     private DiscussionView discussionView;
 
@@ -28,7 +30,7 @@ public class DiscussionBoardInterface extends JFrame {
     public DiscussionBoardInterface (){
         setContentPane(DiscussionInterface);
         setTitle("Discussion Board");
-        setSize(450, 300);
+        setSize(600, 600);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setVisible(true);
 
