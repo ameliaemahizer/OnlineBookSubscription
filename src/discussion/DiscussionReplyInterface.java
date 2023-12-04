@@ -1,6 +1,7 @@
 package discussion;
 
 import database.dbConnect;
+import login.LoginView;
 import login.UserModel;
 
 import javax.swing.*;
@@ -52,12 +53,6 @@ public class DiscussionReplyInterface extends JFrame {
             }
         });
 
-        HomeButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
     }
 
     public DiscussionReplyModel getDiscussionReply() {

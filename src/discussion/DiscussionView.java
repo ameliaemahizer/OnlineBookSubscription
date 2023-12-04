@@ -6,6 +6,7 @@ import login.UserModel;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class DiscussionView extends JFrame {
     private JPanel DiscussionPost;
@@ -15,12 +16,10 @@ public class DiscussionView extends JFrame {
     private JTextArea PostText;
     private JButton SubmitButton;
     private JButton ClearButton;
-    private JButton ViewPostsButton;
-    private JButton HomeButton;
-
     private String searchTerm;
     dbConnect db = new dbConnect();
     DiscussionPostModel dpm;
+
 
     UserModel um = new UserModel("dummy", "dummy");
 
@@ -56,15 +55,8 @@ public class DiscussionView extends JFrame {
               dispose();
             }
         });
-
-        ViewPostsButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-
     }
+
 
     public DiscussionPostModel getDiscussionPost() {
         return dpm;

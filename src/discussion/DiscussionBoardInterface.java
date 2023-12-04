@@ -1,33 +1,33 @@
 package discussion;
 
 import database.dbConnect;
-import login.UserModel;
+import onlinebookclub.HomePageView;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DiscussionBoardInterface extends JFrame {
     private JPanel DiscussionBoard;
     private JButton createADiscussionPostButton;
     private JButton replyToAPostButton;
     private JPanel DiscussionInterface;
-    private JTextArea PostDisplay;
-    private JLabel DiscussionThread;
+    private JButton HomeButton;
 
     private DiscussionView discussionView;
 
     private DiscussionReplyInterface discussionReplyInterface;
-    dbConnect dbc = new dbConnect();
-
     DiscussionPostModel dpm;
 
-    UserModel um = new UserModel("dummy", "dummy");
+
 
     /**
      * This is the default constructor for the DiscussionBoard class
      **/
-    public DiscussionBoardInterface (){
+    public DiscussionBoardInterface () {
         setContentPane(DiscussionInterface);
         setTitle("Discussion Board");
         setSize(600, 600);
@@ -49,6 +49,16 @@ public class DiscussionBoardInterface extends JFrame {
                 discussionReplyInterface.getDiscussionReply();
             }
         });
+
+        HomeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                dispose();
+                HomePageView homePageView = new HomePageView(new ArrayList<>());
+                homePageView.setLoggedIn(true);
+            }
+        });
     }
 
     public DiscussionPostModel getDiscussionBoard() {
@@ -56,3 +66,4 @@ public class DiscussionBoardInterface extends JFrame {
     }
 
 }
+
