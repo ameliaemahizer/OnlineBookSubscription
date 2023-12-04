@@ -1,13 +1,20 @@
 # OnlineBookSubscription
-IST 412 Project<br>
+**IST 412 Project**<br>
 
-**To access our first use case, go to HomePageView under the OnlineBookClub and go to the main method at the bottom.** <br><br>
-The first use case allows users (Reader, Author, or Book Reviewer) to log in and access the book club's homepage. They can search for a book using a selected filter based on book title, author, genre, or price. <br>
+## Use Cases
+**To access our first use case, go to HomePageView under the OnlineBookClub and go to the main method at the bottom.** <br><be>
 
-**Filter by Title: try searching Harry Potter or "and"** <br>
-**Filter by Author: try searching Jane or Rowling or king** <br>
-**Filter by Price: try searching for 8.99 or 20** <br>
-**Filter by Genre: try searching for Romance, Fiction, or Fantasy** <br>
+### Use Case 0: Login 
+This use case allows users like Reader, Author, or Book Reviewer to log in using their username and passcode to access the book club's homepage. <be>
+
+### Use Case 1: Search 
+In the first use case, logged-in users can search for a book using a selected filter based on book title, author, genre, or price, with the default being searching all books without any filter. <be>
+
+### Use Case 2: 
+
+### Use Case 3:
+
+
 
 ## Login Usernames, Passwords, and UniqueIDs
 ### For Reader: 
@@ -21,18 +28,39 @@ The first use case allows users (Reader, Author, or Book Reviewer) to log in and
 ### For Book Reviewer: 
 - username: alicesmith
 - password: book200
+  
 
 ## Books
-- IT, Stephen King, 19.99, Horror
-- Pride and Prejudice, Jane Austen, 12.99, Romance
-- Educated: A Memoir, Author 3, 9.99, Non fiction
-- Eragon,Christopher Paolini, 8.99, Fantasy
-- To Kill A Mockingbird, Harper Lee, 9.99, Fiction
-- Blink, Malcolm Gladwell, 17.00, Non fiction
-- Harry Potter and the Chamber of Secrets, J.K. Rowling, 24.99, Fantasy
-- Harry Potter and the Sorcerer's Stone, J.K. Rowling, 24.99, Fantasy
-- Green Eggs and Ham, Dr. Seuss, 8.99, Children
-- Northanger Abbey, Jane Austen, 6.00, Romance
+ID	Title	Author	Price	ISBN	Genre
+1	Eragon	Christopher Paolini	8.99	9780375890369	Fantasy
+2	The Da Vinci Code	Dan Brown	9.99	9780307474278	Mystery
+3	To Kill a Mockingbird	Harper Lee	9.99	9780061120084	Fiction
+4	The Great Gatsby	F. Scott Fitzgerald	12.99	9780743273565	Fiction
+5	Pride and Prejudice	Jane Austen	7.99	9780486284736	Romance
+6	Brave New World	Aldous Huxley	14.99	9780060850524	Fiction
+7	The Road	Cormac McCarthy	16.99	9780307387899	Fiction
+8	Educated: A Memoir	Tara Westover	17.5	9780399590504	Non-Fiction
+9	Circe	Madeline Miller	12.99	9780316556347	Fantasy
+10	Dune	Frank Herbert	9.99	9780441172719	Sci-Fi
+11	It	Stephen King	19.99	9780450411434	Horror
+12	The Shining	Stephen King	18.99	9780385121675	Horror
+13	Outliers	Malcolm Gladwell	29.99	9780316017930	Non-Fiction
+14	Blink	Malcolm Gladwell	17	9780316010665	Non-Fiction
+15	Harry Potter and the Sorcerer's Stone	J.K. Rowling	24.99	9780439708180	Fantasy
+16	Harry Potter and the Chamber of Secrets	J.K. Rowling	24.99	9780439064873	Fantasy
+17	11/22/63	Stephen King	35	9781451627282	Sci-Fi
+18	The Tipping Point	Malcolm Gladwell	17	9780316346627	Non-Fiction
+19	Harry Potter and the Goblet of Fire	J.K. Rowling	29.99	9780439139601	Fantasy
+20	Carrie	Stephen King	7.99	9780385086950	Horror
+21	Green Eggs and Ham	Dr. Seuss	9.99	9780394800165	Children's
+22	The Cat in the Hat	Dr. Seuss	8.99	9780394800011	Children's
+23	Oh, the Places You'll Go!	Dr. Seuss	17.99	9780679805274	Children's
+24	Emma	Jane Austen	7	9780486406480	Romance
+25	Sense and Sensibility	Jane Austen	9	9780141439662	Romance
+26	How the Grinch Stole Christmas!	Dr. Seuss	15	9780394800790	Children's
+27	Mansfield Park	Jane Austen	6	9781853260322	Fiction
+28	Horton Hears a Who!	Dr. Seuss	14.99	9780394800783	Children's
+29	Northanger Abbey	Jane Austen	6	9780486414126	Romance
 
 ## Design Patterns Implementation
 mzc5994 - Mackenzie Cane: <br> 
@@ -54,7 +82,32 @@ jkz5262 - Ji Zhang: <be>
 - **Filter:** SearchBookController
 
 
-## One Implemented Use Case (Search) 
+
+## Team Involvement Log
+
+### Implemented Use Cases 2 and 3
+
+mzc5994 - Mackenzie Cane: <br> 
+
+- **10%:**  Created LoginView form; Wrote LoginView code to connect the view to the database; Created OnlineBookSubscription class to call LoginController, which contains LoginView Frame; Added user information for reader, author, and book reviewer. Contributed to the README.txt file.
+  
+ake5280 - Amelia Emahizer: <br> 
+
+- **10%:** Created our database and tables within; Added user and search information into the created tables; Helped with purchase books usecase
+
+ajf6238 - Aidan Fitz: <br> 
+
+- **30%**: Created ShoppingCartView and SubscriptionView forms. Connected to database to display added shopping cart materials into the shopping cart. Allowed users to store payment info on subscription screen with add/delete/update table.
+  
+jcf5517 - Jack Fitzgerald: <br> 
+
+- **30%:** 
+  
+jkz5262 - Ji Zhang: <br>
+
+- **10%:** Updated SearchView form; Moved search algorithm codes into SearchController and refined them; Connected search algorithm to the book database. Edited and updated HomePageView code to seamlessly utilize functions from the Search package. Edited code for others. Contributed to the README.txt file.
+
+### Implemented Use Case 1
 mzc5994 - Mackenzie Cane: <br> 
 
 - **30%:**  Created LoginView form; Wrote LoginView code to connect the view to the database; Created OnlineBookSubscription class to call LoginController, which contains LoginView Frame; Added user information for reader, author, and book reviewer. Contributed to the README.txt file.
