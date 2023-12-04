@@ -1,11 +1,12 @@
 package subscription;
 
 import database.dbConnect;
+import onlinebookclub.HomePageView;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
-import search.BookModel;
+import java.util.ArrayList;
 
 import javax.swing.*;
 
@@ -13,31 +14,23 @@ public class ShoppingCartView extends JFrame{
     private JTextArea textArea1;
     private JButton purchaseWithCardButton;
     private JPanel ShoppingCartView;
+    private JButton clearCartButton;
+    private JButton homeButton;
 
 
     public ShoppingCartView(){
         setContentPane(ShoppingCartView);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Shopping Cart");
-        setSize(1000, 200);
+        setSize(1000, 600);
         setVisible(true);
         textArea1.setEditable(false);
         dbConnect db = new dbConnect();
         try {
-            ResultSet rs = db.returnResult("select Title, Author, Price, Genre from Book " +
-                    "where Title like '%" + "potter" + "%'");
+            ResultSet rs = db.returnResult("select Contents from ShoppingCart");
             while (rs.next()) {
-                String title = rs.getString(1);
-                String author = rs.getString(2);
-                double price = rs.getDouble(3);
-                int genre = rs.getInt(4);
-                String gen = String.valueOf(genre);
-                BookModel searchedBook = new BookModel(title, author, price, gen);
-                textArea1.append("Title: " + searchedBook.getTitle() + "\n");
-                textArea1.append("Author: " + searchedBook.getAuthor() + "\n");
-                textArea1.append("Price: $" + searchedBook.getPrice() + "\n");
-                textArea1.append("Genre: " + searchedBook.getGenre() + "\n");
-                textArea1.append("\n");
+                String contents = rs.getString(1);
+                textArea1.append(contents);
 
             }
         }catch(Exception ee) {
@@ -49,6 +42,41 @@ public class ShoppingCartView extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 JOptionPane.showConfirmDialog(null, "Purchase Complete!", "Confirmation", JOptionPane.CLOSED_OPTION);
+
+                String sql = "update ShoppingCart set Contents = NULL";
+                int row = db.updateData(sql);
+                if (row > 0) {
+                    System.out.println("Cart contents removed successfully.");
+                    textArea1.setText("");
+                }
+            }
+        });
+
+        clearCartButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dbConnect db = new dbConnect();
+                try{
+                    String sql = "update ShoppingCart set Contents = NULL";
+                    int row = db.updateData(sql);
+                    if (row > 0) {
+                        System.out.println("Cart contents removed successfully.");
+                        textArea1.setText("");
+
+                    }
+                }catch(Exception ee){
+                    System.out.println(ee);
+                }
+            }
+        });
+
+        homeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                dispose();
+                HomePageView homePageView = new HomePageView(new ArrayList<>());
+                homePageView.setLoggedIn(true);
             }
         });
     }

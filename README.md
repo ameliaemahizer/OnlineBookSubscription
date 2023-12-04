@@ -1,8 +1,8 @@
 # OnlineBookSubscription
-**IST 412 Project**<br>
+***IST 412 Project***<br>
 
 ## Use Cases
-**To access our first use case, go to HomePageView under the OnlineBookClub and go to the main method at the bottom.** <br><be>
+**To access our use cases, go to HomePageView under the OnlineBookClub and run the main method at the bottom.** <br><be>
 
 ### Use Case 0: Login 
 This use case allows users like Reader, Author, or Book Reviewer to log in using their username and passcode to access the book club's homepage. <be>
@@ -42,6 +42,10 @@ In the first use case, logged-in users can search for a book using a selected fi
 - Green Eggs and Ham, Dr. Seuss, 8.99, Children
 - Northanger Abbey, Jane Austen, 6.00, Romance
 
+## Refactored Code 
+
+1. The books were not connected to the 
+
 ## Design Patterns Implementation
 mzc5994 - Mackenzie Cane: <br> 
 
@@ -62,10 +66,9 @@ jkz5262 - Ji Zhang: <be>
 - **Filter:** SearchBookController
 
 
-
 ## Team Involvement Log
 
-### Implemented Use Cases 2 and 3: 
+### Implemented Use Cases 2 and 3
 
 mzc5994 - Mackenzie Cane: <br> 
 
@@ -77,7 +80,7 @@ ake5280 - Amelia Emahizer: <br>
 
 ajf6238 - Aidan Fitz: <br> 
 
-- **30%:** 
+- **30%: Created ShoppingCartView and SubscriptionView forms. Connected to database to display added shopping cart materials into the shopping cart. Allowed users to store payment info on subscription screen with add/delete/update table.
   
 jcf5517 - Jack Fitzgerald: <br> 
 
@@ -87,7 +90,7 @@ jkz5262 - Ji Zhang: <br>
 
 - **10%:** Updated SearchView form; Moved search algorithm codes into SearchController and refined them; Connected search algorithm to the book database. Edited and updated HomePageView code to seamlessly utilize functions from the Search package. Edited code for others. Contributed to the README.txt file.
 
-### Implemented Use Case 1: Search 
+### Implemented Use Case 1
 mzc5994 - Mackenzie Cane: <br> 
 
 - **30%:**  Created LoginView form; Wrote LoginView code to connect the view to the database; Created OnlineBookSubscription class to call LoginController, which contains LoginView Frame; Added user information for reader, author, and book reviewer. Contributed to the README.txt file.
