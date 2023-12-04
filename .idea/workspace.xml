@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="57c68cef-eeeb-407d-9d24-eea90575e859" name="Changes" comment="Added back button to main post and tested out discussion and reply separated. They do not connect for the time being">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/net_sf_ucanaccess.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineBookSubscription.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/com/intellij/uiDesigner/core/AbstractLayout.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/com/intellij/uiDesigner/core/DimensionInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/com/intellij/uiDesigner/core/GridConstraints.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/com/intellij/uiDesigner/core/GridLayoutManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/com/intellij/uiDesigner/core/HorizontalInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/com/intellij/uiDesigner/core/LayoutState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/com/intellij/uiDesigner/core/Spacer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/com/intellij/uiDesigner/core/SupportCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/com/intellij/uiDesigner/core/Util.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/com/intellij/uiDesigner/core/VerticalInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/database/BookClubDatabase1.accdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/database/dbConnect.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/discussion/DiscussionBoardController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/discussion/DiscussionBoardInterface$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/discussion/DiscussionBoardInterface$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/discussion/DiscussionBoardInterface$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/discussion/DiscussionBoardInterface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/discussion/DiscussionPostModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/discussion/DiscussionReplyInterface$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/discussion/DiscussionReplyInterface$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/discussion/DiscussionReplyInterface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/discussion/DiscussionReplyModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/discussion/DiscussionView$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/discussion/DiscussionView$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/discussion/DiscussionView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/login/Author.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/login/BookReviewer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/login/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/login/LoginInterface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/login/LoginView$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/login/LoginView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/login/Reader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/login/UserModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/onlinebookclub/HomePageView$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/onlinebookclub/HomePageView$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/onlinebookclub/HomePageView$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/onlinebookclub/HomePageView$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/onlinebookclub/HomePageView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/review/ExternalReviews.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/review/PostReviewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/review/PostReviewInterface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/review/ReviewModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/review/ReviewView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/review/SocialMedia.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/review/ViewReviewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/review/ViewReviewInterface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/search/AuthorSearch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/search/BookModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/search/GenreSearch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/search/PriceSearch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/search/SearchBookController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/search/SearchView$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/search/SearchView$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/search/SearchView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/search/TitleSearch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/subscription/ApplePay.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/subscription/DebitCredit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/subscription/PayPal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/subscription/Payment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/subscription/PaymentDecorator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/subscription/PaymentImplementation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/subscription/PurchaseBook.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/subscription/PurchaseBookController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/subscription/PurchaseBookInterface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/subscription/ShoppingCartView$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/subscription/ShoppingCartView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/subscription/SubscriptionView$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/subscription/SubscriptionView$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/subscription/SubscriptionView$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/subscription/SubscriptionView$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/subscription/SubscriptionView$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/subscription/SubscriptionView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OnlineBookSubscription/test/TestHarness.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/BookClubDatabase1.accdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/dbConnect.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discussion/DiscussionBoardController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discussion/DiscussionBoardInterface.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discussion/DiscussionBoardInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discussion/DiscussionPostModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discussion/DiscussionReplyInterface.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discussion/DiscussionReplyInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discussion/DiscussionReplyModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discussion/DiscussionView.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discussion/DiscussionView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/login/Author.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/login/BookReviewer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/login/LoginController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/login/LoginInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/login/LoginView.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/login/LoginView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/login/Reader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/login/UserModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onlinebookclub/HomePageView.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onlinebookclub/HomePageView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/review/ExternalReviews.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/review/PostReviewController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/review/PostReviewInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/review/ReviewModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/review/ReviewView.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/review/ReviewView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/review/SocialMedia.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/review/ViewReviewController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/review/ViewReviewInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/search/AuthorSearch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/search/BookModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/search/GenreSearch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/search/PriceSearch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/search/SearchBookController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/search/SearchView.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/search/SearchView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/search/TitleSearch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/subscription/ApplePay.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/subscription/DebitCredit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/subscription/PayPal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/subscription/Payment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/subscription/PaymentDecorator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/subscription/PaymentImplementation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/subscription/PurchaseBook.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/subscription/PurchaseBookController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/subscription/PurchaseBookInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/subscription/ShoppingCartView.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/subscription/ShoppingCartView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/subscription/SubscriptionView.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/subscription/SubscriptionView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/TestHarness.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="loginbranch" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2Yx1NVV9nC1y5KdzYJnw3S65AVH" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Application.HomePageView">
+    <configuration name="DiscussionBoardController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="discussion.DiscussionBoardController" />
+      <module name="OnlineBookSubscription" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="discussion.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HomePageView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="onlinebookclub.HomePageView" />
+      <module name="OnlineBookSubscription" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="onlinebookclub.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.HomePageView" />
+        <item itemvalue="Application.DiscussionBoardController" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="57c68cef-eeeb-407d-9d24-eea90575e859" name="Changes" comment="" />
+      <created>1701452376944</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1701452376944</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Deleted OnlineSubscription class and added code for back button">
+      <option name="closed" value="true" />
+      <created>1701452904026</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1701452904026</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added Back Button to SubscriptionView">
+      <option name="closed" value="true" />
+      <created>1701631181174</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1701631181174</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added Back Button to SubscriptionView">
+      <option name="closed" value="true" />
+      <created>1701631358834</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1701631358834</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Testing discussion">
+      <option name="closed" value="true" />
+      <created>1701652787063</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1701652787063</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Testing discussion">
+      <option name="closed" value="true" />
+      <created>1701652979382</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701652979382</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Testing discussion">
+      <option name="closed" value="true" />
+      <created>1701653105150</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1701653105150</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Testing discussion">
+      <option name="closed" value="true" />
+      <created>1701653851736</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701653851736</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Added back button to main post and tested out discussion and reply separated. They do not connect for the time being">
+      <option name="closed" value="true" />
+      <created>1701660348961</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701660348961</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="mackenzieLogin" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Deleted OnlineSubscription class and added code for back button" />
+    <MESSAGE value="Added Back Button to SubscriptionView" />
+    <MESSAGE value="Testing discussion" />
+    <MESSAGE value="Added back button to main post and tested out discussion and reply separated. They do not connect for the time being" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added back button to main post and tested out discussion and reply separated. They do not connect for the time being" />
+  </component>
+</project>
