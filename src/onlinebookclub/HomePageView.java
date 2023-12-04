@@ -1,6 +1,7 @@
 package onlinebookclub;
 
 import database.dbConnect;
+import discussion.DiscussionBoardInterface;
 import discussion.DiscussionView;
 import login.LoginView;
 import search.BookModel;
@@ -51,7 +52,7 @@ public class HomePageView extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
                 dispose();
-                DiscussionView discussionView = new DiscussionView();
+                DiscussionBoardInterface discussionBoardInterface = new DiscussionBoardInterface();
             }
         });
 
