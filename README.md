@@ -2,7 +2,7 @@
 ***IST 412 Project***<br>
 
 ## Use Cases
-**To access our first use case, go to HomePageView under the OnlineBookClub and go to the main method at the bottom.** <br><be>
+**To access our use cases, go to HomePageView under the OnlineBookClub and run the main method at the bottom.** <br><be>
 
 ### Use Case 0: Login 
 This use case allows users like Reader, Author, or Book Reviewer to log in using their username and passcode to access the book club's homepage. <be>
@@ -42,6 +42,10 @@ In the first use case, logged-in users can search for a book using a selected fi
 - Green Eggs and Ham, Dr. Seuss, 8.99, Children
 - Northanger Abbey, Jane Austen, 6.00, Romance
 
+## Refactored Code 
+
+1. The books were not connected to the 
+
 ## Design Patterns Implementation
 mzc5994 - Mackenzie Cane: <br> 
 
@@ -60,7 +64,6 @@ jkz5262 - Ji Zhang: <be>
 
 - **Strategy:** BookModel, TitleSearch, AuthorSearch, Genre Search, PriceSearch, SearchBookInterface
 - **Filter:** SearchBookController
-
 
 
 ## Team Involvement Log
