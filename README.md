@@ -1,13 +1,20 @@
 # OnlineBookSubscription
 IST 412 Project<br>
 
-**To access our first use case, go to HomePageView under the OnlineBookClub and go to the main method at the bottom.** <br><br>
-The first use case allows users (Reader, Author, or Book Reviewer) to log in and access the book club's homepage. They can search for a book using a selected filter based on book title, author, genre, or price. <br>
+##Use Cases
+**To access our first use case, go to HomePageView under the OnlineBookClub and go to the main method at the bottom.** <br><be>
 
-**Filter by Title: try searching Harry Potter or "and"** <br>
-**Filter by Author: try searching Jane or Rowling or king** <br>
-**Filter by Price: try searching for 8.99 or 20** <br>
-**Filter by Genre: try searching for Romance, Fiction, or Fantasy** <br>
+### Use Case 0: Login 
+This use case allows users like Reader, Author, or Book Reviewer to log in using their username and passcode to access the book club's homepage. <be>
+
+### Use Case 1: Search 
+In the first use case, logged-in users can search for a book using a selected filter based on book title, author, genre, or price, with the default being searching all books without any filter. <be>
+
+### Use Case 2: 
+
+### Use Case 3:
+
+
 
 ## Login Usernames, Passwords, and UniqueIDs
 ### For Reader: 
@@ -21,6 +28,7 @@ The first use case allows users (Reader, Author, or Book Reviewer) to log in and
 ### For Book Reviewer: 
 - username: alicesmith
 - password: book200
+  
 
 ## Books
 - IT, Stephen King, 19.99, Horror
@@ -54,7 +62,32 @@ jkz5262 - Ji Zhang: <be>
 - **Filter:** SearchBookController
 
 
-## One Implemented Use Case (Search) 
+
+## TEAM INVOLVEMENT LOG 
+
+### Implemented Use Cases 2 and 3: 
+
+mzc5994 - Mackenzie Cane: <br> 
+
+- **10%:**  Created LoginView form; Wrote LoginView code to connect the view to the database; Created OnlineBookSubscription class to call LoginController, which contains LoginView Frame; Added user information for reader, author, and book reviewer. Contributed to the README.txt file.
+  
+ake5280 - Amelia Emahizer: <br> 
+
+- **10%:** Created our database and tables within; Added user and search information into the created tables; Created a HomePageView form to connect LoginView and SearchView; Wrote HomePageView code to connect LoginView and SearchView. Edited code for others. Added several books to the arraylist.
+
+ajf6238 - Aidan Fitz: <br> 
+
+- **30%:** 
+  
+jcf5517 - Jack Fitzgerald: <br> 
+
+- **30%:** 
+  
+jkz5262 - Ji Zhang: <br>
+
+- **10%:** Updated SearchView form; Moved search algorithm codes into SearchController and refined them; Connected search algorithm to the book database. Edited and updated HomePageView code to seamlessly utilize functions from the Search package. Edited code for others. Contributed to the README.txt file.
+
+### Implemented Use Case 1: Search 
 mzc5994 - Mackenzie Cane: <br> 
 
 - **30%:**  Created LoginView form; Wrote LoginView code to connect the view to the database; Created OnlineBookSubscription class to call LoginController, which contains LoginView Frame; Added user information for reader, author, and book reviewer. Contributed to the README.txt file.
