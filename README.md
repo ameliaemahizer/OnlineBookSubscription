@@ -10,9 +10,9 @@ This use case allows users like Reader, Author, or Book Reviewer to log in using
 ### Use Case 1: Search 
 In the first use case, logged-in users can search for a book using a selected filter based on book title, author, genre, or price, with the default being searching all books without any filter. <be>
 
-### Use Case 2: 
+### Use Case 2: Purchase
 
-### Use Case 3:
+### Use Case 3: Discussion
 
 
 
