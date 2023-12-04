@@ -1,10 +1,10 @@
 package search;
 
 public class BookModel {
-    private final String title;
-    private final String author;
-    private final double price;
-    private final String genre;
+    private String title;
+    private String author;
+    private double price;
+    private String genre;
 
     public BookModel(String title, String author, double price, String genre) {
         this.title = title;
@@ -28,5 +28,20 @@ public class BookModel {
 
     public String getGenre() {
         return genre;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 }
