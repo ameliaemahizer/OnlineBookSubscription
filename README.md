@@ -84,7 +84,7 @@ ajf6238 - Aidan Fitz: <br>
   
 jcf5517 - Jack Fitzgerald: <br> 
 
-- **30%:** 
+- **30%**:Created DiscussionBoardController that connects the discussion post input box and discussion replies input box and connects it to our database; Created three forms DiscussionView, DiscussionReplyInterface, and DiscussionBoardInterface; DiscussionPostModel and DiscussionReplyModel are utilized in those interfaces 
   
 jkz5262 - Ji Zhang: <br>
 
