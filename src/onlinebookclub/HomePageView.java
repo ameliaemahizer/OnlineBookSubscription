@@ -24,18 +24,17 @@ public class HomePageView extends JDialog {
     private final ArrayList<BookModel> bookModels;
     private boolean isLoggedIn;
     private final LoginView loginView;
-
     private dbConnect dbConnection;
 
     public HomePageView(ArrayList<BookModel> bookModels) {
         this.bookModels = bookModels;
+        this.dbConnection = new dbConnect();
+
         setContentPane(contentPane);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Online Book Club");
         setSize(1000, 800);
         setLocationRelativeTo(null);
-
-        this.dbConnection = new dbConnect(); // Initialize the dbConnect object
 
         searchButton.addActionListener(new ActionListener() {
             @Override
