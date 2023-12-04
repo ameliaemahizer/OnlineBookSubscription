@@ -77,7 +77,7 @@ ake5280 - Amelia Emahizer: <br>
 
 ajf6238 - Aidan Fitz: <br> 
 
-- **30%:** 
+- **30%: Created ShoppingCartView and SubscriptionView forms. Connected to database to display added shopping cart materials into the shopping cart. Allowed users to store payment info on subscription screen with add/delete/update table.
   
 jcf5517 - Jack Fitzgerald: <br> 
 
