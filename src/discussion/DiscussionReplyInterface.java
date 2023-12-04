@@ -7,13 +7,13 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 public class DiscussionReplyInterface extends JFrame {
-    private JPanel DiscussionPost;
     private JTextField DiscussionPostTitleText;
     private JLabel Post;
     private JTextArea PostText;
     private JButton SubmitButton;
     private JButton ClearButton;
     private JButton HomeButton;
+    private JPanel DiscussionReply;
 
     private String searchTerm;
     dbConnect db = new dbConnect();
@@ -22,7 +22,7 @@ public class DiscussionReplyInterface extends JFrame {
     UserModel um = new UserModel("dummy", "dummy");
 
     public DiscussionReplyInterface(){
-        setContentPane(DiscussionPost);
+        setContentPane(DiscussionReply);
         setTitle("Discussion Reply");
         setSize(450, 300);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);

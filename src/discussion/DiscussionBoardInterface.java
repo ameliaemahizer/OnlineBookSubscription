@@ -11,6 +11,7 @@ public class DiscussionBoardInterface extends JFrame {
     private JPanel DiscussionBoard;
     private JButton createADiscussionPostButton;
     private JButton replyToAPostButton;
+    private JPanel DiscussionInterface;
 
     private DiscussionView discussionView;
 
@@ -25,7 +26,7 @@ public class DiscussionBoardInterface extends JFrame {
      * This is the default constructor for the DiscussionBoard class
      **/
     public DiscussionBoardInterface (){
-        setContentPane(DiscussionBoard);
+        setContentPane(DiscussionInterface);
         setTitle("Discussion Board");
         setSize(450, 300);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
