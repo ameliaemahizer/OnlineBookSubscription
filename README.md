@@ -11,7 +11,7 @@ This use case allows users like Reader, Author, or Book Reviewer to log in using
 In the first use case, logged-in users can search for a book using a selected filter based on book title, author, genre, or price, with the default being searching all books without any filter. <be>
 
 ### Use Case 2: Purchase
-In the second use case, logged-in users can purchase searched books using the search view. They can view their items in the shopping cart where the transaction is done. They can also add their payment information in the subscription view as well.<be>
+In the second use case, logged-in users can purchase searched books using the search view. They can view their items in the shopping cart where the transaction is done. They can also add their payment information in the purchase view as well.<be>
 
 ### Use Case 3: Discussion
 In the third use case, logged-in users can discuss books with other users. They can post a main post with a title and body. They can also reply to posts as well. **(We were unable to connect posts and replies at this time)** <be>
@@ -64,13 +64,15 @@ ID	Title	Author	Price	IISBN	Genre <br>
 29	Northanger Abbey	Jane Austen	6	9780486414126	Romance<br>
 
 
-## Refactored Code 
+## Refactoring Implementation
+* All members were involved in different parts of the implementation. 
 
-1. The database is now connected to all parts of the code.
-2. We have deleted unused classes such as UserFinance and OnlineBookSubscription.
-3. We took out the unnecessary comments that were within the code.
-4. We deleted the UniqueID parameter in Login.
+1. The database is now connected to all parts of the code. Professor Vora helped us with the query codes. Amelia helped identify data tables and update them. Ji implemented the data connection codes into the SearchController class, and McKenzie implemented the data connection codes into the LoginView class.
+2. We have deleted unused classes such as UserFinance, OnlineBookSubscription, SocialMedia, ExternalReview, and SearchInterface.
+3. We removed the unnecessary comments among the codes in HomePageView and those in Search and Login packages. Those were coded heavily previously. 
+4. McKenzie deleted the UniqueID parameter in Login. 
 5. All of the view classes are consistent when it comes to code.
+6. We added setter methods into model classes that initially only have getters, such as UserModel and BookModel.
 
 ## Design Patterns Implementation
 mzc5994 - Mackenzie Cane: <br> 
@@ -79,6 +81,7 @@ mzc5994 - Mackenzie Cane: <br>
 - **Input Feedback:** LoginInterface, LoginView, PurchaseBookController, PostReviewController, DiscussionBoardController, SearchView
 
 ake5280 - Amelia Emahizer: <br> 
+
 ajf6238 - Aidan Fitz: <br> 
 
 - **Decorator:** PaymentDecorator, PaymentImplementation, Payment, DebitCredit, ApplePay, PayPal, ShoppingCart
@@ -98,15 +101,15 @@ jkz5262 - Ji Zhang: <be>
 
 mzc5994 - Mackenzie Cane: <br> 
 
-- **10%:**  Created LoginView form; Wrote LoginView code to connect the view to the database; Created OnlineBookSubscription class to call LoginController, which contains LoginView Frame; Added user information for reader, author, and book reviewer. Contributed to the README.txt file.
+- **10%:**  Created LoginView form; Wrote LoginView code to connect the view to the database; Created OnlineBookSubscription class to call LoginController, which contains LoginView Frame; Edited code for others. Contributed to the README.txt file.
   
 ake5280 - Amelia Emahizer: <br> 
 
-- **10%:** Created our database and tables within; Added user and search information into the created tables; Created a HomePageView form to connect LoginView and SearchView; Wrote HomePageView code to connect LoginView and SearchView. Edited code for others. Added several books to the arraylist.
+- **10%:** Updated our database and tables within; Added user and search information into the created tables; Updated HomePageView form to ensure display accuracy; Edited HomePageView code to connect LoginView and SearchView. Edited code for others. 
 
 ajf6238 - Aidan Fitz: <br> 
 
-- **30%: Created ShoppingCartView and SubscriptionView forms. Connected to database to display added shopping cart materials into the shopping cart. Allowed users to store payment info on subscription screen with add/delete/update table.
+- **30%: Created ShoppingCartView and SubscriptionView forms. Connected to database to display added shopping cart materials into the shopping cart. Allowed users to store payment info on purchase screen with add/delete/update table.
   
 jcf5517 - Jack Fitzgerald: <br> 
 
@@ -117,6 +120,7 @@ jkz5262 - Ji Zhang: <br>
 - **10%:** Updated SearchView form; Moved search algorithm codes into SearchController and refined them; Connected search algorithm to the book database. Edited and updated HomePageView code to seamlessly utilize functions from the Search package. Edited code for others. Contributed to the README.txt file.
 
 ### Implemented Use Case 1
+
 mzc5994 - Mackenzie Cane: <br> 
 
 - **30%:**  Created LoginView form; Wrote LoginView code to connect the view to the database; Created OnlineBookSubscription class to call LoginController, which contains LoginView Frame; Added user information for reader, author, and book reviewer. Contributed to the README.txt file.
