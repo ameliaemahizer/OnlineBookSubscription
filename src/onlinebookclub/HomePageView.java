@@ -4,6 +4,7 @@ import database.dbConnect;
 import discussion.DiscussionBoardInterface;
 import discussion.DiscussionView;
 import login.LoginView;
+import review.ReviewView;
 import search.BookModel;
 import search.SearchView;
 import search.SearchBookController;
@@ -61,8 +62,7 @@ public class HomePageView extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
                 dispose();
-                SubscriptionView subscriptionView = new SubscriptionView();
-                // Add code to open the subscription view here
+                ReviewView reviewView = new ReviewView();
             }
         });
 
