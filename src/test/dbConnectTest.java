@@ -9,27 +9,6 @@ import org.junit.jupiter.api.Test;
 public class dbConnectTest {
 
     @Test
-    public void testConnection() {
-        dbConnect db = new dbConnect();
-        ResultSet rs = null;
-        try {
-            rs = db.returnResult("SELECT Title, Author, Price, Genre FROM Book");
-            assertTrue(rs.next(), "Connection failed: ResultSet is empty");
-            // Optionally check a specific column's type, like a String for Title
-            assertNotNull("Title should not be null", rs.getString("Title"));
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-
-        } try {
-            if (rs != null) {
-                rs.close();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Test
     public void testConnectionAndData() {
         dbConnect db = new dbConnect();
         ResultSet rs = null;
@@ -52,16 +31,16 @@ public class dbConnectTest {
                 rowCount++;
             }
             assertTrue(rowCount == 3, "Less than 3 rows in the result set");
+
         } catch (Exception e) {
             System.out.println("Test failed with exception: " + e.getMessage());
-        } finally {
-            try {
-                if (rs != null) {
-                    rs.close();
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
+        }
+        try {
+            if (rs != null) {
+                rs.close();
             }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
