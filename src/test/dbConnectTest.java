@@ -34,14 +34,13 @@ public class dbConnectTest {
 
         } catch (Exception e) {
             System.out.println("Test failed with exception: " + e.getMessage());
-        } finally {
-            try {
-                if (rs != null) {
-                    rs.close();
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
+        }
+        try {
+            if (rs != null) {
+                rs.close();
             }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
