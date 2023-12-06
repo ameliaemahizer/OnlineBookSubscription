@@ -1,4 +1,4 @@
-package subscription;
+package purchase;
 
 
 public class PurchaseBookController {

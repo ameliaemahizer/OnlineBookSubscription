@@ -1,4 +1,4 @@
-package subscription;
+package purchase;
 
 import database.dbConnect;
 import onlinebookclub.HomePageView;

@@ -2,13 +2,12 @@ package onlinebookclub;
 
 import database.dbConnect;
 import discussion.DiscussionBoardInterface;
-import discussion.DiscussionView;
 import login.LoginView;
 import search.BookModel;
 import search.SearchView;
 import search.SearchBookController;
-import subscription.ShoppingCartView;
-import subscription.SubscriptionView;
+import purchase.ShoppingCartView;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -53,16 +52,6 @@ public class HomePageView extends JDialog {
                 setVisible(false);
                 dispose();
                 DiscussionBoardInterface discussionBoardInterface = new DiscussionBoardInterface();
-            }
-        });
-
-        subscriptionButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-                dispose();
-                SubscriptionView subscriptionView = new SubscriptionView();
-                // Add code to open the subscription view here
             }
         });
 

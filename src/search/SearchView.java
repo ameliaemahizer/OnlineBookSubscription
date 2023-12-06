@@ -104,7 +104,6 @@ public class SearchView extends JFrame{
         displayResults(results);
         SearchBookController controller = new SearchBookController(db);
     }
-
 }
 
 
