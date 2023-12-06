@@ -9,7 +9,6 @@ import search.BookModel;
 import search.SearchView;
 import search.SearchBookController;
 import subscription.ShoppingCartView;
-import subscription.SubscriptionView;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

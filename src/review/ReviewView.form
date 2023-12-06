@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="review.ReviewView">
-  <grid id="27dc6" binding="reviews" layout-manager="GridLayoutManager" row-count="5" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="reviews" layout-manager="GridLayoutManager" row-count="7" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
       <xy x="20" y="20" width="509" height="400"/>
@@ -18,35 +18,36 @@
       </component>
       <component id="27e07" class="javax.swing.JTextArea" binding="reviewTitle">
         <constraints>
-          <grid row="3" column="0" row-span="1" col-span="4" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+          <grid row="4" column="0" row-span="1" col-span="4" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="50"/>
           </grid>
         </constraints>
         <properties>
           <editable value="false"/>
-          <font size="12" style="1"/>
+          <font size="28" style="1"/>
           <text value=""/>
         </properties>
       </component>
       <component id="fa0b" class="javax.swing.JTextArea" binding="reviewBody">
         <constraints>
-          <grid row="4" column="0" row-span="1" col-span="5" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+          <grid row="5" column="0" row-span="1" col-span="5" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="50"/>
           </grid>
         </constraints>
         <properties>
           <editable value="false"/>
-          <font size="10"/>
+          <font size="20"/>
         </properties>
       </component>
       <component id="b228c" class="javax.swing.JTextArea" binding="reviewRating">
         <constraints>
-          <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+          <grid row="4" column="4" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="50"/>
           </grid>
         </constraints>
         <properties>
           <editable value="false"/>
+          <font size="36" style="2"/>
           <text value=""/>
         </properties>
       </component>
@@ -58,7 +59,7 @@
         </constraints>
         <properties>
           <editable value="false"/>
-          <font size="12"/>
+          <font size="36"/>
           <text value=""/>
         </properties>
       </component>
@@ -68,17 +69,6 @@
         </constraints>
         <properties>
           <text value="Write a Review"/>
-        </properties>
-      </component>
-      <component id="ab112" class="javax.swing.JTextArea" binding="reviewDate">
-        <constraints>
-          <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="50"/>
-          </grid>
-        </constraints>
-        <properties>
-          <editable value="false"/>
-          <font size="10"/>
         </properties>
       </component>
       <component id="6d650" class="javax.swing.JLabel" binding="Reviews">
@@ -95,6 +85,44 @@
         </constraints>
         <properties>
           <model/>
+        </properties>
+      </component>
+      <component id="93411" class="javax.swing.JTextArea" binding="reviewUser">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="4" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+        </constraints>
+        <properties>
+          <font size="22"/>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="ab112" class="javax.swing.JTextArea" binding="reviewDate">
+        <constraints>
+          <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+        </constraints>
+        <properties>
+          <editable value="false"/>
+          <font size="20"/>
+        </properties>
+      </component>
+      <component id="1cb1b" class="javax.swing.JButton" binding="nextReviewButton" default-binding="true">
+        <constraints>
+          <grid row="6" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Next Review"/>
+        </properties>
+      </component>
+      <component id="ad33b" class="javax.swing.JButton" binding="previousReviewButton" default-binding="true">
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Previous Review"/>
         </properties>
       </component>
     </children>

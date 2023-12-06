@@ -6,6 +6,8 @@ import onlinebookclub.HomePageView;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ReviewView extends JFrame{
@@ -19,13 +21,14 @@ public class ReviewView extends JFrame{
     private JButton writeAReviewButton;
     private JTextArea reviewDate;
     DefaultComboBoxModel list = new DefaultComboBoxModel();
-    private JComboBox bookList = new JComboBox(list);;
+    private JComboBox bookList;
+    private JTextArea reviewUser;
+    private JButton nextReviewButton;
+    private JButton previousReviewButton;
 
-    dbConnect db = new dbConnect();
+    private dbConnect db = new dbConnect();
 
     public ReviewView(){
-
-        new ViewReviewController();
 
         setContentPane(reviews);
         setTitle("Reviews");
@@ -33,6 +36,8 @@ public class ReviewView extends JFrame{
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setVisible(true);
 
+
+        populateBookList();
 
 
         backToHomeButton.addActionListener(new ActionListener() {
@@ -44,27 +49,59 @@ public class ReviewView extends JFrame{
                 homePageView.setLoggedIn(true);
             }
         });
-    }
 
-    public void fillComboBox() {
-
-
-// at constructor or a user-defined method that's called from constructor
-        /*  try{
-            // assume that all objects were all properly defined
-            db = con.createStatement();
-            db.executeQuery("SELECT * FROM cats ORDER BY catName");
-            rs = s.getResultSet();
-            while(rs.next()){
-                //int id = rs.getInt("id");
-                //list.addElement(id);
-
-                String c = rs.getString("catName");
-                list.addElement(c);
+        bookList.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Load corresponding review details when a book is selected
+                loadReviewDetailsForSelectedBook();
             }
-        }catch(Exception err){
-            System.out.println(err);
-        }*/
+        });
     }
 
+    private void populateBookList() {
+        // Assuming you have a "Books" table with a column named "Title"
+        String query = "SELECT Title FROM Book";
+        ResultSet resultSet = db.returnResult(query);
+
+        try {
+            list.removeAllElements();
+
+            while (resultSet.next()) {
+                String title = resultSet.getString("Title");
+                System.out.println("Adding book title: " + title); // Add this line for debugging
+                list.addElement(title);
+            }
+
+            SwingUtilities.invokeLater(() -> {
+                bookList.setModel(list);
+            });
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+    private void loadReviewDetailsForSelectedBook() {
+        String selectedBookTitle = (String) bookList.getSelectedItem();
+
+        String query = "SELECT * FROM Reviews WHERE BookTitle = '" + selectedBookTitle + "'";
+        ResultSet resultSet = db.returnResult(query);
+
+        try {
+
+            while (resultSet.next()) {
+                reviewTitle.setText("TITLE: " + resultSet.getString("Title"));
+                reviewBody.setText(resultSet.getString("Body"));
+                reviewRating.setText("RATING: " + resultSet.getString("Rating"));
+                reviewBookName.setText("BOOK: " + resultSet.getString("BookTitle"));
+                reviewDate.setText("DATE: " + resultSet.getString("DatePublished"));
+                reviewUser.setText("PUBLISHED BY: " + resultSet.getString("Author"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
+
