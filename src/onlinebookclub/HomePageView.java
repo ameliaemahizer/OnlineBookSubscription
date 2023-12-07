@@ -8,6 +8,7 @@ import search.SearchBookController;
 import purchase.ShoppingCartView;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -26,6 +27,8 @@ public class HomePageView extends JDialog {
     private JButton clearButton;
     private JPanel searchPanel;
     private JLabel Filter;
+    private JScrollPane resultScrollPane;
+    private JButton addToCartButton;
     private JButton buttonOK;
     private final ArrayList<BookModel> bookModels;
     private boolean isLoggedIn;
@@ -88,23 +91,24 @@ public class HomePageView extends JDialog {
             }
         });
 
-//        addToCartButton.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                String cartContent = resultTextArea.getText();
-//                dbConnect db = new dbConnect();
-//                try{
-//                    String sql = "insert into ShoppingCart (Contents) values ('" + cartContent + "')";
-//                    int row = db.updateData(sql);
-//                    if (row > 0) {
-//                        System.out.println("Cart contents added successfully.");
-//                        JOptionPane.showConfirmDialog(null, "Item added to cart!", "Notification", JOptionPane.CLOSED_OPTION);
-//                    }
-//                }catch(Exception ee){
-//                    System.out.println(ee);
-//                }
-//            }
-//        });
+        // DOES NOT WORK PROPERLY
+        addToCartButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String cartContent = resultTextArea.getText();
+                dbConnect db = new dbConnect();
+                try{
+                    String sql = "insert into ShoppingCart (Contents) values ('" + cartContent + "')";
+                    int row = db.updateData(sql);
+                    if (row > 0) {
+                        System.out.println("Cart contents added successfully.");
+                        JOptionPane.showConfirmDialog(null, "Item added to cart!", "Notification", JOptionPane.CLOSED_OPTION);
+                    }
+                }catch(Exception ee){
+                    System.out.println(ee);
+                }
+            }
+        });
 
         isLoggedIn = false;
         loginView = new LoginView(this);
