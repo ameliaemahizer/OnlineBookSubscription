@@ -3,6 +3,7 @@ package onlinebookclub;
 import database.dbConnect;
 import discussion.DiscussionBoardInterface;
 import login.LoginView;
+import review.ReviewView;
 import search.BookModel;
 import search.SearchBookController;
 import purchase.ShoppingCartView;
@@ -17,7 +18,7 @@ import java.util.List;
 public class HomePageView extends JDialog {
     private JPanel contentPane;
     private JButton shoppingCartButton;
-    private JButton subscriptionButton;
+    private JButton reviewButton;
     private JButton discussionButton;
     private JButton searchButton;
     private JLabel welcomeLabel;
@@ -69,6 +70,15 @@ public class HomePageView extends JDialog {
                 setVisible(false);
                 dispose();
                 DiscussionBoardInterface discussionBoardInterface = new DiscussionBoardInterface();
+            }
+        });
+
+        reviewButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                dispose();
+                ReviewView reviewView = new ReviewView();
             }
         });
 
