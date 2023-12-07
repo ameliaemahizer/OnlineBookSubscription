@@ -53,6 +53,16 @@ public class ReviewView extends JFrame{
             }
         });
 
+        writeAReviewButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                dispose();
+                PostReviewView postReviewView = new PostReviewView();
+            }
+        });
+
+
         previousReviewButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
