@@ -27,9 +27,6 @@ public class DiscussionBoardInterface extends JFrame {
 
     DiscussionPostModel dpm;
 
-    ArrayList<DiscussionPostModel> dps = new ArrayList<>();
-
-    UserModel um = new UserModel("dummy", "dummy");
 
     /**
      * This is the default constructor for the DiscussionBoard class
@@ -42,41 +39,27 @@ public class DiscussionBoardInterface extends JFrame {
         setVisible(true);
 
         try {
-            String sql = "SELECT dp.Post, dp.Title, " + "dp.ParentPostID FROM DiscussionPost dp";
-            ResultSet rs = dbc.returnResult(sql);
-
-            while (rs.next()) {
-                String title = rs.getString(2);
-                CBdiscussionPosts.addItem(title);
-
-            }
-        } catch (Exception ee){
-            System.out.println(ee);
-        }
-
-        try {
-            String sql = "SELECT dp.Post, dp.Title, " + "dp.ParentPostID FROM DiscussionPost dp";
+            String sql = "SELECT dp.Post, dp.Title FROM DiscussionPost dp";
             ResultSet rs = dbc.returnResult(sql);
 
             while (rs.next()) {
                 String post = rs.getString(1);
                 String title = rs.getString(2);
                 discussionPostsDisplay.append(title + " : " + post + "\n");
-
             }
         } catch (Exception ee){
             System.out.println(ee);
         }
 
         try {
-            String sql = "SELECT dr.Reply, dp.Title FROM DiscussionReply dr, DiscussionPost dp";
+            String sql = "SELECT dr.Reply, dp.Title, dp.ID FROM " +
+                    "DiscussionReply dr, DiscussionPost dp";
             ResultSet rs = dbc.returnResult(sql);
 
             while (rs.next()) {
                 String reply = rs.getString(1);
                 String title = rs.getString(2);
                 discussionReplysDisplay.append( title + " : " + reply + "\n");
-
             }
         } catch (Exception ee){
             System.out.println(ee);

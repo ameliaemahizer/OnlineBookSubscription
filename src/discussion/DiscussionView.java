@@ -38,7 +38,8 @@ public class DiscussionView extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String discTitle = DiscussionPostTitleText.getText();
                 String discPost = PostText.getText();
-                dpm = new DiscussionPostModel(um,discTitle,discPost);
+                String user = UserModel.getCurrentUser().getUsername();
+                dpm = new DiscussionPostModel(user,discTitle,discPost);
                 try{
                     String sql = "insert into DiscussionPost (Title, Post) values ('"+ discTitle + "', '"
                             + discPost + "')";
@@ -66,13 +67,6 @@ public class DiscussionView extends JFrame {
               DiscussionPostTitleText.setText("");
             }
         });
-
-//        ViewPostsButton.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//
-//            }
-//        });
 
     }
 
