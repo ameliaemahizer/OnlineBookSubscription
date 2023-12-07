@@ -2,10 +2,12 @@ package discussion;
 
 import database.dbConnect;
 import login.UserModel;
+import onlinebookclub.HomePageView;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class DiscussionView extends JFrame {
     private JPanel DiscussionPost;
@@ -16,7 +18,7 @@ public class DiscussionView extends JFrame {
     private JButton SubmitButton;
     private JButton ClearButton;
     private JButton ViewPostsButton;
-    private JButton HomeButton;
+    private JButton BackButton;
 
     private String searchTerm;
     dbConnect db = new dbConnect();
@@ -50,26 +52,28 @@ public class DiscussionView extends JFrame {
             }
         });
 
+        BackButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                dispose();
+            }
+        });
+
         ClearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-              dispose();
+              PostText.setText("");
+              DiscussionPostTitleText.setText("");
             }
         });
 
-        ViewPostsButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+//        ViewPostsButton.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//
+//            }
+//        });
 
-            }
-        });
-
-        HomeButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
     }
 
     public DiscussionPostModel getDiscussionPost() {
