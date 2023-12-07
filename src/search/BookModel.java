@@ -36,11 +36,9 @@ public class BookModel {
     public void setAuthor(String author) {
         this.author = author;
     }
-
     public void setPrice(double price) {
         this.price = price;
     }
-
     public void setGenre(String genre) {
         this.genre = genre;
     }

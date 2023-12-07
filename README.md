@@ -11,7 +11,7 @@ This use case allows users like Reader, Author, or Book Reviewer to log in using
 In the first use case, logged-in users can search for a book using a selected filter based on book title, author, genre, or price, with the default being searching all books without any filter. <be>
 
 ### Use Case 2: Purchase
-In the second use case, logged-in users can purchase searched books using the search view. They can view their items in the shopping cart where the transaction is done. They can also add their payment information in the subscription view as well.<be>
+In the second use case, logged-in users can purchase searched books using the search view. They can view their items in the shopping cart where the transaction is done. They can also add their payment information in the purchase view as well.<be>
 
 ### Use Case 3: Discussion
 In the third use case, logged-in users can discuss books with other users. They can post a main post with a title and body. They can also reply to posts as well. **(We were unable to connect posts and replies at this time)** <be>
@@ -109,7 +109,7 @@ ake5280 - Amelia Emahizer: <br>
 
 ajf6238 - Aidan Fitz: <br> 
 
-- **30%: Created ShoppingCartView and SubscriptionView forms. Connected to database to display added shopping cart materials into the shopping cart. Allowed users to store payment info on subscription screen with add/delete/update table.
+- **30%: Created ShoppingCartView and SubscriptionView forms. Connected to database to display added shopping cart materials into the shopping cart. Allowed users to store payment info on purchase screen with add/delete/update table.
   
 jcf5517 - Jack Fitzgerald: <br> 
 
