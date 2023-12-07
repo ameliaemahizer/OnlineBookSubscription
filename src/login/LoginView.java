@@ -43,9 +43,12 @@ public class LoginView extends JFrame {
                             "where CustomerUsername = '" + login + "'");
                     while (rs.next()) {
                         if (rs.getString(2).equals(password)) {
+                            System.out.println("Login successful");
                             setVisible(false);
                             dispose();
                             homePageView.setLoggedIn(true);
+                        } else{
+                            System.out.println("Username and/or password does not exist");
                         }
                     }
                 } catch (Exception ee) {
