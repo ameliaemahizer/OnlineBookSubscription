@@ -104,6 +104,16 @@ public class SearchView extends JFrame{
         displayResults(results);
         SearchBookController controller = new SearchBookController(db);
     }
+
+    public static void main(String[] args) {
+        dbConnect db = new dbConnect();
+        SearchBookController controller = new SearchBookController(db);
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                new SearchView(controller).setVisible(true);
+            }
+        });
+    }
 }
 
 
