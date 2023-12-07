@@ -25,6 +25,9 @@ public class ReviewView extends JFrame{
     private JTextArea reviewUser;
     private JButton nextReviewButton;
     private JButton previousReviewButton;
+    private JLabel AuthorLabel;
+    private JLabel DateLabel;
+    private int currentReviewIndex = 0;
 
     private dbConnect db = new dbConnect();
 
@@ -50,17 +53,34 @@ public class ReviewView extends JFrame{
             }
         });
 
+        previousReviewButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (currentReviewIndex > 0) {
+                    navigateReview(-1);
+                }
+            }
+        });
+
+        nextReviewButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (currentReviewIndex < 10) {
+                    navigateReview(1);
+                }
+            }
+        });
+
+
         bookList.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Load corresponding review details when a book is selected
                 loadReviewDetailsForSelectedBook();
             }
         });
     }
 
     private void populateBookList() {
-        // Assuming you have a "Books" table with a column named "Title"
         String query = "SELECT Title FROM Book";
         ResultSet resultSet = db.returnResult(query);
 
@@ -69,7 +89,7 @@ public class ReviewView extends JFrame{
 
             while (resultSet.next()) {
                 String title = resultSet.getString("Title");
-                System.out.println("Adding book title: " + title); // Add this line for debugging
+                System.out.println("Adding book title: " + title);
                 list.addElement(title);
             }
 
@@ -91,17 +111,75 @@ public class ReviewView extends JFrame{
 
         try {
 
-            while (resultSet.next()) {
-                reviewTitle.setText("TITLE: " + resultSet.getString("Title"));
-                reviewBody.setText(resultSet.getString("Body"));
-                reviewRating.setText("RATING: " + resultSet.getString("Rating"));
-                reviewBookName.setText("BOOK: " + resultSet.getString("BookTitle"));
-                reviewDate.setText("DATE: " + resultSet.getString("DatePublished"));
-                reviewUser.setText("PUBLISHED BY: " + resultSet.getString("Author"));
+            reviewTitle.setText("");
+            reviewBody.setText("");
+            reviewRating.setText("");
+            reviewDate.setText("");
+            reviewUser.setText("");
+
+
+            if (!resultSet.isBeforeFirst()) {
+                currentReviewIndex = -1;
+                reviewTitle.setText("No reviews found.");
+            } else {
+
+                int reviewCount = 0;
+                while (resultSet.next()) {
+                    reviewCount++;
+                    if (reviewCount == currentReviewIndex + 1) {
+
+                        reviewTitle.append("TITLE: " + resultSet.getString("Title") + "\n");
+                        reviewBody.append(resultSet.getString("Body") + "\n");
+                        reviewRating.append("RATING: " + resultSet.getString("Rating") + "\n");
+                        reviewDate.append(resultSet.getString("DatePublished") + "\n");
+                        reviewUser.append("PUBLISHED BY: " + resultSet.getString("Author") + "\n");
+                    }
+                }
+
+                currentReviewIndex = 0;
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
+
+    private void navigateReview(int direction) {
+        String selectedBookTitle = (String) bookList.getSelectedItem();
+
+        String query = "SELECT * FROM Reviews WHERE BookTitle = '" + selectedBookTitle + "'";
+        ResultSet resultSet = db.returnResult(query);
+
+        try {
+            int reviewCount = 0;
+            while (resultSet.next()) {
+                reviewCount++;
+                if (reviewCount == currentReviewIndex + direction) {
+
+                    reviewTitle.setText("TITLE: " + resultSet.getString("Title"));
+                    reviewBody.setText(resultSet.getString("Body"));
+                    reviewRating.setText("RATING: " + resultSet.getString("Rating"));
+                    reviewDate.setText(resultSet.getString("DatePublished"));
+                    reviewUser.setText("PUBLISHED BY: " + resultSet.getString("Author"));
+
+
+                    currentReviewIndex += direction;
+
+                    if (direction > 0 && currentReviewIndex == reviewCount) {
+                        currentReviewIndex = 1;
+                    }
+
+                    break;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+
+
 }
 
