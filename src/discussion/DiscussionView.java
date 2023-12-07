@@ -18,7 +18,7 @@ public class DiscussionView extends JFrame {
     private JButton SubmitButton;
     private JButton ClearButton;
     private JButton ViewPostsButton;
-    private JButton HomeButton;
+    private JButton BackButton;
 
     private String searchTerm;
     dbConnect db = new dbConnect();
@@ -52,29 +52,28 @@ public class DiscussionView extends JFrame {
             }
         });
 
+        BackButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                dispose();
+            }
+        });
+
         ClearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-              dispose();
+              PostText.setText("");
+              DiscussionPostTitleText.setText("");
             }
         });
 
-        ViewPostsButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+//        ViewPostsButton.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//
+//            }
+//        });
 
-            }
-        });
-
-        HomeButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e){
-                setVisible(false);
-                dispose();
-                HomePageView homePageView = new HomePageView(new ArrayList<>());
-                homePageView.setLoggedIn(true);
-            }
-        });
     }
 
     public DiscussionPostModel getDiscussionPost() {
