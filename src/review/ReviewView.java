@@ -1,6 +1,7 @@
 package review;
 
 import database.dbConnect;
+import login.UserModel;
 import onlinebookclub.HomePageView;
 
 import javax.swing.*;
@@ -56,9 +57,16 @@ public class ReviewView extends JFrame{
         writeAReviewButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-                dispose();
-                PostReviewView postReviewView = new PostReviewView();
+                String username = UserModel.getCurrentUser().getUsername();
+                if ("alicesmith".equals(username)){
+                    setVisible(false);
+                    dispose();
+                    PostReviewView postReviewView = new PostReviewView();
+                }
+                else{
+                    JOptionPane.showMessageDialog(reviews, "Only reviewers can post reviews!");
+                }
+
             }
         });
 

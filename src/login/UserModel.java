@@ -76,6 +76,16 @@ public class UserModel {
         this.email = email;
     }
 
+    public String getAccountType(){
+        return accountType;
+    }
+
+    public void setAccountType(String accountType){
+        this.accountType = accountType;
+    }
+
+
+
     public static void setCurrentUser(UserModel user) {
         currentUser = user;
     }
@@ -98,7 +108,9 @@ public class UserModel {
                 String email = rs.getString("Email");
                 String accountType = rs.getString("AccountType");
 
-                return new UserModel(username, email, accountType);
+                UserModel user = new UserModel(username, email, accountType);
+                user.setAccountType(accountType);
+                return user;
             }
         } catch (Exception e) {
             e.printStackTrace();

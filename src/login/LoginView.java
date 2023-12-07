@@ -47,7 +47,7 @@ public class LoginView extends JFrame {
                             dispose();
                             homePageView.setLoggedIn(true);
 
-                            UserModel currentUser = new UserModel(login, password); // You can modify this based on your requirements
+                            UserModel currentUser = new UserModel(login, password);
                             UserModel.setCurrentUser(currentUser);
                         }
                     }
