@@ -27,7 +27,7 @@ public class DiscussionView extends JFrame {
     public DiscussionView(){
         setContentPane(DiscussionPost);
         setTitle("Discussion Post");
-        setSize(450, 300);
+        setSize(600, 600);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setVisible(true);
 
@@ -70,6 +70,10 @@ public class DiscussionView extends JFrame {
 
             }
         });
+    }
+
+    public DiscussionPostModel getDiscussionPost() {
+        return dpm;
     }
 
 }

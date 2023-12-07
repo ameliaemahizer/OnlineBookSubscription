@@ -80,12 +80,11 @@ public class ReviewModel {
         return book;
     }
 
-    public void setBookName(){
-        this.bookName = scanner.nextLine();
-    }
-
     public String getBookName(){
         return this.bookName;
+    }
+    public void setBookName(){
+        this.bookName = scanner.nextLine();
     }
 
     public static ReviewModel getBookReview(int indexNumber){

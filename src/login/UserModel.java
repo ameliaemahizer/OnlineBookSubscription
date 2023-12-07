@@ -1,10 +1,16 @@
 package login;
 
 
+import database.dbConnect;
+
+import java.sql.ResultSet;
+
 public class UserModel {
     private String username;
     private String password;
     private String email;
+    private String accountType;
+    private static UserModel currentUser;
 
 
     /**
@@ -15,13 +21,11 @@ public class UserModel {
         this.password = password;
     }
 
-    /**
-     * This is another constructor for the Login class
-     */
-    public UserModel(String username, String password, String email){
+
+    public UserModel(String username, String email, String accountType){
         this.username = username;
-        this.password = password;
         this.email = email;
+        this.accountType = accountType;
     }
 
     /**
@@ -71,5 +75,49 @@ public class UserModel {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public String getAccountType(){
+        return accountType;
+    }
+
+    public void setAccountType(String accountType){
+        this.accountType = accountType;
+    }
+
+
+
+    public static void setCurrentUser(UserModel user) {
+        currentUser = user;
+    }
+
+    /**
+     * Get the current user.
+     * @return The current user.
+     */
+    public static UserModel getCurrentUser() {
+        return currentUser;
+    }
+
+    public static UserModel getUserDetailsFromDatabase(String username) {
+        dbConnect db = new dbConnect();
+        try {
+            ResultSet rs = db.returnResult("SELECT CustomerUsername, Email, AccountType FROM Accounts " +
+                    "WHERE CustomerUsername = '" + username + "'");
+
+            if (rs.next()) {
+                String email = rs.getString("Email");
+                String accountType = rs.getString("AccountType");
+
+                UserModel user = new UserModel(username, email, accountType);
+                user.setAccountType(accountType);
+                return user;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null; // User not found in the database
+    }
+
 
 }
