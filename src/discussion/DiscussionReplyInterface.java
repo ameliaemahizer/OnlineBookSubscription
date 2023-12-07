@@ -2,10 +2,13 @@ package discussion;
 
 import database.dbConnect;
 import login.UserModel;
+import onlinebookclub.HomePageView;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
 public class DiscussionReplyInterface extends JFrame {
     private JPanel DiscussionPost;
     private JTextField DiscussionPostTitleText;
@@ -56,7 +59,10 @@ public class DiscussionReplyInterface extends JFrame {
         HomeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                setVisible(false);
+                dispose();
+                HomePageView homePageView = new HomePageView(new ArrayList<>());
+                homePageView.setLoggedIn(true);
             }
         });
     }
