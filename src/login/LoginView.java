@@ -33,20 +33,33 @@ public class LoginView extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String login = UserNameField.getText();
-                char[] passwordChars = PasswordField.getPassword(); // Get the password as char array
-                String password = new String(passwordChars); // Convert char array to string
-
+                char[] passwordChars = PasswordField.getPassword();
+                String password = new String(passwordChars);
 
                 dbConnect db = new dbConnect();
+                boolean loginSuccessful = false;
+
                 try {
                     ResultSet rs = db.returnResult("select CustomerUsername, Password from Accounts " +
                             "where CustomerUsername = '" + login + "'");
                     while (rs.next()) {
                         if (rs.getString(2).equals(password)) {
-                            setVisible(false);
-                            dispose();
-                            homePageView.setLoggedIn(true);
+                            loginSuccessful = true;
+                            break;  // Exit the loop once a match is found
                         }
+                    }
+
+                    if (loginSuccessful) {
+                        setVisible(false);
+                        dispose();
+                        homePageView.setLoggedIn(true);
+                        System.out.println("Successful Login");
+
+                        UserModel currentUser = new UserModel(login, password);
+                        UserModel.setCurrentUser(currentUser);
+                    } else {
+                        System.out.println("Username and/or password does not exist");
+                        JOptionPane.showMessageDialog(LoginPanel, "Username/Password incorrect. Try again.");
                     }
                 } catch (Exception ee) {
                     System.out.println(ee);
