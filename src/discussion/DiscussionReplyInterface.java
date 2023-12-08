@@ -69,6 +69,7 @@ public class DiscussionReplyInterface extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
                 dispose();
+                DiscussionBoardInterface discussionBoardInterface = new DiscussionBoardInterface();
             }
         });
     }

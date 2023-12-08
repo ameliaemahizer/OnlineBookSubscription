@@ -62,7 +62,9 @@ public class DiscussionView extends JFrame {
         BackButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                setVisible(false);
                 dispose();
+                DiscussionBoardInterface discussionBoardInterface = new DiscussionBoardInterface();
             }
         });
 
