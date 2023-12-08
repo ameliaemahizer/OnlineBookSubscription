@@ -28,8 +28,9 @@ public class ShoppingCartView extends JFrame{
         textArea1.setEditable(false);
         String username = UserModel.getCurrentUser().getUsername();
         dbConnect db = new dbConnect();
+        //where CustomerName = " + "'" + username + "'"
         try {
-            ResultSet rs = db.returnResult("select Contents from ShoppingCart where CustomerName = " + "'" + username + "'");
+            ResultSet rs = db.returnResult("select Contents from ShoppingCart");
             while (rs.next()) {
                 String contents = rs.getString(1);
                 textArea1.append(contents);
