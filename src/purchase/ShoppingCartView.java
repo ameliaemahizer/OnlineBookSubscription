@@ -26,9 +26,8 @@ public class ShoppingCartView extends JFrame{
         setSize(1000, 600);
         setVisible(true);
         textArea1.setEditable(false);
-        String username = UserModel.getCurrentUser().getUsername();
         dbConnect db = new dbConnect();
-        //where CustomerName = " + "'" + username + "'"
+
         try {
             ResultSet rs = db.returnResult("select Contents from ShoppingCart");
             while (rs.next()) {
@@ -39,18 +38,24 @@ public class ShoppingCartView extends JFrame{
         }catch(Exception ee) {
             System.out.println(ee);
         }
-
+        ///"update ShoppingCart set Contents = NULL"
 
         purchaseWithCardButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showConfirmDialog(null, "Purchase Complete!", "Confirmation", JOptionPane.CLOSED_OPTION);
+                String username = UserModel.getCurrentUser().getUsername();
+                String shoppingCartContent = textArea1.getText();
 
-                String sql = "update ShoppingCart set Contents = NULL";
-                int row = db.updateData(sql);
-                if (row > 0) {
-                    System.out.println("Cart contents removed successfully.");
-                    textArea1.setText("");
+                try{
+                    String sql = "insert into BookPurchased (Contents, Username) values ('"+ shoppingCartContent +"', '"+ username +"')";
+                    int row = db.updateData(sql);
+                    if (row > 0) {
+                        System.out.println("Purchase");
+                        JOptionPane.showConfirmDialog(null, "Purchase Complete!", "Confirmation", JOptionPane.CLOSED_OPTION);
+                        textArea1.setText("");
+                    }
+                }catch (Exception ee){
+                    System.out.println(ee);
                 }
             }
         });
