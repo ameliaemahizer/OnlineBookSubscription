@@ -34,7 +34,7 @@ public class DiscussionBoardInterface extends JFrame {
     public DiscussionBoardInterface() {
         setContentPane(DiscussionInterface);
         setTitle("Discussion Board");
-        setSize(850, 850);
+        setSize(850, 600);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setVisible(true);
 
@@ -100,6 +100,9 @@ public class DiscussionBoardInterface extends JFrame {
         createADiscussionPostButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                setVisible(false);
+                dispose();
                 discussionView = new DiscussionView(um);
                 ///discussionView.getDiscussionPost();
             }
@@ -110,6 +113,8 @@ public class DiscussionBoardInterface extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String selectedTitle = CBdiscussionPosts.getSelectedItem().toString();
 
+                setVisible(false);
+                dispose();
                 discussionReplyInterface = new DiscussionReplyInterface(um, selectedTitle);
                 discussionReplyInterface.getDiscussionReply();
             }
