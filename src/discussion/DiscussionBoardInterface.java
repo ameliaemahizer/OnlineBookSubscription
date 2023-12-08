@@ -101,7 +101,7 @@ public class DiscussionBoardInterface extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 discussionView = new DiscussionView(um);
-                discussionView.getDiscussionPost();
+                ///discussionView.getDiscussionPost();
             }
         });
 
