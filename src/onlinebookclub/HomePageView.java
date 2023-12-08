@@ -110,7 +110,7 @@ public class HomePageView extends JDialog {
                 String username = UserModel.getCurrentUser().getUsername();
                 dbConnect db = new dbConnect();
                 try{
-                    String sql = "insert into ShoppingCart (Contents) values ('" + cartContent + "')";
+                    String sql = "insert into ShoppingCart (CustomerUsername, Contents) values ('"+ username + "', '" + cartContent + "')";
                     int row = db.updateData(sql);
                     if (row > 0) {
                         System.out.println("Cart contents added successfully.");
