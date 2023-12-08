@@ -2,12 +2,11 @@ package discussion;
 
 import database.dbConnect;
 import login.UserModel;
-import onlinebookclub.HomePageView;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
+import java.sql.ResultSet;
 
 public class DiscussionReplyInterface extends JFrame {
     private JTextField DiscussionPostTitleText;
@@ -18,13 +17,14 @@ public class DiscussionReplyInterface extends JFrame {
     private JButton BackButton;
     private JPanel DiscussionReply;
 
-    private String searchTerm;
-    dbConnect db = new dbConnect();
-    DiscussionReplyModel dpm;
+    private dbConnect db = new dbConnect();
+    private DiscussionReplyModel dpm;
+    private UserModel um;
+    private String parentPostTitle;
 
-    UserModel um = new UserModel("dummy", "dummy");
-
-    public DiscussionReplyInterface(){
+    public DiscussionReplyInterface(UserModel user, String parentPostTitle) {
+        um = user;
+        this.parentPostTitle = parentPostTitle;
         setContentPane(DiscussionReply);
         setTitle("Discussion Reply");
         setSize(600, 600);
@@ -35,14 +35,23 @@ public class DiscussionReplyInterface extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String discPost = PostText.getText();
-                dpm = new DiscussionReplyModel(um,discPost);
-                try{
-                    String sql = "insert into DiscussionReply (reply) values ( '" + discPost + "')";
-                    int row = db.updateData(sql);
-                    if (row > 0) {
-                        System.out.println("The discussion reply added successfully.");
+                try {
+                    String getParentPostIdSql = "SELECT ID FROM DiscussionPost WHERE Title = '" + parentPostTitle + "'";
+                    ResultSet parentPostIdResultSet = db.returnResult(getParentPostIdSql);
+
+                    if (parentPostIdResultSet.next()) {
+                        int parentPostId = parentPostIdResultSet.getInt("ID");
+
+                        String sql = "INSERT INTO DiscussionReply (Username, ParentPostID, Reply) VALUES ('" +
+                                um.getUsername() + "', " + parentPostId + ", '" + discPost + "')";
+                        int row = db.updateData(sql);
+
+                        if (row > 0) {
+                            System.out.println("The discussion reply added successfully.");
+                            JOptionPane.showMessageDialog(null, "Reply added successfully!");
+                        }
                     }
-                }catch(Exception ee){
+                } catch (Exception ee) {
                     System.out.println(ee);
                 }
             }
@@ -67,5 +76,4 @@ public class DiscussionReplyInterface extends JFrame {
     public DiscussionReplyModel getDiscussionReply() {
         return dpm;
     }
-
 }

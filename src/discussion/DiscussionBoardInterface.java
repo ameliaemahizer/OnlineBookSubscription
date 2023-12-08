@@ -17,21 +17,21 @@ public class DiscussionBoardInterface extends JFrame {
     private JPanel DiscussionInterface;
     private JButton BackToHome;
     private JComboBox CBdiscussionPosts;
-    private JTextArea discussionPostsDisplay;
+    private JTextArea discussionPostBody;
     private JTextArea discussionReplysDisplay;
+    private JTextArea discussionPostTitle;
 
     private DiscussionView discussionView;
-
     private DiscussionReplyInterface discussionReplyInterface;
-    dbConnect dbc = new dbConnect();
-
-    DiscussionPostModel dpm;
-
+    private dbConnect dbc = new dbConnect();
+    private DiscussionPostModel dpm;
+    private ArrayList<DiscussionPostModel> dps = new ArrayList<>();
+    private UserModel um = UserModel.getCurrentUser();
 
     /**
      * This is the default constructor for the DiscussionBoard class
      **/
-    public DiscussionBoardInterface (){
+    public DiscussionBoardInterface() {
         setContentPane(DiscussionInterface);
         setTitle("Discussion Board");
         setSize(850, 850);
@@ -39,36 +39,68 @@ public class DiscussionBoardInterface extends JFrame {
         setVisible(true);
 
         try {
-            String sql = "SELECT dp.Post, dp.Title FROM DiscussionPost dp";
-            ResultSet rs = dbc.returnResult(sql);
+            String postSql = "SELECT dp.Post, dp.Title, dp.ID FROM DiscussionPost dp";
+            ResultSet postResultSet = dbc.returnResult(postSql);
 
-            while (rs.next()) {
-                String post = rs.getString(1);
-                String title = rs.getString(2);
-                discussionPostsDisplay.append(title + " : " + post + "\n");
+            while (postResultSet.next()) {
+                String title = postResultSet.getString(2);
+                CBdiscussionPosts.addItem(title);
+
+                System.out.println("Added title to JComboBox: " + title);
             }
-        } catch (Exception ee){
-            System.out.println(ee);
+        } catch (Exception ee) {
+            System.out.println("Exception while populating JComboBox: " + ee.getMessage());
+            ee.printStackTrace();
         }
 
-        try {
-            String sql = "SELECT dr.Reply, dp.Title, dp.ID FROM " +
-                    "DiscussionReply dr, DiscussionPost dp";
-            ResultSet rs = dbc.returnResult(sql);
+        CBdiscussionPosts.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
 
-            while (rs.next()) {
-                String reply = rs.getString(1);
-                String title = rs.getString(2);
-                discussionReplysDisplay.append( title + " : " + reply + "\n");
+                String selectedTitle = CBdiscussionPosts.getSelectedItem().toString();
+
+                try {
+
+                    String getIdSql = "SELECT Username, ID, Title FROM DiscussionPost WHERE Title = '" + selectedTitle + "'";
+                    ResultSet idResultSet = dbc.returnResult(getIdSql);
+
+                    if (idResultSet.next()) {
+                        int postId = idResultSet.getInt("ID");
+                        String postTitle = idResultSet.getString("Title");
+                        String username = idResultSet.getString("Username");
+
+                        // Display the selected post's title and body
+                        discussionPostTitle.setText("(" + username + ")" + postTitle);
+                        String getBodySql = "SELECT Post FROM DiscussionPost WHERE ID = " + postId;
+                        ResultSet bodyResultSet = dbc.returnResult(getBodySql);
+                        if (bodyResultSet.next()) {
+                            String postBody = bodyResultSet.getString("Post");
+                            discussionPostBody.setText(postBody);
+                        }
+
+                        String replySql = "SELECT dr.Username, dr.Reply FROM DiscussionReply dr " +
+                                "WHERE dr.ParentPostID = " + postId;
+                        ResultSet replyResultSet = dbc.returnResult(replySql);
+
+                        // Display replies
+                        discussionReplysDisplay.setText("");
+                        while (replyResultSet.next()) {
+                            String replyUsername = replyResultSet.getString("Username");
+                            String reply = replyResultSet.getString("Reply");
+                            discussionReplysDisplay.append("(" + replyUsername + ") " + reply + "\n");
+                        }
+                    }
+                } catch (Exception ex) {
+                    System.out.println(ex);
+                }
             }
-        } catch (Exception ee){
-            System.out.println(ee);
-        }
+        });
+
 
         createADiscussionPostButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                discussionView = new DiscussionView();
+                discussionView = new DiscussionView(um);
                 discussionView.getDiscussionPost();
             }
         });
@@ -76,7 +108,9 @@ public class DiscussionBoardInterface extends JFrame {
         replyToAPostButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                discussionReplyInterface = new DiscussionReplyInterface();
+                String selectedTitle = CBdiscussionPosts.getSelectedItem().toString();
+
+                discussionReplyInterface = new DiscussionReplyInterface(um, selectedTitle);
                 discussionReplyInterface.getDiscussionReply();
             }
         });
@@ -95,5 +129,4 @@ public class DiscussionBoardInterface extends JFrame {
     public DiscussionPostModel getDiscussionBoard() {
         return dpm;
     }
-
 }
