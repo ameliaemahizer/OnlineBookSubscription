@@ -16,7 +16,7 @@ In the second use case, logged-in users can purchase searched books using the se
 ### Use Case 3: Discussion
 In the third use case, logged-in users can discuss books with other users. They can post a main post with a title and body. They can also reply to posts as well. <be>
 
-## Use Case 4: Review 
+### Use Case 4: Review 
 In the fourth use case, logged-in users can view reviews for various books. Logged-in reviewers can create a review for a book. <be>
 
 
