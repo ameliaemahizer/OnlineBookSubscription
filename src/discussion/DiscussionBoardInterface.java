@@ -104,7 +104,7 @@ public class DiscussionBoardInterface extends JFrame {
                 setVisible(false);
                 dispose();
                 discussionView = new DiscussionView(um);
-                discussionView.getDiscussionPost();
+                ///discussionView.getDiscussionPost();
             }
         });
 

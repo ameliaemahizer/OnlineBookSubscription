@@ -110,11 +110,11 @@ public class HomePageView extends JDialog {
                 String username = UserModel.getCurrentUser().getUsername();
                 dbConnect db = new dbConnect();
                 try{
-                    String sql = "insert into ShoppingCart (CustomerUsername, Contents) values ('" + username + "', '" + cartContent + "')";
+                    String sql = "insert into ShoppingCart (Contents) values ('" + cartContent + "')";
                     int row = db.updateData(sql);
                     if (row > 0) {
                         System.out.println("Cart contents added successfully.");
-                        JOptionPane.showConfirmDialog(null, "Item added to cart!", "Notification", JOptionPane.CLOSED_OPTION);
+                        JOptionPane.showConfirmDialog(null, "Item added to cart!", "Notification", JOptionPane.DEFAULT_OPTION);
                     }
                 }catch(Exception ee){
                     System.out.println(ee);
