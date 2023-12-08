@@ -3,6 +3,7 @@ package onlinebookclub;
 import database.dbConnect;
 import discussion.DiscussionBoardInterface;
 import login.LoginView;
+import login.UserModel;
 import review.ReviewView;
 import search.BookModel;
 import search.SearchBookController;
@@ -106,9 +107,10 @@ public class HomePageView extends JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String cartContent = resultTextArea.getText();
+                String username = UserModel.getCurrentUser().getUsername();
                 dbConnect db = new dbConnect();
                 try{
-                    String sql = "insert into ShoppingCart (Contents) values ('" + cartContent + "')";
+                    String sql = "insert into ShoppingCart (CustomerUsername, Contents) values ('" + username + "', '" + cartContent + "')";
                     int row = db.updateData(sql);
                     if (row > 0) {
                         System.out.println("Cart contents added successfully.");

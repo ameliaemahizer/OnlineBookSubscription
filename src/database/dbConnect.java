@@ -54,7 +54,6 @@ public class dbConnect{
             String query = "INSERT INTO Reviews (BookTitle, Title, Body, Rating, Author, DatePublished) VALUES (?, ?, ?, ?, ?, ?)";
 
 
-
             System.out.println("Preparing sql statement");
             PreparedStatement pstmt = conn.prepareStatement(query);
             pstmt.setString(1, bookTitle);
@@ -74,7 +73,6 @@ public class dbConnect{
             System.out.println("Executing SQL Query: " + pstmt.toString());
 
             pstmt.executeUpdate();
-
 
 
             conn.commit();

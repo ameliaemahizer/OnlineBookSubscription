@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DiscussionPostModel {
-    private UserModel userModelName;
+    private String userModelName;
     private String postTitle;
     private String mainPost;
     private String postReplies;
@@ -20,7 +20,7 @@ public class DiscussionPostModel {
      * @param mainPost main text of the post
      */
 
-    public DiscussionPostModel (UserModel userModelName, String postTitle, String mainPost){
+    public DiscussionPostModel (String userModelName, String postTitle, String mainPost){
         this.userModelName = userModelName;
         this.postTitle = postTitle;
         this.mainPost = mainPost;
@@ -39,7 +39,7 @@ public class DiscussionPostModel {
      * Returns the username associated with a discussion post
      * @return a string representing the username associated with the post
      **/
-    public UserModel getUserName() {
+    public String getUserName() {
         return userModelName;
     }
 
@@ -53,7 +53,6 @@ public class DiscussionPostModel {
 
     /**
      * Sets the title of the post
-     * @param postTitle sets the title of the discussion post
      **/
     public void setPostTitle() {
         this.postTitle = scanner.nextLine();

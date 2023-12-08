@@ -2,6 +2,7 @@ package purchase;
 
 import database.dbConnect;
 import onlinebookclub.HomePageView;
+import login.UserModel;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -25,7 +26,9 @@ public class ShoppingCartView extends JFrame{
         setSize(1000, 600);
         setVisible(true);
         textArea1.setEditable(false);
+        String username = UserModel.getCurrentUser().getUsername();
         dbConnect db = new dbConnect();
+        //where CustomerName = " + "'" + username + "'"
         try {
             ResultSet rs = db.returnResult("select Contents from ShoppingCart");
             while (rs.next()) {

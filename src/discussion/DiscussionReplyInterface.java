@@ -2,18 +2,20 @@ package discussion;
 
 import database.dbConnect;
 import login.UserModel;
+import onlinebookclub.HomePageView;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
 public class DiscussionReplyInterface extends JFrame {
-    private JPanel DiscussionPost;
     private JTextField DiscussionPostTitleText;
     private JLabel Post;
     private JTextArea PostText;
     private JButton SubmitButton;
     private JButton ClearButton;
-    private JButton HomeButton;
+    private JButton BackButton;
     private JPanel DiscussionReply;
 
     private String searchTerm;
@@ -49,14 +51,15 @@ public class DiscussionReplyInterface extends JFrame {
         ClearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                dispose();
+                PostText.setText("");
             }
         });
 
-        HomeButton.addActionListener(new ActionListener() {
+        BackButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                setVisible(false);
+                dispose();
             }
         });
     }
