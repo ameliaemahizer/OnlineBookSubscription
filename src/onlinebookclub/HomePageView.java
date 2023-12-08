@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HomePageView extends JDialog {
+    private JButton BackButton;
     private JPanel contentPane;
     private JButton shoppingCartButton;
     private JButton reviewButton;
@@ -103,6 +104,16 @@ public class HomePageView extends JDialog {
         });
 
         // DOES NOT WORK PROPERLY
+        BackButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                dispose();
+                HomePageView homePageView = new HomePageView(new ArrayList<>());
+                homePageView.setLoggedIn(true);
+            }
+        });
+
         addToCartButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
