@@ -2,12 +2,10 @@ package discussion;
 
 import database.dbConnect;
 import login.UserModel;
-import onlinebookclub.HomePageView;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 public class DiscussionView extends JFrame {
     private JPanel DiscussionPost;
@@ -21,12 +19,12 @@ public class DiscussionView extends JFrame {
     private JButton BackButton;
 
     private String searchTerm;
-    dbConnect db = new dbConnect();
-    DiscussionPostModel dpm;
+    private dbConnect db = new dbConnect();
+    private DiscussionPostModel dpm;
+    private UserModel um;
 
-    UserModel um = new UserModel("dummy", "dummy");
-
-    public DiscussionView(){
+    public DiscussionView(UserModel user) {
+        um = user;
         setContentPane(DiscussionPost);
         setTitle("Discussion Post");
         setSize(600, 600);
@@ -38,23 +36,32 @@ public class DiscussionView extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String discTitle = DiscussionPostTitleText.getText();
                 String discPost = PostText.getText();
-                dpm = new DiscussionPostModel(um,discTitle,discPost);
-                try{
-                    String sql = "insert into DiscussionPost (Title, Post) values ('"+ discTitle + "', '"
-                            + discPost + "')";
+
+                System.out.println("Username: " + um.getUsername());
+                System.out.println("Title: " + discTitle);
+                System.out.println("Post: " + discPost);
+
+                try {
+                    String sql = "INSERT INTO DiscussionPost (Username, Title, Post) VALUES ('" +
+                            um.getUsername() + "', '" + discTitle + "', '" + discPost + "')";
                     int row = db.updateData(sql);
+
                     if (row > 0) {
                         System.out.println("The discussion post added successfully.");
+                        JOptionPane.showMessageDialog(null, "Post added successfully!");
+                    } else {
+                        System.out.println("Failed to add the discussion post.");
                     }
-                }catch(Exception ee){
-                    System.out.println(ee);
+                } catch (Exception ee) {
+                    System.out.println("Error: " + ee.getMessage());
+                    ee.printStackTrace();
                 }
             }
         });
 
         BackButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e){
+            public void actionPerformed(ActionEvent e) {
                 dispose();
             }
         });
@@ -62,22 +69,14 @@ public class DiscussionView extends JFrame {
         ClearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-              PostText.setText("");
-              DiscussionPostTitleText.setText("");
+                PostText.setText("");
+                DiscussionPostTitleText.setText("");
             }
         });
-
-//        ViewPostsButton.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//
-//            }
-//        });
 
     }
 
     public DiscussionPostModel getDiscussionPost() {
         return dpm;
     }
-
 }
