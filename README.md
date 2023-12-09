@@ -99,6 +99,27 @@ jkz5262 - Ji Zhang: <be>
 
 
 ## Team Involvement Log
+### Implemented Use Case 4 and Final Implementations
+
+mzc5994 - Mackenzie Cane: <br> 
+
+- **20%:**  Helped to fix the discussion board and shopping cart code. 
+  
+ake5280 - Amelia Emahizer: <br> 
+
+- **30%:** Created ReviewView and PostReviewView. Wrote the code for users to view various book reviews. Wrote code for book reviews to add a new review for a book. 
+
+ajf6238 - Aidan Fitz: <br> 
+
+- **20%**: Helped to fix shopping cart code.
+  
+jcf5517 - Jack Fitzgerald: <br> 
+
+- **20%**: Helped to fix discussion board code. 
+  
+jkz5262 - Ji Zhang: <br>
+
+- **20%:** Added SearchView code into HomePageView. 
 
 ### Implemented Use Cases 2 and 3
 
@@ -112,7 +133,7 @@ ake5280 - Amelia Emahizer: <br>
 
 ajf6238 - Aidan Fitz: <br> 
 
-- **30%: Created ShoppingCartView and SubscriptionView forms. Connected to the database to display added shopping cart materials into the shopping cart. Allowed users to store payment info on the purchase screen with an add/delete/update table.
+- **30%**: Created ShoppingCartView and SubscriptionView forms. Connected to the database to display added shopping cart materials into the shopping cart. Allowed users to store payment info on the purchase screen with an add/delete/update table.
   
 jcf5517 - Jack Fitzgerald: <br> 
 
