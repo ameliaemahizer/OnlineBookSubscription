@@ -107,7 +107,7 @@ mzc5994 - Mackenzie Cane: <br>
   
 ake5280 - Amelia Emahizer: <br> 
 
-- **30%:** Created ReviewView and PostReviewView. Wrote the code for users to view various book reviews. Wrote code for book reviews to add a new review for a book. 
+- **30%:** Created ReviewView and PostReviewView. Wrote the code for users to view various book reviews. Wrote code for book reviews to add a new review for a book. Helped to fix the discussion board and shopping cart code. Updated database with any changes we needed.
 
 ajf6238 - Aidan Fitz: <br> 
 
