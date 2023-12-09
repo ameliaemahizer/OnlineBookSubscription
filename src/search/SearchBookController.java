@@ -44,8 +44,6 @@ public class SearchBookController {
                     String author = rs.getString(2);
                     double price = rs.getDouble(3);
                     String genre = rs.getString(4);
-                    //String gen = String.valueOf(genre);
-                    //BookModel searchedBook = new BookModel(title, author, price, gen);
                     BookModel searchedBook = new BookModel(title, author, price, genre);
                     results.add(searchedBook);
                 }
