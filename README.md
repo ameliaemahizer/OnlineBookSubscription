@@ -66,38 +66,6 @@ ID	Title	Author	Price	IISBN	Genre <br>
 28	Horton Hears a Who!	Dr. Seuss	14.99	9780394800783	Children's<br>
 29	Northanger Abbey	Jane Austen	6	9780486414126	Romance<br>
 
-
-## Refactoring Implementation
-* All members were involved in different parts of the implementation. 
-
-1. The database is now connected to all parts of the code. Professor Vora helped us with the query codes. Amelia helped identify data tables and update them. Ji implemented the data connection codes into the SearchController class, and Mackenzie implemented the data connection codes into the LoginView class.
-2. We have deleted unused classes such as UserFinance, OnlineBookSubscription, SocialMedia, ExternalReview, and SearchInterface.
-3. We removed the unnecessary comments among the codes in HomePageView and those in Search and Login packages. Those were coded heavily previously. 
-4. Mackenzie deleted the UniqueID parameter in Login. 
-5. All of the view classes are consistent when it comes to code.
-6. We added setter methods into model classes that initially only have getters, such as UserModel and BookModel.
-
-## Design Patterns Implementation
-mzc5994 - Mackenzie Cane: <br> 
-
-- **Template:** Reader, Author, BookReviewer, LoginInterface
-- **Input Feedback:** LoginInterface, LoginView, PurchaseBookController, PostReviewController, DiscussionBoardController, SearchView
-
-ake5280 - Amelia Emahizer: <br> 
-
-ajf6238 - Aidan Fitz: <br> 
-
-- **Decorator:** PaymentDecorator, PaymentImplementation, Payment, DebitCredit, ApplePay, PayPal, ShoppingCart
-- **Shopping Cart:** PurchaseBookController 
-
-jcf5517 - Jack Fitzgerald: <br> 
-
-jkz5262 - Ji Zhang: <be> 
-
-- **Strategy:** BookModel, TitleSearch, AuthorSearch, Genre Search, PriceSearch, SearchBookInterface
-- **Filter:** SearchBookController
-
-
 ## Team Involvement Log
 ### Implemented Use Case 4 and Final Implementations
 
@@ -164,3 +132,35 @@ jcf5517 - Jack Fitzgerald: <br>
 jkz5262 - Ji Zhang: <br>
 
 - **30%:** Created SearchView form; Wrote SearchView & SearchController code to connect the view to the list of books; Added book information that is utilized in the code. Wrote HomePageView code to connect LoginView and SearchView. Edited code for others. Added book data to the arraylist. Finalized the codes and ensured accurate functionalities. Contributed to the README.txt file.
+
+
+## Refactoring Implementation
+* All members were involved in different parts of the implementation. 
+
+1. The database is now connected to all parts of the code. Professor Vora helped us with the query codes. Amelia helped identify data tables and update them. Ji implemented the data connection codes into the SearchController class, and Mackenzie implemented the data connection codes into the LoginView class.
+2. We have deleted unused classes such as UserFinance, OnlineBookSubscription, SocialMedia, ExternalReview, and SearchInterface.
+3. We removed the unnecessary comments among the codes in HomePageView and those in Search and Login packages. Those were coded heavily previously. 
+4. Mackenzie deleted the UniqueID parameter in Login. 
+5. All of the view classes are consistent when it comes to code.
+6. We added setter methods into model classes that initially only have getters, such as UserModel and BookModel.
+
+## Design Patterns Implementation
+mzc5994 - Mackenzie Cane: <br> 
+
+- **Template:** Reader, Author, BookReviewer, LoginInterface
+- **Input Feedback:** LoginInterface, LoginView, PurchaseBookController, PostReviewController, DiscussionBoardController, SearchView
+
+ake5280 - Amelia Emahizer: <br> 
+
+ajf6238 - Aidan Fitz: <br> 
+
+- **Decorator:** PaymentDecorator, PaymentImplementation, Payment, DebitCredit, ApplePay, PayPal, ShoppingCart
+- **Shopping Cart:** PurchaseBookController 
+
+jcf5517 - Jack Fitzgerald: <br> 
+
+jkz5262 - Ji Zhang: <be> 
+
+- **Strategy:** BookModel, TitleSearch, AuthorSearch, Genre Search, PriceSearch, SearchBookInterface
+- **Filter:** SearchBookController
+
