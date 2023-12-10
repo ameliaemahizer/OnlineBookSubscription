@@ -37,6 +37,7 @@ public class HomePageView extends JDialog {
     private LoginView loginView;
     private dbConnect dbConnection;
     private SearchBookController searchController;
+    private int titleCounter = 0;
 
     public HomePageView(ArrayList<BookModel> bookModels) {
         this.bookModels = bookModels;
@@ -45,7 +46,7 @@ public class HomePageView extends JDialog {
         setContentPane(contentPane);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Online Book Club");
-        setSize(1000, 800);
+        setSize(1000, 650);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setVisible(true);
@@ -102,25 +103,31 @@ public class HomePageView extends JDialog {
             }
         });
 
-        // DOES NOT WORK PROPERLY
         addToCartButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String cartContent = resultTextArea.getText();
                 String username = UserModel.getCurrentUser().getUsername();
+                String titleToSearch = "Title: ";
+
                 dbConnect db = new dbConnect();
-                try{
-                    String sql = "insert into ShoppingCart (CustomerUsername, Contents) values ('"+ username + "', '" + cartContent + "')";
+                try {
+                    String sql = "insert into ShoppingCart (CustomerUsername, Contents) values ('" + username + "', '" + cartContent + "')";
                     int row = db.updateData(sql);
                     if (row > 0) {
                         System.out.println("Cart contents added successfully.");
                         JOptionPane.showConfirmDialog(null, "Item added to cart!", "Notification", JOptionPane.DEFAULT_OPTION);
+
+                        titleCounter += countOccurrences(cartContent, titleToSearch);
+
+                        updateShoppingCartButtonText();
                     }
-                }catch(Exception ee){
+                } catch (Exception ee) {
                     System.out.println(ee);
                 }
             }
         });
+
 
         isLoggedIn = false;
         loginView = new LoginView(this);
@@ -157,6 +164,24 @@ public class HomePageView extends JDialog {
                 resultTextArea.append("Price: $" + bookModel.getPrice() + "\n");
                 resultTextArea.append("Genre: " + bookModel.getGenre() + "\n\n");
             }
+        }
+    }
+
+    private int countOccurrences(String text, String substring) {
+        int count = 0;
+        int index = 0;
+        while ((index = text.indexOf(substring, index)) != -1) {
+            index += substring.length();
+            count++;
+        }
+        return count;
+    }
+
+    private void updateShoppingCartButtonText() {
+        if (titleCounter > 0) {
+            shoppingCartButton.setText("Shopping Cart (" + titleCounter + ")");
+        } else {
+            shoppingCartButton.setText("Shopping Cart");
         }
     }
 

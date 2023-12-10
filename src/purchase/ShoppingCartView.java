@@ -38,7 +38,6 @@ public class ShoppingCartView extends JFrame{
         }catch(Exception ee) {
             System.out.println(ee);
         }
-        ///"update ShoppingCart set Contents = NULL"
 
         purchaseWithCardButton.addActionListener(new ActionListener() {
             @Override
@@ -52,7 +51,9 @@ public class ShoppingCartView extends JFrame{
                     if (row > 0) {
                         System.out.println("Purchase");
                         JOptionPane.showConfirmDialog(null, "Purchase Complete!", "Confirmation", JOptionPane.CLOSED_OPTION);
-                        textArea1.setText("");
+                        clearShoppingCartContents();
+
+
                     }
                 }catch (Exception ee){
                     System.out.println(ee);
@@ -87,6 +88,22 @@ public class ShoppingCartView extends JFrame{
                 homePageView.setLoggedIn(true);
             }
         });
+
+
+    }
+
+    private void clearShoppingCartContents() {
+        dbConnect db = new dbConnect();
+        try {
+            String clearCartSql = "update ShoppingCart set Contents = NULL";
+            int row = db.updateData(clearCartSql);
+            if (row > 0) {
+                System.out.println("Cart contents removed successfully.");
+                textArea1.setText("");
+            }
+        } catch (Exception ee) {
+            System.out.println(ee);
+        }
     }
 
 }
