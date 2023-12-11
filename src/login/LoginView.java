@@ -40,7 +40,7 @@ public class LoginView extends JFrame {
                 boolean loginSuccessful = false;
 
                 try {
-                    ResultSet rs = db.returnResult("select CustomerUsername, Password from Accounts " +
+                    ResultSet rs = db.returnResult("select CustomerUsername, Password, AccountType from Accounts " +
                             "where CustomerUsername = '" + login + "'");
                     while (rs.next()) {
                         if (rs.getString(2).equals(password)) {
@@ -55,7 +55,10 @@ public class LoginView extends JFrame {
                         homePageView.setLoggedIn(true);
                         System.out.println("Successful Login");
 
-                        UserModel currentUser = new UserModel(login, password);
+                        // Fetch account type from the database
+                        String accountType = rs.getString("AccountType");
+
+                        UserModel currentUser = new UserModel(login, password, accountType);
                         UserModel.setCurrentUser(currentUser);
                     } else {
                         System.out.println("Username and/or password does not exist");

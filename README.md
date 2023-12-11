@@ -14,7 +14,10 @@ In the first use case, logged-in users can search for a book using a selected fi
 In the second use case, logged-in users can purchase searched books using the search view. They can view their items in the shopping cart where the transaction is done. They can also add their payment information in the purchase view as well.<be>
 
 ### Use Case 3: Discussion
-In the third use case, logged-in users can discuss books with other users. They can post a main post with a title and body. They can also reply to posts as well. **(We were unable to connect posts and replies at this time)** <be>
+In the third use case, logged-in users can discuss books with other users. They can post a main post with a title and body. They can also reply to posts as well. <be>
+
+### Use Case 4: Review 
+In the fourth use case, logged-in users can view reviews for various books. Logged-in reviewers can create a review for a book. <be>
 
 
 ## Login Usernames, Passwords, and UniqueIDs
@@ -27,8 +30,12 @@ In the third use case, logged-in users can discuss books with other users. They 
 - password: abc123
 
 ### For Book Reviewer: 
+#### Book Reviewer 1: 
 - username: alicesmith
 - password: book200
+#### Book Reviewer 2: 
+- username: bobjoe
+- password: password234
   
 
 ## Books
@@ -63,39 +70,28 @@ ID	Title	Author	Price	IISBN	Genre <br>
 28	Horton Hears a Who!	Dr. Seuss	14.99	9780394800783	Children's<br>
 29	Northanger Abbey	Jane Austen	6	9780486414126	Romance<br>
 
+## Team Involvement Log
+### Implemented Use Case 4 and Final Implementations
 
-## Refactoring Implementation
-* All members were involved in different parts of the implementation. 
-
-1. The database is now connected to all parts of the code. Professor Vora helped us with the query codes. Amelia helped identify data tables and update them. Ji implemented the data connection codes into the SearchController class, and McKenzie implemented the data connection codes into the LoginView class.
-2. We have deleted unused classes such as UserFinance, OnlineBookSubscription, SocialMedia, ExternalReview, and SearchInterface.
-3. We removed the unnecessary comments among the codes in HomePageView and those in Search and Login packages. Those were coded heavily previously. 
-4. McKenzie deleted the UniqueID parameter in Login. 
-5. All of the view classes are consistent when it comes to code.
-6. We added setter methods into model classes that initially only have getters, such as UserModel and BookModel.
-
-## Design Patterns Implementation
 mzc5994 - Mackenzie Cane: <br> 
 
-- **Template:** Reader, Author, BookReviewer, LoginInterface
-- **Input Feedback:** LoginInterface, LoginView, PurchaseBookController, PostReviewController, DiscussionBoardController, SearchView
-
+- **20%:**  Helped to fix the discussion board and shopping cart code. 
+  
 ake5280 - Amelia Emahizer: <br> 
+
+- **30%:** Created ReviewView and PostReviewView. Wrote the code for users to view various book reviews. Wrote code for book reviews to add a new review for a book. Helped to fix the discussion board and shopping cart code. Updated database with any changes we needed.
 
 ajf6238 - Aidan Fitz: <br> 
 
-- **Decorator:** PaymentDecorator, PaymentImplementation, Payment, DebitCredit, ApplePay, PayPal, ShoppingCart
-- **Shopping Cart:** PurchaseBookController 
-
+- **20%**: Helped to fix shopping cart code.
+  
 jcf5517 - Jack Fitzgerald: <br> 
 
-jkz5262 - Ji Zhang: <be> 
+- **20%**: Helped to fix discussion board code. 
+  
+jkz5262 - Ji Zhang: <br>
 
-- **Strategy:** BookModel, TitleSearch, AuthorSearch, Genre Search, PriceSearch, SearchBookInterface
-- **Filter:** SearchBookController
-
-
-## Team Involvement Log
+- **20%:** Added SearchView code into HomePageView. 
 
 ### Implemented Use Cases 2 and 3
 
@@ -109,7 +105,7 @@ ake5280 - Amelia Emahizer: <br>
 
 ajf6238 - Aidan Fitz: <br> 
 
-- **30%: Created ShoppingCartView and SubscriptionView forms. Connected to database to display added shopping cart materials into the shopping cart. Allowed users to store payment info on purchase screen with add/delete/update table.
+- **30%**: Created ShoppingCartView and SubscriptionView forms. Connected to the database to display added shopping cart materials into the shopping cart. Allowed users to store payment info on the purchase screen with an add/delete/update table.
   
 jcf5517 - Jack Fitzgerald: <br> 
 
@@ -140,3 +136,35 @@ jcf5517 - Jack Fitzgerald: <br>
 jkz5262 - Ji Zhang: <br>
 
 - **30%:** Created SearchView form; Wrote SearchView & SearchController code to connect the view to the list of books; Added book information that is utilized in the code. Wrote HomePageView code to connect LoginView and SearchView. Edited code for others. Added book data to the arraylist. Finalized the codes and ensured accurate functionalities. Contributed to the README.txt file.
+
+
+## Refactoring Implementation
+* All members were involved in different parts of the implementation. 
+
+1. The database is now connected to all parts of the code. Professor Vora helped us with the query codes. Amelia helped identify data tables and update them. Ji implemented the data connection codes into the SearchController class, and Mackenzie implemented the data connection codes into the LoginView class.
+2. We have deleted unused classes such as UserFinance, OnlineBookSubscription, SocialMedia, ExternalReview, and SearchInterface.
+3. We removed the unnecessary comments among the codes in HomePageView and those in Search and Login packages. Those were coded heavily previously. 
+4. Mackenzie deleted the UniqueID parameter in Login. 
+5. All of the view classes are consistent when it comes to code.
+6. We added setter methods into model classes that initially only have getters, such as UserModel and BookModel.
+
+## Design Patterns Implementation
+mzc5994 - Mackenzie Cane: <br> 
+
+- **Template:** Reader, Author, BookReviewer, LoginInterface
+- **Input Feedback:** LoginInterface, LoginView, PurchaseBookController, PostReviewController, DiscussionBoardController, SearchView
+
+ake5280 - Amelia Emahizer: <br> 
+
+ajf6238 - Aidan Fitz: <br> 
+
+- **Decorator:** PaymentDecorator, PaymentImplementation, Payment, DebitCredit, ApplePay, PayPal, ShoppingCart
+- **Shopping Cart:** PurchaseBookController 
+
+jcf5517 - Jack Fitzgerald: <br> 
+
+jkz5262 - Ji Zhang: <be> 
+
+- **Strategy:** BookModel, TitleSearch, AuthorSearch, Genre Search, PriceSearch, SearchBookInterface
+- **Filter:** SearchBookController
+

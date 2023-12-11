@@ -57,16 +57,14 @@ public class ReviewView extends JFrame{
         writeAReviewButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String username = UserModel.getCurrentUser().getUsername();
-                if ("alicesmith".equals(username)){
+                UserModel currentUser = UserModel.getCurrentUser();
+                if (currentUser != null && "Reviewer".equals(currentUser.getAccountType())) {
                     setVisible(false);
                     dispose();
                     PostReviewView postReviewView = new PostReviewView();
-                }
-                else{
+                } else {
                     JOptionPane.showMessageDialog(reviews, "Only reviewers can post reviews!");
                 }
-
             }
         });
 
