@@ -30,8 +30,12 @@ In the fourth use case, logged-in users can view reviews for various books. Logg
 - password: abc123
 
 ### For Book Reviewer: 
+#### Book Reviewer 1: 
 - username: alicesmith
 - password: book200
+#### Book Reviewer 2: 
+- username: bobjoe
+- password: password234
   
 
 ## Books
